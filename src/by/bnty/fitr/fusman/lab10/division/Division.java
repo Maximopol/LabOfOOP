@@ -1,6 +1,4 @@
-package by.bnty.fitr.fusman.division;
-
-import com.sun.org.apache.xpath.internal.operations.Div;
+package by.bnty.fitr.fusman.lab10.division;
 
 public class Division {
     public Division(){
