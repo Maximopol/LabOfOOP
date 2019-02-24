@@ -15,12 +15,18 @@ public class WorkerWithArrays {
     }
 
     public static int searchIndexOfMinElement(double[] mas) {
-        return 0;
+        int position = 0;
+        for (int i = 0; i < mas.length; i++) {
+            if (mas[i] < mas[position]) {
+                position = i;
+            }
+        }
+        return position;
     }
 
-    public static double sumElementsAfterMin(double[] mas, int lolkek) {
+    public static double sumElementsAfterMin(double[] mas, int positionMin) {
         double sum = 0;
-        for (int i = lolkek; i < mas.length; i++) {
+        for (int i = positionMin; i < mas.length; i++) {
             sum += mas[i];
         }
         return sum;

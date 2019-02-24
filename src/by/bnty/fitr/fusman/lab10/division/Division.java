@@ -1,10 +1,19 @@
 package by.bnty.fitr.fusman.lab10.division;
 
 public class Division {
-    public Division(){
+    private final int MAX_SIZE_TANKS = 15;
+
+    public Division() {
 
     }
-    public Division(Division division){
+
+    public Division(Division division) {
 
     }
+
+    public String toString() {
+        return "";
+    }
+
+
 }
