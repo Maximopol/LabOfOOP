@@ -10,6 +10,7 @@ public class Tank {
     private int damage;
     private int armor;
     private int caliber;
+    private int countBullets;
 
     public Tank() {
     }
@@ -23,6 +24,7 @@ public class Tank {
         caliber = tank.caliber;
         name = tank.name;
         health = tank.health;
+        countBullets = tank.countBullets;
     }
 
     public void attack(Tank enemy) {
@@ -30,8 +32,10 @@ public class Tank {
 //        if (new Random().nextBoolean()) {
 //            totalDamage += damage / COEFFICIENT_DAMAGE;
 //        }
-
-        enemy.protection(new Random().nextBoolean() ? damage : damage / COEFFICIENT_DAMAGE + damage, this.caliber);
+        if (countBullets > 0) {
+            enemy.protection(new Random().nextBoolean() ? damage : damage / COEFFICIENT_DAMAGE + damage, this.caliber);
+            --countBullets;
+        }
     }
 
     private void protection(int damage, int caliber) {

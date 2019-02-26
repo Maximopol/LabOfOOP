@@ -20,11 +20,16 @@ public class WorkerWithArraysTest {
     }
 
     @Test
-    public void sumElementsAfterMin(){
-        int[] mas=new int[]{9, 0, 32, 7};
-        int pozition=WorkerWithArrays.searchIndexOfMinElement(mas);
-        assertEquals(39,WorkerWithArrays.sumElementsAfterMin(mas,pozition));
-      //  assertEquals(39.0,WorkerWithArrays.sumElementsAfterMin(mas,WorkerWithArrays.searchIndexOfMinElement(mas)));
+    public void sumElementsAfterMin() {
+        int[] mas = new int[]{9, 0, 32, 7};
+        int pozition = WorkerWithArrays.searchIndexOfMinElement(mas);
+        assertEquals(39, WorkerWithArrays.sumElementsAfterMin(mas, pozition));
+        //  assertEquals(39.0,WorkerWithArrays.sumElementsAfterMin(mas,WorkerWithArrays.searchIndexOfMinElement(mas)));
+    }
+
+    @Test
+    public void isAlone() {
+
     }
 
 }

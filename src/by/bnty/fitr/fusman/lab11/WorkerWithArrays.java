@@ -25,6 +25,15 @@ public class WorkerWithArrays {
         return position;
     }
 
+    public static boolean isAlone(int[] mas, int lol) {
+        int count = 0;
+        for (int ma : mas) {
+            if (ma == lol) {
+                count++;
+            }
+        }
+        return count == 1;
+    }
 
     public static int sumElementsAfterMin(int[] mas, int positionMin) {
         int sum = 0;
