@@ -1,21 +1,28 @@
 package by.bnty.fitr.fusman;
 
-import by.bnty.fitr.fusman.lab11.CreaterArrays;
-import by.bnty.fitr.fusman.lab11.WorkerWithArrays;
-
-import java.util.Arrays;
-
+//11
+//Необходимо в основное задание предыдущей лабораторной работы придумать и добавить в предметную область класс-сущность,
+//который бы состоял из соответствующих бизнес объектов программной системы.
+//Данный класс должен содержать соответствующую функциональность, которая обычно присуще любым контейнерным классам:
+// разнообразие конструкторов (конструктор по умолчанию, конструкторы с параметрами в том числе конструктор-копирования);
+//методы по добавлению элементов, удалению, изменению; методы для перебора бизнес объектов данного контейнерного класса;
+// переопределённый метод toString() и т.д.
+// Также реализовать для объектов данного контейнерного класса соответствующую бизнес-логику, которая бы осуществляла,
+// к примеру, поиск целевых данных и(или) экстремальных значений и т.д.
+//12
+//Необходимо проанализировать предметную область из предыдущей лабораторной работы и внедрить в неё функционал,
+//который бы для своих вычислений использовал бы многомерные массивы.
 public class Menu {
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(CreaterArrays.create(10)));
-
-        double[] mas = new double[10];
-        CreaterArrays.init(mas);
-
-
-        System.out.println(Arrays.toString(mas));
-        System.out.println(WorkerWithArrays.searchIndexOfMinElement(mas));
+//        System.out.println(Arrays.toString(CreaterArrays.create(10)));
+//
+//        double[] mas = new double[10];
+//        CreaterArrays.init(mas);
+//
+//
+//        System.out.println(Arrays.toString(mas));
+//        System.out.println(WorkerWithArrays.searchIndexOfMinElement(mas));
 
     }
 }

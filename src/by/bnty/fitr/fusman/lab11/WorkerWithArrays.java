@@ -14,7 +14,8 @@ public class WorkerWithArrays {
         return count;
     }
 
-    public static int searchIndexOfMinElement(double[] mas) {
+
+    public static int searchIndexOfMinElement(int[] mas) {
         int position = 0;
         for (int i = 0; i < mas.length; i++) {
             if (mas[i] < mas[position]) {
@@ -24,11 +25,23 @@ public class WorkerWithArrays {
         return position;
     }
 
-    public static double sumElementsAfterMin(double[] mas, int positionMin) {
-        double sum = 0;
+
+    public static int sumElementsAfterMin(int[] mas, int positionMin) {
+        int sum = 0;
         for (int i = positionMin; i < mas.length; i++) {
             sum += mas[i];
         }
         return sum;
     }
+
+//    public static boolean isRepeat(int[] mas){
+//        for (;;){
+//            if(true){
+//
+//            }
+//        }
+//
+//        return false;
+//    }
 }
+

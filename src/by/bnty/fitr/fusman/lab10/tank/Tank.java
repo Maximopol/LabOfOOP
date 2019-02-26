@@ -14,6 +14,9 @@ public class Tank {
     public Tank() {
     }
 
+    public Tank(int i) {
+    }
+
     public Tank(Tank tank) {
         damage = tank.damage;
         armor = tank.armor;
