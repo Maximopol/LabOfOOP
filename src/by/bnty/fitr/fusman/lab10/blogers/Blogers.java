@@ -8,6 +8,6 @@ public class Blogers {
     }
 
     public Blogers(Blogers blogers) {
-        nickname = blogers.nickname;
+        this.nickname = blogers.nickname;
     }
 }
