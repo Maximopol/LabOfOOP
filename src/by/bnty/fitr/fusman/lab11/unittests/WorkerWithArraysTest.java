@@ -8,7 +8,14 @@ import static org.junit.Assert.*;
 public class WorkerWithArraysTest {
 
     @Test
+    public void searchMaxElement(){
+        assertEquals(10,WorkerWithArrays.searchMaxElement(new int[]{5,3,10}));//test case № 1
+        assertEquals(0,WorkerWithArrays.searchMaxElement(new int[]{0}));//test case № 2
+        assertEquals(36,WorkerWithArrays.searchMaxElement(new int[]{5,36,10}));//test case № 3
+    }
+    @Test
     public void countZeros() {
+
         assertEquals(0, WorkerWithArrays.countZeros(new double[]{23, 2}));//test case № 1
 
         assertEquals(2, WorkerWithArrays.countZeros(new double[]{23, 2, 0, 0}));//test case № 2

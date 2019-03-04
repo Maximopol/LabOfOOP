@@ -25,6 +25,16 @@ public class WorkerWithArrays {
         return position;
     }
 
+    public static int searchMaxElement(int[] mas) {
+        int Max = mas[0];
+        for (int ma : mas) {
+            if (Max < ma) {
+                Max = ma;
+            }
+        }
+        return Max;
+    }
+
     public static boolean isAlone(int[] mas, int lol) {
         int count = 0;
         for (int ma : mas) {
@@ -42,15 +52,5 @@ public class WorkerWithArrays {
         }
         return sum;
     }
-
-//    public static boolean isRepeat(int[] mas){
-//        for (;;){
-//            if(true){
-//
-//            }
-//        }
-//
-//        return false;
-//    }
 }
 

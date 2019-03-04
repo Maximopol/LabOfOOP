@@ -23,5 +23,17 @@ public class WorkerWithMatrix {
 //    }
 
     }
+
+    public static int[][] multiply(int[][] mas, int[][] mas2) {
+        for (int i = 0; i < mas.length; i++) {
+            int max = WorkerWithArrays.searchMaxElement(mas2[i]);
+            for (int j = 0; j < mas[i].length; j++) {
+                mas[i][j] *= max;
+            }
+
+        }
+
+        return mas;
+    }
 }
 
