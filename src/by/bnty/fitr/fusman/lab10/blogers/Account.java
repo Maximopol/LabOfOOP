@@ -1,13 +1,32 @@
 package by.bnty.fitr.fusman.lab10.blogers;
 
+import by.bnty.fitr.fusman.lab10.playlists.Playlists;
+
+import java.util.ArrayList;
+
 public class Account {
     private String nickname;
+    private ArrayList<Playlists> collection;
 
-    public Account() {
+    private Account() {
+        collection = new ArrayList<>();
+    }
 
+    public Account(String nickname) {
+        this();
+        this.nickname = nickname;
     }
 
     public Account(Account account) {
-        this.nickname = account.nickname;
+        nickname = account.nickname;
+        collection = account.collection;
+    }
+
+    public void deletePlaylists() {
+
+    }
+
+    public String toString() {
+        return "Nick:" + nickname;
     }
 }
