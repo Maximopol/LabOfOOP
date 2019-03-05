@@ -9,31 +9,30 @@ import by.bnty.fitr.fusman.lab11.WorkerWithArrays;
 //матрицу умножением элементов каждой строки первой матрицы на
 //наибольшее из значений элементов соответствующей строки второй матрицы.
 public class WorkerWithMatrix {
-    public static int searchMinFromMatrix(int[][] mas) {
-        for (int[] ma : mas) {
-            if (WorkerWithArrays.isAlone(ma, 3)) {
-                return 1;
+
+    public static int[][] transpose(int[][] mas) {
+        int[][] new_mas = new int[mas[0].length][mas.length];
+        for (int i = 0; i < mas.length; i++) {
+            for (int j = 0; j < mas.length; j++) {
+                new_mas[j][i] = mas[i][j];
             }
-
         }
-        return 0;
-//    public static int[][] multiplyMathixes(int[][] mas1, int[][] mas2) {
-//
-//        return mas1;
-//    }
 
+        return new_mas;
     }
 
     public static int[][] multiply(int[][] mas, int[][] mas2) {
+        int[][] mas3 = new int[mas.length][];
         for (int i = 0; i < mas.length; i++) {
             int max = WorkerWithArrays.searchMaxElement(mas2[i]);
             for (int j = 0; j < mas[i].length; j++) {
-                mas[i][j] *= max;
+                mas3[i][j] = max * mas[i][j];
+                // mas[i][j] *= max;
             }
 
         }
 
-        return mas;
+        return mas3;
     }
 }
 

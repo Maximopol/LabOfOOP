@@ -4,6 +4,7 @@ import by.bnty.fitr.fusman.Printer.Printer;
 import by.bnty.fitr.fusman.lab10.video.Video;
 import by.bnty.fitr.fusman.lab11.ArrayInitializer;
 import by.bnty.fitr.fusman.lab11.WorkerWithArrays;
+import by.bnty.fitr.fusman.lab12.WorkerWithMatrix;
 
 import java.util.Arrays;
 
@@ -42,13 +43,10 @@ public class Menu {
         //lab 12 task 1
 
         //lab 12 task 2
-
-//        double[] mas = new double[10];
-//        CreaterArrays.init(mas);
-//
-//
-//        System.out.println(Arrays.toString(mas));
-//        System.out.println(WorkerWithArrays.searchIndexOfMinElement(mas));
+        for (int[] m : WorkerWithMatrix.transpose(new int[][]{{4, 5, 4, 5}, {9, 0, 2, 3}, {11, 12, 12, 11}, {5, 4, 111, 234}})
+        ) {
+            Printer.println(Arrays.toString(m));
+        }
 
     }
 }

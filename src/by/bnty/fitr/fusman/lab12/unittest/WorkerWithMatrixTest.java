@@ -8,7 +8,11 @@ import static org.junit.Assert.*;
 public class WorkerWithMatrixTest {
 
     @Test
-    public void searchMinFromMatrix() {
+    public void transpose() {
+        int[][] mas = WorkerWithMatrix.transpose(new int[][]{{4, 5, 6}, {9, 10, 11}, {100, 200, 300}});
+        assertArrayEquals(new int[]{4, 9, 100}, mas[0]);
+        assertArrayEquals(new int[]{5, 10, 200}, mas[1]);
+        assertArrayEquals(new int[]{6, 11, 300}, mas[2]);
     }
 
     @Test
