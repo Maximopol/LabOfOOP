@@ -16,14 +16,16 @@ public class WorkerWithArraysTest {
     @Test
     public void countZeros() {
 
-        assertEquals(0, WorkerWithArrays.countZeros(new double[]{23, 2}));//test case № 1
+        assertEquals(0, WorkerWithArrays.countZeros(new int[]{23, 2}));//test case № 1
 
-        assertEquals(2, WorkerWithArrays.countZeros(new double[]{23, 2, 0, 0}));//test case № 2
+        assertEquals(2, WorkerWithArrays.countZeros(new int[]{23, 2, 0, 0}));//test case № 2
     }
 
     @Test
     public void searchIndexOfMinElement() {
         assertEquals(3, WorkerWithArrays.searchIndexOfMinElement(new int[]{9, 10, 32, 0}));//test case № 1
+
+        assertEquals(0, WorkerWithArrays.searchIndexOfMinElement(new int[]{9}));//test case № 2
     }
 
     @Test

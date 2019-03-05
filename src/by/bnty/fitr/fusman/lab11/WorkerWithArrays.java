@@ -3,9 +3,10 @@ package by.bnty.fitr.fusman.lab11;
 //В векторе, состоящем из n вещественных элементов, вычислить: количество
 //элементов вектора, равных 0 и сумму элементов вектора, расположенных после минимального элемента.
 public class WorkerWithArrays {
-    public static int countZeros(double[] mas) {
+
+    public static int countZeros(int[] mas) {
         int count = 0;
-        for (double element : mas) {
+        for (int element : mas) {
             if (element == 0.0) {
                 count++;
             }
