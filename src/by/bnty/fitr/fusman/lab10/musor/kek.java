@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.lab10;
+package by.bnty.fitr.fusman.lab10.musor;
 
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;

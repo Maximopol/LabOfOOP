@@ -2,7 +2,7 @@ package by.bnty.fitr.fusman.tasks.task4;
 
 import java.util.Arrays;
 
-import static by.bnty.fitr.fusman.Printer.Printer.println;
+import static Printer.Printer.println;
 
 public class Main {
     public static void main(String[] args) {
