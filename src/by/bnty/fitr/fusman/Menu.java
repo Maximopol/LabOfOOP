@@ -1,15 +1,5 @@
 package by.bnty.fitr.fusman;
 
-import by.bnty.fitr.fusman.labs.lab10.video.Video;
-import by.bnty.fitr.fusman.labs.lab11.ArrayInitializer;
-import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrays;
-import by.bnty.fitr.fusman.labs.lab12.WorkerWithMatrix;
-
-import java.util.Arrays;
-
-import static Printer.Printer.println;
-
-
 //11
 //Необходимо в основное задание предыдущей лабораторной работы придумать и добавить в предметную область класс-сущность,
 //который бы состоял из соответствующих бизнес объектов программной системы.
@@ -25,29 +15,29 @@ import static Printer.Printer.println;
 public class Menu {
     public static void main(String[] args) {
 
-        int[] mas = new int[10];
-        ArrayInitializer.rndInit(mas, 10, 100);
-        println(Arrays.toString(mas));
-
-        //lab 11 task 2
-        //В векторе, состоящем из n вещественных элементов, вычислить: количество
-        //элементов вектора, равных 0 и сумму элементов вектора, расположенных после минимального элемента.
-        int[] mas1 = new int[100];
-        ArrayInitializer.rndInit(mas1, -100, 100);
-        println(Arrays.toString(mas1));
-        println(WorkerWithArrays.countZeros(mas1));
-
-        println(WorkerWithArrays.sumElementsAfterMin(mas1, WorkerWithArrays.searchIndexOfMinElement(mas1)));
-
-
-        println(new Video().toString());
-        //lab 12 task 1
-
-        //lab 12 task 2
-        for (int[] m : WorkerWithMatrix.transpose(new int[][]{{4, 5, 4, 5}, {9, 0, 2, 3}, {11, 12, 12, 11}, {5, 4, 111, 234}})
-        ) {
-            println(Arrays.toString(m));
-        }
+//        int[] mas = new int[10];
+//        ArrayInitializer.rndInit(mas, 10, 100);
+//        println(Arrays.toString(mas));
+//
+//        //lab 11 task 2
+//        //В векторе, состоящем из n вещественных элементов, вычислить: количество
+//        //элементов вектора, равных 0 и сумму элементов вектора, расположенных после минимального элемента.
+//        int[] mas1 = new int[100];
+//        ArrayInitializer.rndInit(mas1, -100, 100);
+//        println(Arrays.toString(mas1));
+//        println(WorkerWithArrays.countZeros(mas1));
+//
+//        println(WorkerWithArrays.sumElementsAfterMin(mas1, WorkerWithArrays.searchIndexOfMinElement(mas1)));
+//
+//
+//        println(new Video().toString());
+//        //lab 12 task 1
+//
+//        //lab 12 task 2
+//        for (int[] m : WorkerWithMatrix.transpose(new int[][]{{4, 5, 4, 5}, {9, 0, 2, 3}, {11, 12, 12, 11}, {5, 4, 111, 234}})
+//        ) {
+//            println(Arrays.toString(m));
+//        }
 
     }
 }

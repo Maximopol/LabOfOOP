@@ -18,33 +18,36 @@ public class MatrixWorker {
         return true;
     }
 
+    public static Matrix searchMax(Matrix matrix) {
+        return matrix.getCountRows() == matrix.getCountColumns() ? Search(matrix) : matrix;
+    }
 
-//    public static int[][] searchMax(Matrix matrix) {
-//        int posx = 0, posy = 0;
-//        int length = matrix.getCountRows();
-//        int max = matrix.getElement(posx,posy);
-//
-//        for (int i = 0; i < length; i++) {
-//            if (max < matrix.getElement(i,i)) {
-//                max = matrix.getElement(i,i);
-//                posx = posy = i;
-//            }
-//        }
-//        for (int i = length - 1, j = 0; i != 0; i--, j++) {
-//            if (max <matrix.getElement(i,j)) {
-//                max = matrix.getElement(i,j);
-//                posx = i;
-//                posy = j;
-//            }
-//        }
-//        if (length % 2 != 0) {
-//
-//           // array[posx][posy] = array[length / 2][length / 2];
-//            //array[length / 2][length / 2] = max;
-//        }
-//
-//      //  return array;
-//    }
+    private static Matrix Search(Matrix matrix) {
+        int posx = 0, posy = 0,
+                length = matrix.getCountColumns(),
+                maxEl = matrix.getElement(posx, posy);
+
+        for (int i = 0; i < length; i++) {
+            if (maxEl < matrix.getElement(i, i)) {
+                maxEl = matrix.getElement(i, i);
+                posx = posy = i;
+            }
+        }
+
+        for (int i = 0, j = length - 1; i < length; i++, j--) {
+            if (maxEl < matrix.getElement(i, j)) {
+                maxEl = matrix.getElement(i, j);
+                posx = i;
+                posy = j;
+            }
+        }
+
+        int xx = matrix.getElement(posx, posy);
+        matrix.setElement(posx, posy, matrix.getElement(length / 2, length / 2));
+        matrix.setElement(length / 2, length / 2, xx);
+
+        return matrix;
+    }
 
 }
 

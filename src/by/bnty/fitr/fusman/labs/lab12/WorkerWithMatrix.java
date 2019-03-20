@@ -4,35 +4,38 @@ package by.bnty.fitr.fusman.labs.lab12;
 
 
 import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrays;
+import by.bnty.fitr.fusman.tasks.task4.Matrix;
 
 //Даны две действительные квадратные матрицы порядка n. Получить новую
 //матрицу умножением элементов каждой строки первой матрицы на
 //наибольшее из значений элементов соответствующей строки второй матрицы.
 public class WorkerWithMatrix {
 
-    public static int[][] transpose(int[][] mas) {
-        int[][] new_mas = new int[mas[0].length][mas.length];
-        for (int i = 0; i < mas.length; i++) {
-            for (int j = 0; j < mas.length; j++) {
-                new_mas[j][i] = mas[i][j];
+    public static Matrix transpose(Matrix matrix) {
+
+        Matrix matrix1 = new Matrix(matrix.getCountColumns(), matrix.getCountRows());
+
+        for (int i = 0; i < matrix1.getCountRows(); i++) {
+            for (int j = 0; j < matrix1.getCountColumns(); j++) {
+                matrix1.setElement(i, j, matrix.getElement(j, i));
             }
         }
+        return matrix1;
 
-        return new_mas;
     }
 
-    public static int[][] multiply(int[][] mas, int[][] mas2) {
-        int[][] mas3 = new int[mas.length][];
-        for (int i = 0; i < mas.length; i++) {
-            int max = WorkerWithArrays.searchMaxElement(mas2[i]);
-            for (int j = 0; j < mas[i].length; j++) {
-                mas3[i][j] = max * mas[i][j];
-                // mas[i][j] *= max;
+    public static Matrix multiply(Matrix matrix1, Matrix matrix2) {
+        Matrix matrix = new Matrix(matrix1.getCountRows(), matrix1.getCountColumns());
+
+        for (int i = 0; i < matrix.getCountRows(); i++) {
+            int max = WorkerWithArrays.searchMaxElement(matrix2, i);
+            for (int j = 0; j < matrix.getCountColumns(); j++) {
+                matrix.setElement(i, j, max * matrix1.getElement(i, j));
+
             }
 
         }
-
-        return mas3;
+        return matrix;
     }
 }
 

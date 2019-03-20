@@ -1,5 +1,6 @@
 package by.bnty.fitr.fusman.labs.lab11.unittests;
 
+import by.bnty.fitr.fusman.labs.lab11.Arrays;
 import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrays;
 import org.junit.Test;
 
@@ -8,36 +9,82 @@ import static org.junit.Assert.*;
 public class WorkerWithArraysTest {
 
     @Test
-    public void searchMaxElement(){
-        assertEquals(10,WorkerWithArrays.searchMaxElement(new int[]{5,3,10}));//test case № 1
-        assertEquals(0,WorkerWithArrays.searchMaxElement(new int[]{0}));//test case № 2
-        assertEquals(36,WorkerWithArrays.searchMaxElement(new int[]{5,36,10}));//test case № 3
-    }
-    @Test
-    public void countZeros() {
-
-        assertEquals(0, WorkerWithArrays.countZeros(new int[]{23, 2}));//test case № 1
-
-        assertEquals(2, WorkerWithArrays.countZeros(new int[]{23, 2, 0, 0}));//test case № 2
+    public void searchMaxElement1() {
+        Arrays arrays = new Arrays(3);
+        arrays.setElement(0, 5);
+        arrays.setElement(1, 3);
+        arrays.setElement(2, 10);
+        assertEquals(10, WorkerWithArrays.searchMaxElement(arrays));
     }
 
     @Test
-    public void searchIndexOfMinElement() {
-        assertEquals(3, WorkerWithArrays.searchIndexOfMinElement(new int[]{9, 10, 32, 0}));//test case № 1
-
-        assertEquals(0, WorkerWithArrays.searchIndexOfMinElement(new int[]{9}));//test case № 2
+    public void searchMaxElement2() {
+        Arrays arrays = new Arrays(1);
+        arrays.setElement(0, 0);
+        assertEquals(0, WorkerWithArrays.searchMaxElement(arrays));
     }
 
     @Test
-    public void sumElementsAfterMin() {
-        int[] mas = new int[]{9, 0, 32, 7};
-        int pozition = WorkerWithArrays.searchIndexOfMinElement(mas);
-        assertEquals(39, WorkerWithArrays.sumElementsAfterMin(mas, pozition));
-        //  assertEquals(39.0,WorkerWithArrays.sumElementsAfterMin(mas,WorkerWithArrays.searchIndexOfMinElement(mas)));
+    public void countZeros1() {
+
+        assertEquals(3, WorkerWithArrays.countZeros(new Arrays()));
     }
 
     @Test
-    public void isAlone() {
+    public void countZeros2() {
+        Arrays arrays = new Arrays(2);
+        arrays.setElement(0, 1);
+        arrays.setElement(1, 1);
+        assertEquals(0, WorkerWithArrays.countZeros(arrays));
+    }
+
+    @Test
+    public void searchIndexOfMinElement1() {
+        Arrays arrays = new Arrays(4);
+        arrays.setElement(0, 9);
+        arrays.setElement(1, 10);
+        arrays.setElement(2, 0);
+        arrays.setElement(3, 32);
+        assertEquals(2, WorkerWithArrays.searchIndexOfMinElement(arrays));
+
+    }
+
+    @Test
+    public void searchIndexOfMinElement2() {
+        Arrays arrays = new Arrays(1);
+        arrays.setElement(0, 0);
+
+        assertEquals(0, WorkerWithArrays.searchIndexOfMinElement(arrays));
+    }
+
+    @Test
+    public void sumElementsAfterMin1() {
+        Arrays arrays = new Arrays(4);
+        arrays.setElement(0, 9);
+        arrays.setElement(1, 0);
+        arrays.setElement(2, 7);
+        arrays.setElement(3, 32);
+        assertEquals(39, WorkerWithArrays.sumElementsAfterMin(arrays, WorkerWithArrays.searchIndexOfMinElement(arrays)));
+
+    }
+
+    @Test
+    public void sumElementsAfterMin2() {
+        Arrays arrays = new Arrays(1);
+        arrays.setElement(0, 2);
+
+        assertEquals(0, WorkerWithArrays.sumElementsAfterMin(arrays, WorkerWithArrays.searchIndexOfMinElement(arrays)));
+
+    }
+
+    @Test
+    public void sumElementsAfterMin3() {
+        Arrays arrays = new Arrays(4);
+        arrays.setElement(0, 9);
+        arrays.setElement(1, 2);
+        arrays.setElement(2, 7);
+        arrays.setElement(3, 1);
+        assertEquals(0, WorkerWithArrays.sumElementsAfterMin(arrays, WorkerWithArrays.searchIndexOfMinElement(arrays)));
 
     }
 

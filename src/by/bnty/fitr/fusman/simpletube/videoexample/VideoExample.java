@@ -19,14 +19,15 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class VideoExample extends Application {
-    private int CANVAS_HEIGHT = 600; // height of the player
-    private int CANVAS_WIDTH = 600;  // width of the player
+    private int APP_HEIGHT = 600;
+    private int APP_WIDTH = 1000;
     private MediaPlayer player;
+
 
     private void uiSetup(final Stage stage) {
 
         StackPane root = new StackPane();
-        Scene theScene = new Scene(root, CANVAS_WIDTH, CANVAS_HEIGHT);
+        Scene theScene = new Scene(root, APP_WIDTH, APP_HEIGHT);
 
 
         final HBox buttonContainer = new HBox(0);
@@ -113,8 +114,7 @@ public class VideoExample extends Application {
         try {
             uiSetup(stage);
             stage.show();
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

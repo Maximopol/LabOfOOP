@@ -18,7 +18,6 @@ public class Matrix {
     }
 
 
-
     public Matrix(int size) {
         this(size, size);
     }
@@ -50,9 +49,9 @@ public class Matrix {
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[0].length; j++) {
-                builder.append(array[i][j]).append("  ");
+        for (int[] ints : array) {
+            for (int x : ints) {
+                builder.append(x).append("  ");
 
             }
             builder.append("\n");
