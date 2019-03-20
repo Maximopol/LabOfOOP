@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.lab11;
+package by.bnty.fitr.fusman.labs.lab11;
 
 import java.util.Random;
 

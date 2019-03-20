@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.lab10.musor;
+package by.bnty.fitr.fusman.simpletube.videoexample;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;

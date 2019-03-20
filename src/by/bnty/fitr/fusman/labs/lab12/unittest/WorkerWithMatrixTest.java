@@ -1,6 +1,6 @@
-package by.bnty.fitr.fusman.lab12.unittest;
+package by.bnty.fitr.fusman.labs.lab12.unittest;
 
-import by.bnty.fitr.fusman.lab12.WorkerWithMatrix;
+import by.bnty.fitr.fusman.labs.lab12.WorkerWithMatrix;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

@@ -1,9 +1,9 @@
-package by.bnty.fitr.fusman.lab12;
+package by.bnty.fitr.fusman.labs.lab12;
 
 //Найти минимальное из чисел, встречающихся в заданной матрице ровно один раз.
 
 
-import by.bnty.fitr.fusman.lab11.WorkerWithArrays;
+import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrays;
 
 //Даны две действительные квадратные матрицы порядка n. Получить новую
 //матрицу умножением элементов каждой строки первой матрицы на

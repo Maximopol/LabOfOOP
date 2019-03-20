@@ -1,9 +1,9 @@
 package by.bnty.fitr.fusman;
 
-import by.bnty.fitr.fusman.lab10.video.Video;
-import by.bnty.fitr.fusman.lab11.ArrayInitializer;
-import by.bnty.fitr.fusman.lab11.WorkerWithArrays;
-import by.bnty.fitr.fusman.lab12.WorkerWithMatrix;
+import by.bnty.fitr.fusman.labs.lab10.video.Video;
+import by.bnty.fitr.fusman.labs.lab11.ArrayInitializer;
+import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrays;
+import by.bnty.fitr.fusman.labs.lab12.WorkerWithMatrix;
 
 import java.util.Arrays;
 

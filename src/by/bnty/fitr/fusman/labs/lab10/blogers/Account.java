@@ -1,6 +1,6 @@
-package by.bnty.fitr.fusman.lab10.blogers;
+package by.bnty.fitr.fusman.labs.lab10.blogers;
 
-import by.bnty.fitr.fusman.lab10.playlists.Playlists;
+import by.bnty.fitr.fusman.labs.lab10.playlists.Playlists;
 
 import java.util.ArrayList;
 

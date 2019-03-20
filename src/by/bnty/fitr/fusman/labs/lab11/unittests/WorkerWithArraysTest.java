@@ -1,6 +1,6 @@
-package by.bnty.fitr.fusman.lab11.unittests;
+package by.bnty.fitr.fusman.labs.lab11.unittests;
 
-import by.bnty.fitr.fusman.lab11.WorkerWithArrays;
+import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrays;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
