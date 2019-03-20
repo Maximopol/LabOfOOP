@@ -28,12 +28,13 @@ public class VideoExample extends Application {
         StackPane root = new StackPane();
         Scene theScene = new Scene(root, CANVAS_WIDTH, CANVAS_HEIGHT);
 
-        //create all buttons
+
         final HBox buttonContainer = new HBox(0);
         final Button open_button = new Button("open");
         final Button pause_button = new Button("pause");
         final Button play_button = new Button("play");
         final Button stop_button = new Button("stop");
+
         buttonContainer.setAlignment(Pos.BOTTOM_LEFT);
         Insets buttonContainerPadding = new Insets(1, 1, 1, 1);
         buttonContainer.setPadding(buttonContainerPadding);
@@ -42,7 +43,7 @@ public class VideoExample extends Application {
         final FileChooser fileChooser = new FileChooser(); // create a file chooser
         final MediaView mediaView = new MediaView(player); // create a media view
 
-        //this button will load the video
+
         open_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -67,21 +68,21 @@ public class VideoExample extends Application {
                     alert.setTitle("Loading Error");
                     alert.setHeaderText("Error happen when loading");
                     alert.setContentText("Cannot load the video");
-                    alert.showAndWait().ifPresent(null
-                    );
+                    alert.showAndWait().ifPresent(null);
                 }
             }
         });
 
-        //this button will play the video
+
         play_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                //player.setVolume();
                 player.play();
             }
         });
 
-        //this button will pause the video
+
         pause_button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -109,8 +110,14 @@ public class VideoExample extends Application {
     @Override
     public void start(final Stage stage) throws Exception {
 
-        uiSetup(stage);
-        stage.show();
+        try {
+            uiSetup(stage);
+            stage.show();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
 
     }
 
