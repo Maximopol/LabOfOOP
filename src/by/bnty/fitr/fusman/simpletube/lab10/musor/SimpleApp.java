@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.labs.lab10.musor;
+package by.bnty.fitr.fusman.simpletube.lab10.musor;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

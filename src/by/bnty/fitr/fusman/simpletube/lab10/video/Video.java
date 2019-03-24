@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.labs.lab10.video;
+package by.bnty.fitr.fusman.simpletube.lab10.video;
 
 import java.util.Date;
 
