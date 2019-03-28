@@ -70,6 +70,7 @@ public class VideoExample extends Application {
                     alert.setHeaderText("Error happen when loading");
                     alert.setContentText("Cannot load the video");
                     alert.showAndWait().ifPresent(null);
+                    e.printStackTrace();
                 }
             }
         });
