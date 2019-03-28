@@ -5,6 +5,11 @@ import java.util.Date;
 public class Video {
     private String name;
     private Date data;
+    private int countViews;
+
+    private int countLikes;
+
+    private int countDizLikes;
 
     public Video() {
         data = new Date();
@@ -22,3 +27,4 @@ public class Video {
     }
 
 }
+
