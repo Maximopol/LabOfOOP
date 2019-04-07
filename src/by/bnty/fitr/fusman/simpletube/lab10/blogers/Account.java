@@ -1,13 +1,13 @@
 package by.bnty.fitr.fusman.simpletube.lab10.blogers;
 
 import by.bnty.fitr.fusman.simpletube.accountstatus.AccountStatus;
-import by.bnty.fitr.fusman.simpletube.lab10.playlists.Playlists;
+import by.bnty.fitr.fusman.simpletube.lab10.arrays.Playlist;
 
 import java.util.ArrayList;
 
 public class Account {
     private String nickname;
-    private ArrayList<Playlists> collection;
+    private ArrayList<Playlist> collection;
     private AccountStatus status;
 
     private Account() {
@@ -24,13 +24,5 @@ public class Account {
         nickname = account.nickname;
         collection = account.collection;
         status = account.status;
-    }
-
-    public void deletePlaylists() {
-
-    }
-
-    public String toString() {
-        return "Nick:" + nickname;
     }
 }

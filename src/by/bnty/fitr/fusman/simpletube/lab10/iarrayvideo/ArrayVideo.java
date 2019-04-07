@@ -1,7 +1,11 @@
 package by.bnty.fitr.fusman.simpletube.lab10.iarrayvideo;
 
-public interface ArrayVideo {
-    void add();
+import by.bnty.fitr.fusman.simpletube.lab10.video.Video;
 
-    void remove();
+public interface ArrayVideo {
+    void add(Video video);
+
+    void remove(Video video);
+
+    Video getVideo(String name);
 }
