@@ -2,7 +2,7 @@ package by.bnty.fitr.fusman.tasks.task5;
 
 import java.util.Arrays;
 
-public class Disk {
+public class Disk implements Storage {
     private final int MAX_LENGTH_ARRAY_MUSIC = 100;
     private int count;
     private Music[] array;
@@ -35,6 +35,11 @@ public class Disk {
         }
     }
 
+    public void remove(int number) {
+        array[number] = null;
+    }
+
+
     public int getLengthDisk() {
         return array.length;
     }
@@ -44,7 +49,6 @@ public class Disk {
             return array[number];
         } else {
             return null;
-
         }
     }
 

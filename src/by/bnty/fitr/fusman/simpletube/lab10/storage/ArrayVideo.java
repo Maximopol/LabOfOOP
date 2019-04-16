@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.lab10.iarrayvideo;
+package by.bnty.fitr.fusman.simpletube.lab10.storage;
 
 import by.bnty.fitr.fusman.simpletube.lab10.video.Video;
 

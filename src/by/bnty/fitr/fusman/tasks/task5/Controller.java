@@ -24,4 +24,13 @@ public class Controller {
 
         return disk.getMusic(minIndex) == null ? null : disk.getMusic(minIndex).toString();
     }
+
+    public static String searchName(Disk disk, String name) {
+        for (int i = 0; i < disk.getCount(); i++) {
+            if (name.equals(disk.getMusic(i).getName())) {
+                return disk.getMusic(i).toString();
+            }
+        }
+        return null;
+    }
 }

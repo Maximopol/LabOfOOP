@@ -1,6 +1,6 @@
 package by.bnty.fitr.fusman.simpletube.lab10.arrays;
 
-import by.bnty.fitr.fusman.simpletube.lab10.iarrayvideo.ArrayVideo;
+import by.bnty.fitr.fusman.simpletube.lab10.storage.ArrayVideo;
 import by.bnty.fitr.fusman.simpletube.lab10.video.Video;
 
 import java.util.ArrayList;

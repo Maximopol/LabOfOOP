@@ -47,4 +47,25 @@ public class ControllerTest {
     public void searchShortSongInDisk2() {
         assertNull(Controller.searchShortSongInDisk(new Disk(2)));
     }
+
+    @Test
+    public void searchName1() {
+        Music music = new Music();
+        music.setDuration(5);
+        music.setName("Гимп СССР");
+
+        Music music2 = new Music();
+        music2.setDuration(10);
+
+        Disk disk = new Disk(3);
+
+        disk.add(music);
+        disk.add(music2);
+        assertEquals(music.toString(), Controller.searchName(disk, "Гимп СССР"));
+    }
+
+    @Test
+    public void searchName2() {
+        assertNull(Controller.searchName(new Disk(3), "Гимп СССР"));
+    }
 }
