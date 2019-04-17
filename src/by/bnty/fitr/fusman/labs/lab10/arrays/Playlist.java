@@ -1,17 +1,18 @@
-package by.bnty.fitr.fusman.simpletube.lab10.arrays;
+package by.bnty.fitr.fusman.labs.lab10.arrays;
 
-import by.bnty.fitr.fusman.simpletube.lab10.storage.ArrayVideo;
-import by.bnty.fitr.fusman.simpletube.lab10.video.Video;
+import by.bnty.fitr.fusman.labs.lab10.storage.ArrayVideo;
+import by.bnty.fitr.fusman.labs.lab10.video.Video;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Playlist implements ArrayVideo {
     private String name;
     private ArrayList<Video> playlist;
+    private int countVideo;
 
     public Playlist() {
         playlist = new ArrayList<>();
+        countVideo = 0;
     }
 
     public Playlist(String name) {
@@ -22,15 +23,18 @@ public class Playlist implements ArrayVideo {
     public Playlist(Playlist playlist) {
         this.playlist = playlist.playlist;
         name = playlist.name;
+        countVideo = playlist.countVideo;
     }
 
     public void remove(Video video) {
         playlist.remove(video);
+        countVideo--;
     }
 
 
     public void add(Video video) {
         playlist.add(video);
+        countVideo++;
     }
 
     public Video getVideo(String name) {
@@ -42,10 +46,17 @@ public class Playlist implements ArrayVideo {
         return null;
     }
 
+
+    public int getCountVideo() {
+        return countVideo;
+    }
+
+
     public String toString() {
         return "Playlist{" +
                 "name='" + name + '\'' +
-                ", playlist=" + Arrays.toString(playlist.toArray()) +
+                ", playlist=" + playlist +
+                ", countVideo=" + countVideo +
                 '}';
     }
 }

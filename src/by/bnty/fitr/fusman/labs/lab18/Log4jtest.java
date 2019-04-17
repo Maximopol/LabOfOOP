@@ -7,20 +7,21 @@ public class Log4jtest {
 
     public static void main(String[] args) throws Exception {
         Log4jtest log4jtest = new Log4jtest();
-        log4jtest.doOrder();
+        log4jtest.test();
 
     }
 
-    public void doOrder() {
+    private void test() {
 
         log.info("Это информационное сообщение!");
-        addToCart();
+        testing();
     }
 
-    private void addToCart() {
+    private void testing() {
 
         log.error("Это сообщение ошибки");
         log.debug("kek");
         log.warn("stop");
+        log.fatal("кхъ");
     }
 }

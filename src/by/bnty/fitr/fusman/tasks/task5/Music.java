@@ -2,20 +2,20 @@ package by.bnty.fitr.fusman.tasks.task5;
 
 import java.util.Random;
 
-//Тут я не стал использвать наследование, т.к. достаточно этот класс и класс GenreOfMusic
+//Тут я не стал использвать наследование, т.к. достаточно этот класс и класс MusicGenre
 public class Music {
     private int MAX_DURATION = 1000;
-    private GenreOfMusic genre;
+    private MusicGenre genre;
     private String name;
     private int duration;
 
     public Music() {
-        genre = GenreOfMusic.Unknown;
+        genre = MusicGenre.Unknown;
         name = "Untitled";
         duration = new Random().nextInt(MAX_DURATION);
     }
 
-    public Music(String name, int duration, GenreOfMusic genre) {
+    public Music(String name, int duration, MusicGenre genre) {
         this.name = name;
         this.duration = duration;
         this.genre = genre;
@@ -46,11 +46,11 @@ public class Music {
         this.name = name;
     }
 
-    public GenreOfMusic getGenre() {
+    public MusicGenre getGenre() {
         return genre;
     }
 
-    public void setGenre(GenreOfMusic genre) {
+    public void setGenre(MusicGenre genre) {
         this.genre = genre;
     }
 

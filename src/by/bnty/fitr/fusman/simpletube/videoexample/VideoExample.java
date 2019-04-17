@@ -15,10 +15,12 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 
 public class VideoExample extends Application {
+    private static final Logger log = Logger.getLogger(VideoExample.class);
     private int APP_HEIGHT = 600;
     private int APP_WIDTH = 1000;
     private MediaPlayer player;
@@ -109,6 +111,11 @@ public class VideoExample extends Application {
 
     }
 
+    public static void main(String[] args) {
+        log.info("Запуск приложение");
+        Application.launch(args);
+    }
+
     @Override
     public void start(final Stage stage) throws Exception {
 
@@ -116,13 +123,11 @@ public class VideoExample extends Application {
             uiSetup(stage);
             stage.show();
         } catch (Exception e) {
+            log.error(e);
             e.printStackTrace();
+
         }
 
 
-    }
-
-    public static void main(String[] args) {
-        Application.launch(args);
     }
 }

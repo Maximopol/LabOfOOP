@@ -1,6 +1,6 @@
-package by.bnty.fitr.fusman.simpletube.lab10.storage;
+package by.bnty.fitr.fusman.labs.lab10.storage;
 
-import by.bnty.fitr.fusman.simpletube.lab10.video.Video;
+import by.bnty.fitr.fusman.labs.lab10.video.Video;
 
 public interface ArrayVideo {
     void add(Video video);

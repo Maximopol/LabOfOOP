@@ -1,6 +1,6 @@
-package by.bnty.fitr.fusman.simpletube;
+package by.bnty.fitr.fusman.simpletube.musor;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.util.Calendar;
 
 public class SimpleApplet extends javax.swing.JApplet {

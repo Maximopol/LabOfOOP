@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.music;
+package by.bnty.fitr.fusman.simpletube.musor.music;
 
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;

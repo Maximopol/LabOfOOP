@@ -20,7 +20,7 @@ public class Controller {
                 minIndex = i;
             }
         }
-        // return "This song has min duration\nHis position in the disk is" + minIndex + "\n" + disk.getMusic(minIndex);
+
 
         return disk.getMusic(minIndex) == null ? null : disk.getMusic(minIndex).toString();
     }
