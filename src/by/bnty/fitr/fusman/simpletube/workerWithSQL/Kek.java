@@ -44,7 +44,7 @@ public class Kek {
 
             // выполнить SQL запрос
             // statement.execute(createTableSQL);
-            statement.executeUpdate("INSERT INTO DBUSER VALUES ('Minsk',90,90);");
+            //  statement.executeUpdate("INSERT INTO DBUSER VALUES ('Pinsk',50,90);");
 
             ResultSet rs = statement.executeQuery("SELECT * FROM DBUSER");
 
@@ -69,20 +69,4 @@ public class Kek {
             }
         }
     }
-
-//    private static Connection getDBConnection() {
-//        Connection dbConnection = null;
-//        try {
-//            Class.forName(DB_DRIVER);
-//        } catch (ClassNotFoundException e) {
-//            System.out.println(e.getMessage());
-//        }
-//        try {
-//            dbConnection = DriverManager.getConnection("jdbc:postgresql://hostname:port/dbname", "username", "password");
-//            return dbConnection;
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());
-//        }
-//        return dbConnection;
-//    }
 }
