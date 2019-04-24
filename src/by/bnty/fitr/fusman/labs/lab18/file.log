@@ -3,3 +3,17 @@
 2019-04-24 23:06:36 ERROR Log4jtest:22 - Это сообщение ошибки
 2019-04-24 23:06:36 WARN  Log4jtest:24 - stop
 2019-04-24 23:06:36 FATAL Log4jtest:25 - кхъ
+2019-04-25 00:54:17 INFO  SimpleTube:15 - Запуск
+2019-04-25 00:54:17 INFO  SimpleTube:17 - Создан обьект: by.bnty.fitr.fusman.simpletube.client.SimpleTube@439f5b3d
+2019-04-25 00:54:17 INFO  SimpleTube:18 - СтатусOffline
+2019-04-25 00:58:12 INFO  SimpleTube:21 - Запуск
+2019-04-25 00:58:12 INFO  SimpleTube:23 - Создан обьект: by.bnty.fitr.fusman.simpletube.client.SimpleTube@49c2faae
+2019-04-25 00:58:12 INFO  SimpleTube:24 - Статус Offline
+2019-04-25 01:00:05 INFO  SimpleTube:24 - Запуск
+2019-04-25 01:00:05 INFO  SimpleTube:26 - Создан обьект: by.bnty.fitr.fusman.simpletube.client.SimpleTube@49c2faae
+2019-04-25 01:00:05 INFO  SimpleTube:27 - Статус Offline
+2019-04-25 01:00:05 INFO  SimpleTube:28 - Начал работать
+2019-04-25 01:00:23 INFO  SimpleTube:24 - Запуск
+2019-04-25 01:00:23 INFO  SimpleTube:26 - Создан обьект: by.bnty.fitr.fusman.simpletube.client.SimpleTube@49c2faae
+2019-04-25 01:00:23 INFO  SimpleTube:27 - Статус Offline
+2019-04-25 01:00:23 INFO  SimpleTube:28 - Начал работать

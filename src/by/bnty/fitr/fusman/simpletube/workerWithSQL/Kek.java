@@ -29,8 +29,6 @@ public class Kek {
     }
 
     private static void createDbUserTable() throws SQLException {
-        Connection dbConnection = null;
-        Statement statement = null;
 
         String createTableSQL = "CREATE TABLE DBUSER("
                 + "city varchar(90) NOT NULL, "
@@ -38,9 +36,7 @@ public class Kek {
                 + "pos_y int NOT NULL "
                 + ")";
 
-        try {
-            dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "");
-            statement = dbConnection.createStatement();
+        try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", ""); Statement statement = dbConnection.createStatement()) {
 
             // выполнить SQL запрос
             // statement.execute(createTableSQL);
@@ -51,7 +47,7 @@ public class Kek {
             // И если что то было получено то цикл while сработает
             while (rs.next()) {
                 String userid = rs.getString("city");
-                 int username = rs.getInt("pos_x");
+                int username = rs.getInt("pos_x");
 
                 System.out.println("userid : " + userid);
                 System.out.println("username : " + username);
@@ -60,13 +56,6 @@ public class Kek {
             System.out.println("Table \"dbuser\" is created!");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (statement != null) {
-                statement.close();
-            }
-            if (dbConnection != null) {
-                dbConnection.close();
-            }
         }
     }
 }
