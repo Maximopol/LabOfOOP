@@ -1,6 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.client;
 
 import by.bnty.fitr.fusman.simpletube.client.mode.Modes;
+import by.bnty.fitr.fusman.simpletube.videoexample.VideoExample;
 import org.apache.log4j.Logger;
 
 public class SimpleTube {
@@ -16,20 +17,16 @@ public class SimpleTube {
         return simpleTube == null ? simpleTube = new SimpleTube() : simpleTube;
     }
 
-    public static void main(String[] args) {
-        log.info("Запуск");
-        SimpleTube simpleTube = SimpleTube.getSimpleTube();
-        log.info("Создан обьект: " + simpleTube);
-        log.info("Статус " + simpleTube.modes);
-        log.info("Начал работать");
-        simpleTube.run();
-    }
+    public void run(String[] args) {
 
-    public void run() {
-
+        VideoExample.startter(args);
     }
 
     public Modes getModes() {
         return modes;
+    }
+
+    public void setModes(Modes modes) {
+        this.modes = modes;
     }
 }

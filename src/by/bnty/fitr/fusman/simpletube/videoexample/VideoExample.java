@@ -111,7 +111,7 @@ public class VideoExample extends Application {
 
     }
 
-    public static void main(String[] args) {
+    public static void startter(String[] args) {
         log.info("Запуск приложение");
         Application.launch(args);
     }
@@ -125,9 +125,6 @@ public class VideoExample extends Application {
         } catch (Exception e) {
             log.error(e);
             e.printStackTrace();
-
         }
-
-
     }
 }
