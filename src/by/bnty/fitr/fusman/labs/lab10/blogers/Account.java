@@ -1,17 +1,14 @@
 package by.bnty.fitr.fusman.labs.lab10.blogers;
 
-import by.bnty.fitr.fusman.labs.lab10.arrays.Playlist;
 import by.bnty.fitr.fusman.simpletube.accountstatus.AccountStatus;
-
-import java.util.ArrayList;
 
 public class Account {
     private String nickname;
-    private ArrayList<Playlist> collection;
+    //  private ArrayList<Playlist> collection;
     private AccountStatus status;
 
     private Account() {
-        collection = new ArrayList<>();
+        //collection = new ArrayList<>();
     }
 
     public Account(String nickname) {
@@ -22,7 +19,7 @@ public class Account {
 
     public Account(Account account) {
         nickname = account.nickname;
-        collection = account.collection;
+        // collection = account.collection;
         status = account.status;
     }
 
@@ -30,7 +27,7 @@ public class Account {
         return "Account{" +
                 "nickname='" + nickname + '\'' +
                 ", status=" + status +
-                ", collection=" + collection +
+                //  ", collection=" + collection +
                 '}';
     }
 }
