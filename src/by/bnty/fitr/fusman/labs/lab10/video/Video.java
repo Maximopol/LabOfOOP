@@ -1,6 +1,7 @@
 package by.bnty.fitr.fusman.labs.lab10.video;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Video {
     private String name;
@@ -29,6 +30,23 @@ public class Video {
         countViews = video.countViews;
         countLikes = video.countLikes;
         countDizLikes = video.countLikes;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Video video = (Video) o;
+        return getCountViews() == video.getCountViews() &&
+                getCountLikes() == video.getCountLikes() &&
+                getCountDizLikes() == video.getCountDizLikes() &&
+                Objects.equals(getName(), video.getName()) &&
+                Objects.equals(getData(), video.getData());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getData(), getCountViews(), getCountLikes(), getCountDizLikes());
     }
 
     public String getName() {

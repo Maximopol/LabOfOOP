@@ -1,33 +1,34 @@
-package by.bnty.fitr.fusman.labs.lab10.storage;
+package by.bnty.fitr.fusman.labs.lab10.arrays.common;
 
 import by.bnty.fitr.fusman.labs.lab10.video.Video;
 
 import java.util.List;
 
-public abstract class Playlist {
+public abstract class Playlist implements BaseStorage<Video> {
     protected String name;
-    protected int countVideo;
+
 
     protected List<Video> playlist;
 
 
     public void remove(Video video) {
-        if (playlist.remove(video)) {
-            countVideo--;
-        }
+        playlist.remove(video);
     }
-
 
     public void add(Video video) {
         playlist.add(video);
-        countVideo++;
+
 
     }
 
+    public Video getVideo(int i) {
+        return playlist.get(i);
+    }
+
     public Video getVideo(String name) {
-        for (int i = 0; i < countVideo; i++) {
-            if (playlist.get(i).getName().equals(name)) {
-                return playlist.get(i);
+        for (Video video : playlist) {
+            if (video.getName().equals(name)) {
+                return video;
             }
 
         }
@@ -35,6 +36,6 @@ public abstract class Playlist {
     }
 
     public int getCountVideo() {
-        return countVideo;
+        return playlist.size();
     }
 }
