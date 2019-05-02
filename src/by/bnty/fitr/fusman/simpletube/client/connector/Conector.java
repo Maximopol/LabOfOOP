@@ -47,6 +47,10 @@ public class Conector {
         return checkServer(DEFAULT_HOST, DEFAULT_PORT);
     }
 
+    public static boolean checkNnewUpdate(String host, int port) {
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println(Conector.checkServer("localhost", DEFAULT_PORT));
     }

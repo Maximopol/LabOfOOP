@@ -1,9 +1,12 @@
 package by.bnty.fitr.fusman.simpletube.server.servers;
 
-import by.bnty.fitr.fusman.simpletube.client.connector.Conector;
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
+import java.net.ServerSocket;
+
 public class MainServer {
+    private static int DEFAULT_PORT = 65432;
     private static final Logger log = Logger.getLogger(MainServer.class);
     private static MainServer mainServer;
 
@@ -17,16 +20,15 @@ public class MainServer {
 
     public void run(String[] args) {
         //приемный пункт, где будет сортировка сообщений и отправка отдельных серверам
-        int i = 1;
-        switch (i) {
-            case 1: {
-                break;
-            }
-            case 2: {
-                //
-                Conector.checkServer();
-                break;
-            }
+        ServerSocket servers = null;
+
+        try {
+            servers = new ServerSocket(DEFAULT_PORT);
+        } catch (IOException e) {
+            log.fatal("Couldn't listen to port " + DEFAULT_PORT);
+            System.exit(-1);
         }
+
+
     }
 }

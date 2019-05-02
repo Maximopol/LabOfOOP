@@ -5,6 +5,7 @@ import by.bnty.fitr.fusman.simpletube.videoexample.VideoExample;
 import org.apache.log4j.Logger;
 
 public class SimpleTube {
+    //private static final String VERSION = "0.0.1";
     private static final Logger log = Logger.getLogger(SimpleTube.class);
     private static SimpleTube simpleTube;
     private Modes modes;
@@ -20,6 +21,7 @@ public class SimpleTube {
     public void run(String[] args) {
 
         VideoExample.startter(args);
+
     }
 
     public Modes getModes() {
