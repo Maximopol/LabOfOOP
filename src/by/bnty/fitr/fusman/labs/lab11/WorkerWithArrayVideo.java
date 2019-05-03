@@ -1,7 +1,7 @@
 package by.bnty.fitr.fusman.labs.lab11;
 
 import by.bnty.fitr.fusman.labs.lab10.arrays.common.Playlist;
-import by.bnty.fitr.fusman.labs.lab10.iterator.Iterator;
+import by.bnty.fitr.fusman.labs.lab10.iterator.IIterator;
 import by.bnty.fitr.fusman.labs.lab10.video.Video;
 
 public class WorkerWithArrayVideo {
@@ -12,27 +12,27 @@ public class WorkerWithArrayVideo {
 
     public static int countLiked(Playlist playlist) {
         int count = 0;
-        Iterator<Video> iterator = playlist.createIterator();
-        while (iterator.hasNext()) {
-            count += iterator.next().getCountLikes();
+        IIterator<Video> IIterator = playlist.createIterator();
+        while (IIterator.hasNext()) {
+            count += IIterator.next().getCountLikes();
         }
         return count;
     }
 
     public static int countDizLikes(Playlist playlist) {
         int count = 0;
-        Iterator<Video> iterator = playlist.createIterator();
-        while (iterator.hasNext()) {
-            count += iterator.next().getCountDizLikes();
+        IIterator<Video> IIterator = playlist.createIterator();
+        while (IIterator.hasNext()) {
+            count += IIterator.next().getCountDizLikes();
         }
         return count;
     }
 
     public static int countViews(Playlist playlist) {
         int count = 0;
-        Iterator<Video> iterator = playlist.createIterator();
-        while (iterator.hasNext()) {
-            count += iterator.next().getCountViews();
+        IIterator<Video> IIterator = playlist.createIterator();
+        while (IIterator.hasNext()) {
+            count += IIterator.next().getCountViews();
         }
         return count;
     }

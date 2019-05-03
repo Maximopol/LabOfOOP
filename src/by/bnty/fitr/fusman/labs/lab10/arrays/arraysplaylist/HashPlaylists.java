@@ -10,8 +10,6 @@ public class HashPlaylists extends Playlists {
 
     public HashPlaylists() {
         playlist = new HashSet<>();
-
-
     }
 
     public HashPlaylists(String name) {

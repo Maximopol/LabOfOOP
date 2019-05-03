@@ -9,21 +9,17 @@ public class ArrayPlaylists extends Playlists {
 
     public ArrayPlaylists() {
         playlist = new ArrayList<>();
-
-
     }
 
 
     public ArrayPlaylists(String name) {
         this();
         this.name = name;
-
     }
 
     public ArrayPlaylists(ArrayPlaylists arrayPlaylist) {
         this.playlist = arrayPlaylist.playlist;
         name = arrayPlaylist.name;
-
     }
 
     public String toString() {

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ArrayVideo extends Playlist {
 
     public ArrayVideo() {
-        playlist = new ArrayList<>();
+        playlist = new ArrayList<>(10);
 
 
     }

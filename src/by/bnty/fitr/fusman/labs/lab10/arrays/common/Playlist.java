@@ -1,30 +1,8 @@
 package by.bnty.fitr.fusman.labs.lab10.arrays.common;
 
-import by.bnty.fitr.fusman.labs.lab10.iterator.IteratorVideo;
 import by.bnty.fitr.fusman.labs.lab10.video.Video;
 
-import java.util.List;
-
-public abstract class Playlist implements BaseStorage<Video> {
-    protected String name;
-
-
-    protected List<Video> playlist;
-
-
-    public void remove(Video video) {
-        playlist.remove(video);
-    }
-
-    public IteratorVideo createIterator() {
-        return new IteratorVideo(playlist);
-    }
-
-    public void add(Video video) {
-        playlist.add(video);
-
-
-    }
+public abstract class Playlist extends Storage<Video> {
 
     public Video getVideo(int i) {
         return playlist.get(i);

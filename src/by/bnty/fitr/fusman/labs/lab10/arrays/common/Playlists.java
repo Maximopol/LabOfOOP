@@ -1,24 +1,6 @@
 package by.bnty.fitr.fusman.labs.lab10.arrays.common;
 
-import java.util.List;
-
-public abstract class Playlists implements BaseStorage<Playlist> {
-
-    protected String name;
-
-    protected List<Playlist> playlist;
-
-
-    public void remove(Playlist playlis) {
-        playlist.remove(playlis);
-
-    }
-
-
-    public void add(Playlist playlis) {
-        playlist.add(playlis);
-
-    }
+public abstract class Playlists extends Storage<Playlist> {
 
     public Playlist getPlaylist(int i) {
         return playlist.get(i);

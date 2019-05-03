@@ -9,8 +9,6 @@ public class LinkedPlaylists extends Playlists {
 
     public LinkedPlaylists() {
         playlist = new LinkedList<>();
-
-
     }
 
 
