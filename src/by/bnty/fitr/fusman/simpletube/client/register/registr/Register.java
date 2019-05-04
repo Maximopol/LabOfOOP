@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.registerandaauthorization;
+package by.bnty.fitr.fusman.simpletube.client.register.registr;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

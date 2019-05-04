@@ -1,7 +1,7 @@
 package by.bnty.fitr.fusman.labs.lab10.blogers;
 
 import by.bnty.fitr.fusman.labs.lab10.arrays.arraysplaylist.ArrayPlaylists;
-import by.bnty.fitr.fusman.simpletube.accountstatus.AccountStatus;
+import by.bnty.fitr.fusman.simpletube.common.accountstatus.AccountStatus;
 
 import java.util.Objects;
 

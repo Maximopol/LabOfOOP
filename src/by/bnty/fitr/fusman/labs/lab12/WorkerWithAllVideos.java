@@ -8,9 +8,9 @@ import by.bnty.fitr.fusman.labs.lab11.WorkerWithArrayVideo;
 
 public class WorkerWithAllVideos {
     public static Video searchVideo(Playlists playlists, String name) {
-        for (int i = 0; i < playlists.getCountPlaylist(); i++) {
-            if (WorkerWithArrayVideo.searchVideo(playlists.getPlaylist(i), name) != null) {
-                return WorkerWithArrayVideo.searchVideo(playlists.getPlaylist(i), name);
+        for (int i = 0; i < playlists.size(); i++) {
+            if (WorkerWithArrayVideo.searchVideo(playlists.get(i), name) != null) {
+                return WorkerWithArrayVideo.searchVideo(playlists.get(i), name);
             }
 
         }

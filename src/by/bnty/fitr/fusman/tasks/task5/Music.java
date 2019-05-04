@@ -2,7 +2,7 @@ package by.bnty.fitr.fusman.tasks.task5;
 
 import java.util.Random;
 
-//Тут я не стал использвать наследование, т.к. достаточно этот класс и класс MusicGenre
+
 public class Music {
     private int MAX_DURATION = 1000;
     private MusicGenre genre;
