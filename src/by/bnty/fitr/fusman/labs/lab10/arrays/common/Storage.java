@@ -11,6 +11,10 @@ public abstract class Storage<T> implements BaseStorage<T> {
 
     protected List<T> playlist;
 
+    public T get(int i) {
+        return playlist.get(i);
+    }
+
     public void remove(T t) {
         playlist.remove(t);
     }
@@ -25,5 +29,9 @@ public abstract class Storage<T> implements BaseStorage<T> {
 
     public IIterator<T> createIterator() {
         return new Iterator<>(playlist);
+    }
+
+    public int size() {
+        return playlist.size();
     }
 }

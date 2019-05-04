@@ -1,8 +1,6 @@
-package by.bnty.fitr.fusman.simpletube.videoexample;
+package by.bnty.fitr.fusman.simpletube.client.videoexample;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -47,60 +45,46 @@ public class VideoExample extends Application {
         final MediaView mediaView = new MediaView(player); // create a media view
 
 
-        open_button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
+        open_button.setOnAction(event -> {
 
-                try {
-                    File file = fileChooser.showOpenDialog(stage);
-                    fileChooser.setTitle("Open Video File");
-                    String url = file.toURI().toURL().toString();
+            try {
+                File file = fileChooser.showOpenDialog(stage);
+                fileChooser.setTitle("Open Video File");
+                String url = file.toURI().toURL().toString();
 
-                    if (player != null)
-                        player.stop();
-
-                    Media media = new Media(url);
-
-                    player = new MediaPlayer(media);
-
-                    mediaView.setFitWidth(stage.getWidth());
-                    mediaView.setFitHeight(stage.getHeight());
-                    mediaView.setMediaPlayer(player);
-                } catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Loading Error");
-                    alert.setHeaderText("Error happen when loading");
-                    alert.setContentText("Cannot load the video");
-                    alert.showAndWait().ifPresent(null);
-                    e.printStackTrace();
-                }
-            }
-        });
-
-
-        play_button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                //player.setVolume();
-                player.play();
-            }
-        });
-
-
-        pause_button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                player.pause();
-            }
-        });
-
-        //this button will stop the video
-        stop_button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
                 if (player != null)
                     player.stop();
+
+                Media media = new Media(url);
+
+                player = new MediaPlayer(media);
+
+                mediaView.setFitWidth(stage.getWidth());
+                mediaView.setFitHeight(stage.getHeight());
+                mediaView.setMediaPlayer(player);
+            } catch (Exception e) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Loading Error");
+                alert.setHeaderText("Error happen when loading");
+                alert.setContentText("Cannot load the video");
+                alert.showAndWait().ifPresent(null);
+                e.printStackTrace();
             }
+        });
+
+
+        play_button.setOnAction(event -> {
+            //player.setVolume();
+            player.play();
+        });
+
+
+        pause_button.setOnAction(event -> player.pause());
+
+        //this button will stop the video
+        stop_button.setOnAction(event -> {
+            if (player != null)
+                player.stop();
         });
 
         root.getChildren().addAll(mediaView, buttonContainer); //add the media view and button container to the stackpane

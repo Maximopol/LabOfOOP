@@ -1,23 +1,21 @@
 package by.bnty.fitr.fusman.tasks.task5;
 
-import static Printer.Printer.println;
-
 public class Main {
     public static void main(String[] args) {
-        Music lol = new Music();
-        Disk disk = new Disk(4
-        );
-        println(lol);
-        disk.add(lol);
-        println(Controller.countAllDuration(disk));
-        println("");
-        println(Controller.searchShortSongInDisk(disk));
-        Music kek = new Music();
-        println(kek);
-        disk.add(kek);
-        println(Controller.countAllDuration(disk));
-        println("");
-        println(Controller.searchShortSongInDisk(disk));
-        println(disk);
+//        Music lol = new Music();
+//        Folder folder = new Folder(4
+//        );
+//        println(lol);
+//        folder.add(lol);
+//        println(ControllerWithDisk.countAllDuration(folder));
+//        println("");
+//        println(ControllerWithDisk.searchShortSongInDisk(folder));
+//        Music kek = new Music();
+//        println(kek);
+//        folder.add(kek);
+//        println(ControllerWithDisk.countAllDuration(folder));
+//        println("");
+//        println(ControllerWithDisk.searchShortSongInDisk(folder));
+//        println(folder);
     }
 }
