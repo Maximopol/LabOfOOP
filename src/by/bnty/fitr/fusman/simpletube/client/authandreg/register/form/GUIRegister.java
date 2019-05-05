@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.client.authoration.form;
+package by.bnty.fitr.fusman.simpletube.client.authandreg.register.form;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -18,16 +18,15 @@ import javafx.stage.Stage;
 
 import java.util.Random;
 
-public class GUIAuthoration extends Application {
+public class GUIRegister extends Application {
 
     public static void main(String[] args) {
         launch(args);
     }
 
-
     @Override
     public void start(Stage primaryStage) {
-        primaryStage.setTitle("Auth to SimpleTube");
+        primaryStage.setTitle("Reg to SimpleTube");
 
         GridPane grid = new GridPane();
         grid.setAlignment(Pos.CENTER);
@@ -37,6 +36,7 @@ public class GUIAuthoration extends Application {
 
         Scene scene = new Scene(grid, 270, 200);
         primaryStage.setScene(scene);
+
         Text scenetitle = new Text("Welcome");
         scenetitle.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(scenetitle, 0, 0, 2, 1);
@@ -55,30 +55,22 @@ public class GUIAuthoration extends Application {
 
 
         Button btn = new Button("Sign in");
-        Button button = new Button("Forgot pass");
-
         HBox hbBtn = new HBox(10);
         hbBtn.setAlignment(Pos.BOTTOM_RIGHT);
         hbBtn.getChildren().add(btn);
-
-        hbBtn.getChildren().add(button);
-
         grid.add(hbBtn, 1, 4);
 
         final Text actiontarget = new Text();
         grid.add(actiontarget, 1, 6);
 
-        button.setOnAction(e -> {
-            Random random = new Random();
-            actiontarget.setFill(Color.rgb(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-            actiontarget.setText("ЗАчем вам!");
-        });
 
         btn.setOnAction(e -> {
+
             Random random = new Random();
             actiontarget.setFill(Color.rgb(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
             actiontarget.setText("Sign in button pressed");
         });
+
         primaryStage.show();
     }
 }

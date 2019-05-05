@@ -14,7 +14,7 @@ public class Client {
 
         System.out.println("Connecting to... " + "localhost");
 
-        Socket fromserver = new Socket("localhost", 4444);
+        Socket fromserver = new Socket("localhost", 65432);
         BufferedReader in = new
                 BufferedReader(new
                 InputStreamReader(fromserver.getInputStream()));

@@ -1,5 +1,8 @@
-package by.bnty.fitr.fusman.simpletube.client.videoexample;
+package by.bnty.fitr.fusman.simpletube.client.mainform;
 
+import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
+import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
+import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -19,15 +22,15 @@ import java.io.File;
 
 public class VideoExample extends Application {
     private static final Logger log = Logger.getLogger(VideoExample.class);
-    private int APP_HEIGHT = 600;
-    private int APP_WIDTH = 1000;
+    private int DEFAULT_HEIGHT = 600;
+    private int DEFAULT_WIDTH = 1000;
     private MediaPlayer player;
 
 
     private void uiSetup(final Stage stage) {
 
         StackPane root = new StackPane();
-        Scene theScene = new Scene(root, APP_WIDTH, APP_HEIGHT);
+        Scene theScene = new Scene(root, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
 
         final HBox buttonContainer = new HBox(0);
@@ -36,14 +39,29 @@ public class VideoExample extends Application {
         final Button play_button = new Button("play");
         final Button stop_button = new Button("stop");
 
+        final Button button_reg = new Button("reg");
+        final Button button_aoth = new Button("aoth");
+
         buttonContainer.setAlignment(Pos.BOTTOM_LEFT);
         Insets buttonContainerPadding = new Insets(1, 1, 1, 1);
         buttonContainer.setPadding(buttonContainerPadding);
         buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button);
 
+        buttonContainer.getChildren().addAll(button_reg, button_aoth);
+
         final FileChooser fileChooser = new FileChooser(); // create a file chooser
         final MediaView mediaView = new MediaView(player); // create a media view
 
+
+        button_reg.setOnAction(event -> {
+            Runnable runnable = new RegisterForm();
+            runnable.run();
+        });
+
+        button_aoth.setOnAction(event -> {
+            Runnable runnable = new AuthorationForm();
+            runnable.run();
+        });
 
         open_button.setOnAction(event -> {
 
@@ -62,12 +80,14 @@ public class VideoExample extends Application {
                 mediaView.setFitWidth(stage.getWidth());
                 mediaView.setFitHeight(stage.getHeight());
                 mediaView.setMediaPlayer(player);
+
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Loading Error");
                 alert.setHeaderText("Error happen when loading");
                 alert.setContentText("Cannot load the video");
                 alert.showAndWait().ifPresent(null);
+
                 e.printStackTrace();
             }
         });
@@ -75,6 +95,7 @@ public class VideoExample extends Application {
 
         play_button.setOnAction(event -> {
             //player.setVolume();
+            // RegisterForm.main(null);
             player.play();
         });
 
@@ -89,7 +110,7 @@ public class VideoExample extends Application {
 
         root.getChildren().addAll(mediaView, buttonContainer); //add the media view and button container to the stackpane
 
-        stage.setTitle("Video");
+        stage.setTitle("SimpleTube");
 
         stage.setScene(theScene);
 

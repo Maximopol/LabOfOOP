@@ -1,9 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.client;
 
-import by.bnty.fitr.fusman.simpletube.client.authoration.form.GUIAuthoration;
+import by.bnty.fitr.fusman.simpletube.client.mainform.VideoExample;
 import by.bnty.fitr.fusman.simpletube.client.mode.Modes;
-import by.bnty.fitr.fusman.simpletube.client.register.form.GUIRegister;
-import by.bnty.fitr.fusman.simpletube.client.videoexample.VideoExample;
 import org.apache.log4j.Logger;
 
 public class SimpleTube {
@@ -23,8 +21,7 @@ public class SimpleTube {
     public void run(String[] args) {
 
         VideoExample.startter(args);
-        GUIAuthoration.main(args);
-        GUIRegister.main(args);
+        //RegisterForm.main(args);
     }
 
     public Modes getModes() {

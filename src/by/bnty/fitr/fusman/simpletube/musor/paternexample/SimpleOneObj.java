@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.paternexample;
+package by.bnty.fitr.fusman.simpletube.musor.paternexample;
 
 import static Printer.Printer.println;
 

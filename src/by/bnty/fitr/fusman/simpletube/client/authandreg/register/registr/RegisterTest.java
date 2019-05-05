@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.client.register.registr;
+package by.bnty.fitr.fusman.simpletube.client.authandreg.register.registr;
 
 import org.junit.Test;
 

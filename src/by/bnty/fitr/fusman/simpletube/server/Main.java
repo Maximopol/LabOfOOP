@@ -9,7 +9,7 @@ public class Main {
         log.info("Запуск");
 
         MainServer mainServer = MainServer.getMainServer();
-        mainServer.run(args);
+        mainServer.run();
 
         log.info("Конец работы");
         //сервер будет обрабаывтаь запросы ,получаяя инфы из sql, и будет возращать клиенту
