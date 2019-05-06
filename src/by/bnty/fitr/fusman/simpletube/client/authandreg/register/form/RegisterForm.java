@@ -62,4 +62,6 @@ public class RegisterForm extends JDialog implements Runnable {
         dialog.pack();
         dialog.setVisible(true);
     }
+
+
 }

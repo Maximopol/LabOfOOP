@@ -121,6 +121,11 @@ public class VideoExample extends Application {
         Application.launch(args);
     }
 
+    public static void run() {
+        log.info("Запуск приложение");
+        Application.launch((String[]) null);
+    }
+
     @Override
     public void start(final Stage stage) throws Exception {
 

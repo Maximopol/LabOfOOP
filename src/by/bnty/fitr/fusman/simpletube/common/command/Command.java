@@ -5,5 +5,5 @@ public class Command {
     public static String AUTHORIZATION = "Auth";
     public static String REGISTRATION = "Reg";
     public static String WALKING = "walking";
-    public static String SARCHING = "search";
+    public static String SEARCHING = "search";
 }

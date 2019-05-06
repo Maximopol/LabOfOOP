@@ -1,6 +1,8 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.primaryserver;
 
-public class PrimaryServer extends Thread {
+import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
+
+public class PrimaryServer extends Thread implements Server {
     public PrimaryServer() {
     }
 

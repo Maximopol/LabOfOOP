@@ -20,7 +20,7 @@ public class SimpleTube {
 
     public void run(String[] args) {
 
-        VideoExample.startter(args);
+        VideoExample.run();
         //RegisterForm.main(args);
     }
 
