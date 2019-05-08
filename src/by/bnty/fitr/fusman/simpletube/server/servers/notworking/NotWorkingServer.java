@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.server.servers.notworkingserver;
+package by.bnty.fitr.fusman.simpletube.server.servers.notworking;
 
 import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
 

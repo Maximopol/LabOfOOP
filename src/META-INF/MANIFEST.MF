@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: by.bnty.fitr.fusman.simpletube.client.Main
+

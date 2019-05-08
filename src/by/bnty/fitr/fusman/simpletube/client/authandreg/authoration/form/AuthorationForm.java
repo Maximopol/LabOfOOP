@@ -1,13 +1,13 @@
 package by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
+import by.bnty.fitr.fusman.simpletube.common.command.Command;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -18,6 +18,10 @@ public class AuthorationForm extends JDialog implements Runnable {
     private JButton buttonCancel;
     private JTextField textField1;
     private JPasswordField passwordField1;
+    private JLabel label1;
+    private JLabel label2;
+    private JButton fogotButton;
+    private JLabel label3;
 
     public AuthorationForm() {
         setTitle("Auth to SimpleTube");
@@ -51,17 +55,26 @@ public class AuthorationForm extends JDialog implements Runnable {
     private void onOK() {
 
         try {
-            Socket fromserver = new Socket("localhost", 4444);
-            BufferedReader in = new BufferedReader(new InputStreamReader(fromserver.getInputStream()));
-            PrintWriter out = new PrintWriter(fromserver.getOutputStream(), true);
-            BufferedReader inu = new BufferedReader(new InputStreamReader(System.in));
-            out.println(textField1.getText() + "\n" + passwordField1.getText());
+            Socket socket = new Socket("localhost", 65432);
+            PrintWriter out = new
+                    PrintWriter(socket.getOutputStream(), true);
 
-            textField1.setText("");
-            passwordField1.setText("");
 
-        } catch (IOException e) {
-            e.printStackTrace();
+            out.println(Command.AUTHORIZATION + "\n" + textField1.getText() + "\n" + passwordField1.getText());
+
+            System.out.println("посылка");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            if (bufferedReader.readLine().equals("true")) {
+                System.out.println("Успех");
+                label3.setText("Успех");
+
+            } else {
+                label3.setText("Отказ");
+            }
+            out.close();
+            bufferedReader.close();
+        } catch (Exception e) {
+            label3.setText("Error");
         }
 
 //        // add your code here

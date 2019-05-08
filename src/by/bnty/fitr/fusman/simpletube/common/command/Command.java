@@ -6,4 +6,5 @@ public class Command {
     public static String REGISTRATION = "Reg";
     public static String WALKING = "walking";
     public static String SEARCHING = "search";
+    public static String DONWLOAIDING = "skachat";
 }

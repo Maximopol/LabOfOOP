@@ -36,11 +36,11 @@ public class Kek {
                 + "pos_y int NOT NULL "
                 + ")";
 
-        try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", ""); Statement statement = dbConnection.createStatement()) {
+        try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
 
             // выполнить SQL запрос
             // statement.execute(createTableSQL);
-            //  statement.executeUpdate("INSERT INTO DBUSER VALUES ('Pinsk',50,90);");
+            statement.executeUpdate("INSERT INTO DBUSER VALUES ('Pinsk',50,90);");
 
             ResultSet rs = statement.executeQuery("SELECT * FROM DBUSER");
 

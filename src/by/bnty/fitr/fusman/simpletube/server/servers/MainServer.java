@@ -27,12 +27,15 @@ public class MainServer {
             ServerSocket serverSocket = new ServerSocket(DEFAULT_PORT);
 
             while (true) {
-
+                log.info("waiting");
                 Socket socket = serverSocket.accept();
                 log.info("New client " + socket);
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-                new CrearerMiniServer().createServer(bufferedReader.readLine(), socket).run();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                String str = bufferedReader.readLine();
+
+                log.info(str);
+                new CrearerMiniServer().createServer(str, socket, bufferedReader).run();
 
                 bufferedReader.close();
             }

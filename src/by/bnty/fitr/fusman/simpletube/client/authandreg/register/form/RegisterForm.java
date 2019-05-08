@@ -1,11 +1,16 @@
 package by.bnty.fitr.fusman.simpletube.client.authandreg.register.form;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
+import by.bnty.fitr.fusman.simpletube.common.command.Command;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
 
 public class RegisterForm extends JDialog implements Runnable {
     private JPanel contentPane;
@@ -13,8 +18,11 @@ public class RegisterForm extends JDialog implements Runnable {
     private JButton buttonCancel;
     private JTextField textField1;
     private JPasswordField passwordField1;
-    private JLabel label1;
-    private JLabel label2;
+    private JLabel labelEmail;
+    private JLabel labelPass;
+    private JTextField textField2;
+    private JLabel labelNick;
+    private JLabel lableinfo;
 
 
     public RegisterForm() {
@@ -47,6 +55,29 @@ public class RegisterForm extends JDialog implements Runnable {
     }
 
     private void onOK() {
+        try {
+            Socket socket = new Socket("localhost", 65432);
+            PrintWriter out = new
+                    PrintWriter(socket.getOutputStream(), true);
+
+
+            out.println(Command.REGISTRATION + "\n" + textField1.getText() + "\n" + passwordField1.getText() + "\n" + textField2.getText());
+
+            System.out.println("посылка");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            if (bufferedReader.readLine().equals("true")) {
+                System.out.println("Успех");
+                lableinfo.setText("Успех");
+
+            } else {
+                lableinfo.setText("Отказ");
+            }
+            out.close();
+            bufferedReader.close();
+        } catch (Exception e) {
+            lableinfo.setText("Error");
+        }
+
         //тут обработка
 
     }
@@ -61,6 +92,7 @@ public class RegisterForm extends JDialog implements Runnable {
         RegisterForm dialog = new RegisterForm();
         dialog.pack();
         dialog.setVisible(true);
+        //return
     }
 
 

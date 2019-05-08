@@ -1,14 +1,17 @@
 package by.bnty.fitr.fusman.simpletube.client.mainform;
 
+import by.bnty.fitr.fusman.simpletube.client.accountform.AccountForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
+import by.bnty.fitr.fusman.simpletube.common.command.Command;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
@@ -24,14 +27,19 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class VideoExample extends Application {
-    private static final Logger log = Logger.getLogger(VideoExample.class);
+public class MainForm extends Application {
+    private static final Logger log = Logger.getLogger(MainForm.class);
     private int DEFAULT_HEIGHT = 600;
     private int DEFAULT_WIDTH = 1000;
     private MediaPlayer player;
 
+    public static void run() {
+        log.info("Запуск приложение");
+        Application.launch((String[]) null);
+    }
 
     private void playVideo(MediaView mediaView, String url) {
+        log.info("Open to watch:" + url);
         Media media = new Media(url);
 
         player = new MediaPlayer(media);
@@ -41,53 +49,78 @@ public class VideoExample extends Application {
         mediaView.setMediaPlayer(player);
     }
 
+    private void writeKeyCode(KeyCode key) {
+        if (player != null) {
+
+//            if (key == KeyCode.RIGHT) {
+//            }
+        }
+    }
+
     private void uiSetup(final Stage stage) {
 
         StackPane root = new StackPane();
         Scene theScene = new Scene(root, DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
+        setUserAgentStylesheet(Application.STYLESHEET_CASPIAN);
 
-        final HBox buttonContainer = new HBox(0);
+
+        final HBox buttonContainer = new HBox(1);
+
         final Button open_button = new Button("open");
         final Button pause_button = new Button("pause");
         final Button play_button = new Button("play");
         final Button stop_button = new Button("stop");
-
         final Button button_reg = new Button("reg");
         final Button button_aoth = new Button("aoth");
-
         final Button button_kek = new Button("get video from server");
+        final Button button_ac = new Button("Account");
+
 
         buttonContainer.setAlignment(Pos.BOTTOM_LEFT);
         Insets buttonContainerPadding = new Insets(1, 1, 1, 1);
         buttonContainer.setPadding(buttonContainerPadding);
-        buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button);
 
+        buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button, button_ac);
         buttonContainer.getChildren().addAll(button_reg, button_aoth, button_kek);
 
-        final FileChooser fileChooser = new FileChooser(); // create a file chooser
-        final MediaView mediaView = new MediaView(player); // create a media view
 
+        final FileChooser fileChooser = new FileChooser();
+        final MediaView mediaView = new MediaView(player);
+
+
+        theScene.setOnKeyPressed(event -> {
+            KeyCode key = event.getCode();
+            writeKeyCode(key);
+        });
 
         button_reg.setOnAction(event -> {
+            log.info("Start RegisterForm");
             Runnable runnable = new RegisterForm();
             runnable.run();
         });
 
         button_aoth.setOnAction(event -> {
+            log.info("Start AuthorationForm");
             Runnable runnable = new AuthorationForm();
             runnable.run();
         });
 
+        button_ac.setOnAction(event -> {
+            // log.info("Start AuthorationForm");
+            Runnable runnable = new AccountForm();
+            runnable.run();
+        });
         button_kek.setOnAction(event -> {
             try {
                 Socket s = new Socket("localhost", 65432);
 
                 System.out.println("Подождите...");
-                PrintWriter out = new
-                        PrintWriter(s.getOutputStream(), true);
+                PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
-                out.println("walking");
+                out.println(Command.DONWLOAIDING);
+
+                System.out.println("послано");
                 String xsdFolder = "F://clientstorage//";
                 DataInputStream din = new DataInputStream(s.getInputStream());
 
@@ -127,69 +160,23 @@ public class VideoExample extends Application {
                 }
 
                 System.out.println("Готово!");
+
+                out.close();
                 s.close();
             } catch (Exception e) {
                 System.err.println(e.toString());
             }
         });
-//        button_kek.setOnAction(event -> {
-//            try {
-//
-////                Socket sock = new Socket("localhost", 3128);
-////                byte[] mybytearray = new byte[1024];
-////                InputStream is = sock.getInputStream();
-////                FileOutputStream fos = new FileOutputStream("D://2Kyrs//Kyrsovik//client//file.txt");
-////                BufferedOutputStream bos = new BufferedOutputStream(fos);
-////                int bytesRead = is.read(mybytearray, 0, mybytearray.length);
-////                bos.write(mybytearray, 0, bytesRead);
-////                bos.close();
-////                sock.close();
-//
-//
-////                Socket server = new Socket("localhost", 65432);
-////                PrintWriter out = new
-////                        PrintWriter(server.getOutputStream(), true);
-////
-////                out.println("walking");
-////
-////                ObjectInputStream printWriter = new ObjectInputStream(server.getInputStream());
-////                Object media = printWriter.readObject();
-////
-////                out.close();
-////                printWriter.close();
-////                server.close();
-////
-////                Media media1 = (Media) media;
-////
-////                player = new MediaPlayer(media1);
-////
-////                mediaView.setFitWidth(media1.getWidth());
-////                mediaView.setFitHeight(media1.getHeight());
-////                mediaView.setMediaPlayer(player);
-//
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//
-//
-//        });
 
         open_button.setOnAction(event -> {
-
             try {
-
-
                 File file = fileChooser.showOpenDialog(stage);
                 fileChooser.setTitle("Open Video File");
-                String url = file.toURI().toURL().toString();
 
-                button_kek.setText(url);
-
-                if (player != null)
+                if (player != null) {
                     player.stop();
-
-
-                playVideo(mediaView, url);
+                }
+                playVideo(mediaView, file.toURI().toURL().toString());
 
             } catch (Exception e) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -198,22 +185,34 @@ public class VideoExample extends Application {
                 alert.setContentText("Cannot load the video");
                 alert.showAndWait().ifPresent(null);
 
-                e.printStackTrace();
+                log.error(e);
             }
         });
 
 
-        play_button.setOnAction(event -> player.play());
-
-
-        pause_button.setOnAction(event -> player.pause());
-
-        stop_button.setOnAction(event -> {
-            if (player != null)
-                player.stop();
+        play_button.setOnAction(event -> {
+            if (player != null) {
+                player.play();
+            }
         });
 
-        root.getChildren().addAll(mediaView, buttonContainer); //add the media view and button container to the stackpane
+
+        pause_button.setOnAction(event ->
+                {
+                    if (player != null) {
+                        player.pause();
+                    }
+                }
+        );
+
+        stop_button.setOnAction(event -> {
+            if (player != null) {
+                player.stop();
+            }
+        });
+
+
+        root.getChildren().addAll(mediaView, buttonContainer);
 
         stage.setTitle("SimpleTube");
 
@@ -221,25 +220,9 @@ public class VideoExample extends Application {
 
     }
 
-    public static void startter(String[] args) {
-        log.info("Запуск приложение");
-        Application.launch(args);
-    }
-
-    public static void run() {
-        log.info("Запуск приложение");
-        Application.launch((String[]) null);
-    }
-
     @Override
-    public void start(final Stage stage) throws Exception {
-
-        try {
-            uiSetup(stage);
-            stage.show();
-        } catch (Exception e) {
-            log.error(e);
-            e.printStackTrace();
-        }
+    public void start(final Stage stage) {
+        uiSetup(stage);
+        stage.show();
     }
 }
