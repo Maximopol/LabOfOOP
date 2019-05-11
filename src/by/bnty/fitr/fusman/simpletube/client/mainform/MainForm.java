@@ -1,6 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.client.mainform;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
+import by.bnty.fitr.fusman.simpletube.client.LoaderVideo;
 import by.bnty.fitr.fusman.simpletube.client.accountform.AccountForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
@@ -22,7 +23,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
 
 public class MainForm extends Application {
@@ -138,48 +142,20 @@ public class MainForm extends Application {
         });
 
         button_load.setOnAction(event -> {
-            try {
-                account = new Account("root", "root@gmail.com");
-
-                Socket socket = new Socket("localhost", 65432);
-                PrintWriter out = new
-                        PrintWriter(socket.getOutputStream(), true);
-
-                out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
-
-                DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
-                // String xsdPath = "F://serverstorage//";
-                //String []filenames = new File(xsdPath).list();
-                // assert filenames != null;
-                // int numFiles = filenames.length;
-                outD.writeInt(1);
-                //for (String filename : filenames) {
-                File f = new File("F://clientstorage//12.mp4");
-
-                outD.writeLong(f.length());//отсылаем размер файла
-                outD.writeUTF(f.getName());//отсылаем имя файла
-
-                System.out.println(f.length());
-                System.out.println(f.getName());
-
-                FileInputStream in = new FileInputStream(f);
-                byte[] buffer = new byte[64 * 1024];
-                int count;
-
-                while ((count = in.read(buffer)) != -1) {
-                    outD.write(buffer, 0, count);
-                }
-
-                outD.flush();
-                in.close();
-                out.close();
-                socket.close();
-//                PrintWriter out = new PrintWriter(s.getOutputStream(), true);
-//                out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
+            LoaderVideo.run(new Account("ppp", "pp@mail.com"));
+//            try {
+//                account = new Account("root", "root@gmail.com");
 //
-//                DataOutputStream outD = new DataOutputStream(s.getOutputStream());
+//                Socket socket = new Socket("localhost", 65432);
+//                PrintWriter out = new
+//                        PrintWriter(socket.getOutputStream(), true);
+//
+//                //out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
+//
+//                DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
+//
 //                outD.writeInt(1);
-//
+//                //for (String filename : filenames) {
 //                File f = new File("F://clientstorage//12.mp4");
 //
 //                outD.writeLong(f.length());//отсылаем размер файла
@@ -199,10 +175,36 @@ public class MainForm extends Application {
 //                outD.flush();
 //                in.close();
 //                out.close();
-//                s.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//                socket.close();
+////                PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+////                out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
+////
+////                DataOutputStream outD = new DataOutputStream(s.getOutputStream());
+////                outD.writeInt(1);
+////
+////                File f = new File("F://clientstorage//12.mp4");
+////
+////                outD.writeLong(f.length());//отсылаем размер файла
+////                outD.writeUTF(f.getName());//отсылаем имя файла
+////
+////                System.out.println(f.length());
+////                System.out.println(f.getName());
+////
+////                FileInputStream in = new FileInputStream(f);
+////                byte[] buffer = new byte[64 * 1024];
+////                int count;
+////
+////                while ((count = in.read(buffer)) != -1) {
+////                    outD.write(buffer, 0, count);
+////                }
+////
+////                outD.flush();
+////                in.close();
+////                out.close();
+////                s.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         });
 
 

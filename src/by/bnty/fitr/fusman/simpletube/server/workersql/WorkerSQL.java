@@ -3,6 +3,7 @@ package by.bnty.fitr.fusman.simpletube.server.workersql;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
+import java.util.Date;
 
 public class WorkerSQL {
     private static final Logger log = Logger.getLogger(WorkerSQL.class);
@@ -94,6 +95,31 @@ public class WorkerSQL {
             System.out.println(e.getMessage());
             flag = false;
         }
+        return flag;
+    }
+
+    public boolean addVideo(String unictable, String playlist, String name, String path) {
+        boolean flag = false;
+
+        System.out.println(unictable);
+        try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
+            //  ResultSet rs = statement.executeQuery("SELECT * FROM"+unictable +")";
+
+            statement.executeUpdate("INSERT INTO " + unictable + " VALUES " + "('" + playlist + "','" +
+                    name + "','" +
+                    path +
+                    "','" + new Date().toString()
+                    + "'," + 0 + "," + 0 + "," + 0 + ");");
+
+
+            flag = true;
+            System.out.println("lll");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+
         return flag;
     }
 
