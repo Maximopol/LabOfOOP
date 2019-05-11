@@ -1,5 +1,6 @@
 package by.bnty.fitr.fusman.simpletube.client.mainform;
 
+import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.simpletube.client.accountform.AccountForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
@@ -11,9 +12,9 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -21,22 +22,21 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class MainForm extends Application {
     private static final Logger log = Logger.getLogger(MainForm.class);
-    private int DEFAULT_HEIGHT = 600;
-    private int DEFAULT_WIDTH = 1000;
+    private static final int DEFAULT_HEIGHT = 600;
+    private static final int DEFAULT_WIDTH = 1000;
     private MediaPlayer player;
+    private Account account = null;
 
     public static void run() {
         log.info("Запуск приложение");
         Application.launch((String[]) null);
     }
+
 
     private void playVideo(MediaView mediaView, String url) {
         log.info("Open to watch:" + url);
@@ -52,8 +52,20 @@ public class MainForm extends Application {
     private void writeKeyCode(KeyCode key) {
         if (player != null) {
 
-//            if (key == KeyCode.RIGHT) {
+            if (key == KeyCode.RIGHT) {
+                if (player.getStatus().equals(MediaPlayer.Status.PAUSED)) {
+                    player.play();
+                } else {
+                    player.pause();
+                }
+            }
+//            if (key == KeyCode.UP) {
+//                player.setVolume(player.getVolume() + 1);
 //            }
+//            if (key == KeyCode.DOWN) {
+//                player.setVolume(player.getVolume() - 1);
+//            }
+//            System.out.println(player.getVolume());
         }
     }
 
@@ -64,7 +76,6 @@ public class MainForm extends Application {
 
         setUserAgentStylesheet(Application.STYLESHEET_CASPIAN);
 
-
         final HBox buttonContainer = new HBox(1);
 
         final Button open_button = new Button("open");
@@ -72,17 +83,31 @@ public class MainForm extends Application {
         final Button play_button = new Button("play");
         final Button stop_button = new Button("stop");
         final Button button_reg = new Button("reg");
-        final Button button_aoth = new Button("aoth");
-        final Button button_kek = new Button("get video from server");
+        final Button button_aoth = new Button("sing in");
+        final Button button_kek = new Button("download");
         final Button button_ac = new Button("Account");
+        final Button button_load = new Button("Load to serv");
 
+//        ComboBox<Playlists> cmb = new ComboBox<>();
+//        cmb.getItems().add(new Playlists(){});
+//        cmb.getItems().add(new Playlists(){});
+
+
+//        Image defaultImage = new Image("file:/F:/4/f.png");
+//        ImageView imageView = new ImageView(defaultImage);
+//
+//        imageView.setTranslateX(200);
+//        imageView.setTranslateY(200);
+//
+//        imageView.setFitWidth(50);
+//        imageView.setFitHeight(50);
 
         buttonContainer.setAlignment(Pos.BOTTOM_LEFT);
         Insets buttonContainerPadding = new Insets(1, 1, 1, 1);
         buttonContainer.setPadding(buttonContainerPadding);
 
         buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button, button_ac);
-        buttonContainer.getChildren().addAll(button_reg, button_aoth, button_kek);
+        buttonContainer.getChildren().addAll(button_reg, button_aoth, button_kek, button_load);
 
 
         final FileChooser fileChooser = new FileChooser();
@@ -96,21 +121,91 @@ public class MainForm extends Application {
 
         button_reg.setOnAction(event -> {
             log.info("Start RegisterForm");
-            Runnable runnable = new RegisterForm();
-            runnable.run();
+//            RegisterForm runnable = new RegisterForm();
+            RegisterForm.run();
         });
 
         button_aoth.setOnAction(event -> {
             log.info("Start AuthorationForm");
-            Runnable runnable = new AuthorationForm();
-            runnable.run();
+//            AuthorationForm runnable = new AuthorationForm();
+            AuthorationForm.run();
+            //   account = new Account("maks","maximopolnate@gmail.com");
         });
 
         button_ac.setOnAction(event -> {
-            // log.info("Start AuthorationForm");
             Runnable runnable = new AccountForm();
             runnable.run();
         });
+
+        button_load.setOnAction(event -> {
+            try {
+                account = new Account("root", "root@gmail.com");
+
+                Socket socket = new Socket("localhost", 65432);
+                PrintWriter out = new
+                        PrintWriter(socket.getOutputStream(), true);
+
+                out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
+
+                DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
+                // String xsdPath = "F://serverstorage//";
+                //String []filenames = new File(xsdPath).list();
+                // assert filenames != null;
+                // int numFiles = filenames.length;
+                outD.writeInt(1);
+                //for (String filename : filenames) {
+                File f = new File("F://clientstorage//12.mp4");
+
+                outD.writeLong(f.length());//отсылаем размер файла
+                outD.writeUTF(f.getName());//отсылаем имя файла
+
+                System.out.println(f.length());
+                System.out.println(f.getName());
+
+                FileInputStream in = new FileInputStream(f);
+                byte[] buffer = new byte[64 * 1024];
+                int count;
+
+                while ((count = in.read(buffer)) != -1) {
+                    outD.write(buffer, 0, count);
+                }
+
+                outD.flush();
+                in.close();
+                out.close();
+                socket.close();
+//                PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+//                out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
+//
+//                DataOutputStream outD = new DataOutputStream(s.getOutputStream());
+//                outD.writeInt(1);
+//
+//                File f = new File("F://clientstorage//12.mp4");
+//
+//                outD.writeLong(f.length());//отсылаем размер файла
+//                outD.writeUTF(f.getName());//отсылаем имя файла
+//
+//                System.out.println(f.length());
+//                System.out.println(f.getName());
+//
+//                FileInputStream in = new FileInputStream(f);
+//                byte[] buffer = new byte[64 * 1024];
+//                int count;
+//
+//                while ((count = in.read(buffer)) != -1) {
+//                    outD.write(buffer, 0, count);
+//                }
+//
+//                outD.flush();
+//                in.close();
+//                out.close();
+//                s.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+
         button_kek.setOnAction(event -> {
             try {
                 Socket s = new Socket("localhost", 65432);
@@ -136,7 +231,7 @@ public class MainForm extends Application {
                     FileOutputStream outF = new FileOutputStream(xsdFolder + fileName);
 
                     long left = fileSize;
-                    while (true) {
+                    do {
                         int nextPackSize = (int) Math.min(left, buffer.length);
                         int count = din.read(buffer, 0, nextPackSize);
                         if (count <= 0) {
@@ -146,10 +241,7 @@ public class MainForm extends Application {
                         outF.write(buffer, 0, count);
 
                         left -= count;
-                        if (left == 0) {
-                            break;
-                        }
-                    }
+                    } while (left != 0);
 
                     outF.flush();
                     outF.close();
@@ -176,6 +268,9 @@ public class MainForm extends Application {
                 if (player != null) {
                     player.stop();
                 }
+
+                //String filename = "file:///F:/serverstorage/kekeke.mp4";
+                //String filename = "http://techslides.com/demos/sample-videos/small.mp4";
                 playVideo(mediaView, file.toURI().toURL().toString());
 
             } catch (Exception e) {
@@ -188,7 +283,6 @@ public class MainForm extends Application {
                 log.error(e);
             }
         });
-
 
         play_button.setOnAction(event -> {
             if (player != null) {
@@ -211,9 +305,17 @@ public class MainForm extends Application {
             }
         });
 
-
         root.getChildren().addAll(mediaView, buttonContainer);
 
+        //  root.getChildren().remove(buttonContainer);
+        String url = "file:/F:/4/VSwP4iYYJlY.png";
+        root.setBackground(new Background(new BackgroundImage(new Image(url, DEFAULT_WIDTH, DEFAULT_HEIGHT, false, true),
+                BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT)));
+
+
+        stage.setMinHeight(DEFAULT_HEIGHT);
+        stage.setMinWidth(DEFAULT_WIDTH);
         stage.setTitle("SimpleTube");
 
         stage.setScene(theScene);

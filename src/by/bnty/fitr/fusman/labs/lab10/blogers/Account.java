@@ -1,30 +1,31 @@
 package by.bnty.fitr.fusman.labs.lab10.blogers;
 
 import by.bnty.fitr.fusman.labs.lab10.arrays.arraysplaylist.ArrayPlaylists;
+import by.bnty.fitr.fusman.labs.lab10.arrays.common.Playlists;
 import by.bnty.fitr.fusman.simpletube.common.accountstatus.AccountStatus;
 
 import java.util.Objects;
 
 public class Account {
+    private String email;
     private String nickname;
-    private ArrayPlaylists arrayPlaylists;
-    //  private ArrayList<Playlist> collection;
+    private Playlists playlists;
     private AccountStatus status;
 
     private Account() {
-        arrayPlaylists = new ArrayPlaylists();
-
+        playlists = new ArrayPlaylists();
     }
 
-    public Account(String nickname) {
+    public Account(String nickname, String email) {
         this();
         this.nickname = nickname;
         status = AccountStatus.Usual;
+        this.email = email;
     }
 
     public Account(Account account) {
         nickname = account.nickname;
-        arrayPlaylists = account.arrayPlaylists;
+        playlists = account.playlists;
         status = account.status;
     }
 
@@ -34,21 +35,39 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return Objects.equals(nickname, account.nickname) &&
-                Objects.equals(arrayPlaylists, account.arrayPlaylists) &&
+        return Objects.equals(email, account.email) &&
+                Objects.equals(nickname, account.nickname) &&
+                Objects.equals(playlists, account.playlists) &&
                 status == account.status;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nickname, arrayPlaylists, status);
+        return Objects.hash(email, nickname, playlists, status);
     }
 
     public String toString() {
         return "Account{" +
-                "nickname='" + nickname + '\'' +
+                "email='" + email + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", playlists=" + playlists +
                 ", status=" + status +
-                //  ", collection=" + collection +
                 '}';
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public Playlists getPlaylists() {
+        return playlists;
+    }
+
+    public AccountStatus getStatus() {
+        return status;
     }
 }

@@ -8,4 +8,6 @@ public interface BaseStorage<T> {
     void add(T t);
 
     T get(int i);
+
+    int size();
 }

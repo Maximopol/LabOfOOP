@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.server.workerWithSQL;
+package by.bnty.fitr.fusman.simpletube.server.workersql;
 
 
 import java.sql.*;

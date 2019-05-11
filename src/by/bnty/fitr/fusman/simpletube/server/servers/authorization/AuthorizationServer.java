@@ -2,7 +2,7 @@ package by.bnty.fitr.fusman.simpletube.server.servers.authorization;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.registr.Register;
 import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
-import by.bnty.fitr.fusman.simpletube.server.workerWithSQL.WorkerSQL;
+import by.bnty.fitr.fusman.simpletube.server.workersql.WorkerSQL;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -1,1 +1,415 @@
-
+2019-05-10 15:13:19 INFO  Main:9 - Запуск
+2019-05-10 15:13:19 INFO  MainForm:39 - Запуск приложение
+2019-05-10 15:13:30 INFO  MainForm:118 - Start AuthorationForm
+2019-05-10 15:13:47 INFO  Main:11 - Конец работы
+2019-05-10 15:14:48 INFO  Main:9 - Запуск
+2019-05-10 15:14:48 INFO  MainForm:39 - Запуск приложение
+2019-05-10 15:15:37 INFO  MainForm:118 - Start AuthorationForm
+2019-05-10 15:15:46 INFO  Main:11 - Конец работы
+2019-05-10 15:55:47 INFO  Main:9 - Запуск
+2019-05-10 15:55:47 INFO  MainForm:39 - Запуск приложение
+2019-05-10 15:55:58 INFO  Main:11 - Конец работы
+2019-05-10 16:01:30 INFO  Main:9 - Запуск
+2019-05-10 16:01:30 INFO  MainServer:30 - waiting
+2019-05-10 16:01:45 INFO  Main:9 - Запуск
+2019-05-10 16:01:45 INFO  MainForm:39 - Запуск приложение
+2019-05-10 16:01:51 INFO  MainForm:110 - Start AuthorationForm
+2019-05-10 16:02:02 INFO  MainServer:32 - New client Socket[addr=/127.0.0.1,port=56023,localport=65432]
+2019-05-10 16:02:02 INFO  MainServer:37 - Auth
+2019-05-10 16:02:04 INFO  MainServer:30 - waiting
+2019-05-10 16:02:16 INFO  MainServer:32 - New client Socket[addr=/127.0.0.1,port=56037,localport=65432]
+2019-05-10 16:02:16 INFO  MainServer:37 - skachat
+2019-05-10 16:02:16 INFO  MainServer:30 - waiting
+2019-05-10 16:02:17 INFO  MainForm:45 - Open to watch:file:/F://clientstorage//kekeke.mp4
+2019-05-10 16:02:22 INFO  MainForm:104 - Start RegisterForm
+2019-05-10 16:02:50 INFO  MainServer:32 - New client Socket[addr=/127.0.0.1,port=56063,localport=65432]
+2019-05-10 16:02:50 INFO  MainServer:37 - Reg
+2019-05-10 16:02:50 INFO  MainServer:30 - waiting
+2019-05-10 16:03:19 INFO  Main:11 - Конец работы
+2019-05-10 16:06:34 INFO  Main:9 - Запуск
+2019-05-10 16:06:34 INFO  MainServer:30 - waiting
+2019-05-10 16:08:47 INFO  Main:9 - Запуск
+2019-05-10 16:08:47 INFO  MainForm:39 - Запуск приложение
+2019-05-10 16:08:51 INFO  MainServer:32 - New client Socket[addr=/127.0.0.1,port=56332,localport=65432]
+2019-05-10 16:08:51 INFO  MainServer:37 - skachat
+2019-05-10 16:08:51 INFO  MainServer:30 - waiting
+2019-05-10 16:08:51 INFO  MainForm:45 - Open to watch:file:/F://clientstorage//kekeke.mp4
+2019-05-10 16:08:54 INFO  Main:11 - Конец работы
+2019-05-10 20:24:59 INFO  Main:9 - Запуск
+2019-05-10 20:24:59 INFO  MainForm:39 - Запуск приложение
+2019-05-10 20:25:19 INFO  MainForm:104 - Start RegisterForm
+2019-05-10 20:25:24 INFO  MainForm:110 - Start AuthorationForm
+2019-05-10 20:25:36 INFO  Main:11 - Конец работы
+2019-05-10 20:28:12 INFO  Main:9 - Запуск
+2019-05-10 20:28:13 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-10 20:28:13 INFO  MainServer:34 - waiting
+2019-05-10 21:10:31 INFO  Main:9 - Запуск
+2019-05-10 21:10:31 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-10 21:10:31 INFO  MainServer:34 - waiting
+2019-05-10 21:11:23 INFO  Main:9 - Запуск
+2019-05-10 21:11:23 INFO  MainForm:39 - Запуск приложение
+2019-05-10 21:12:28 INFO  MainForm:45 - Open to watch:http://techslides.com/demos/sample-videos/small.mp4
+2019-05-10 21:13:21 INFO  MainForm:45 - Open to watch:http://techslides.com/demos/sample-videos/small.mp4
+2019-05-10 21:13:55 INFO  Main:11 - Конец работы
+2019-05-10 21:17:52 INFO  Main:9 - Запуск
+2019-05-10 21:17:53 INFO  MainForm:38 - Запуск приложение
+2019-05-10 21:18:32 INFO  MainForm:44 - Open to watch:http://localhost/F:/serverstorage/kekeke.mp4
+2019-05-10 21:27:47 INFO  Main:9 - Запуск
+2019-05-10 21:27:47 INFO  MainForm:38 - Запуск приложение
+2019-05-10 21:28:04 INFO  MainForm:44 - Open to watch:ftp://localhost/F/serverstorage/kekeke.mp4
+2019-05-10 21:28:50 INFO  Main:9 - Запуск
+2019-05-10 21:28:53 INFO  MainForm:38 - Запуск приложение
+2019-05-10 21:29:00 INFO  MainForm:44 - Open to watch:http://localhost/F/serverstorage/kekeke.mp4
+2019-05-10 21:29:04 INFO  MainForm:44 - Open to watch:http://localhost/F/serverstorage/kekeke.mp4
+2019-05-10 21:33:11 INFO  Main:11 - Конец работы
+2019-05-10 21:48:14 INFO  Main:9 - Запуск
+2019-05-10 21:48:14 INFO  MainForm:40 - Запуск приложение
+2019-05-10 21:48:30 INFO  MainForm:46 - Open to watch:https://youtu.be/0pjV0vZ0BeY
+2019-05-10 21:48:40 INFO  MainForm:46 - Open to watch:https://youtu.be/0pjV0vZ0BeY
+2019-05-10 21:48:41 INFO  MainForm:46 - Open to watch:https://youtu.be/0pjV0vZ0BeY
+2019-05-10 21:48:44 INFO  Main:11 - Конец работы
+2019-05-10 21:55:48 INFO  Main:9 - Запуск
+2019-05-10 21:55:48 INFO  MainForm:40 - Запуск приложение
+2019-05-10 21:55:57 INFO  MainForm:46 - Open to watch:http:///F:/serverstorage/kekeke.mp4
+2019-05-10 21:56:02 INFO  Main:11 - Конец работы
+2019-05-10 21:56:21 INFO  Main:9 - Запуск
+2019-05-10 21:56:21 INFO  MainForm:40 - Запуск приложение
+2019-05-10 21:56:27 INFO  MainForm:46 - Open to watch:file:///F:/serverstorage/kekeke.mp4
+2019-05-10 21:56:39 INFO  Main:11 - Конец работы
+2019-05-10 22:01:33 INFO  Main:9 - Запуск
+2019-05-10 22:01:33 INFO  MainForm:40 - Запуск приложение
+2019-05-10 22:02:15 INFO  Main:9 - Запуск
+2019-05-10 22:02:15 INFO  MainForm:40 - Запуск приложение
+2019-05-10 22:02:27 INFO  Main:11 - Конец работы
+2019-05-10 22:03:22 INFO  Main:9 - Запуск
+2019-05-10 22:03:23 INFO  MainForm:40 - Запуск приложение
+2019-05-10 22:03:30 INFO  Main:11 - Конец работы
+2019-05-10 22:04:13 INFO  Main:9 - Запуск
+2019-05-10 22:04:13 INFO  MainForm:40 - Запуск приложение
+2019-05-10 22:04:37 INFO  Main:11 - Конец работы
+2019-05-10 22:05:03 INFO  Main:9 - Запуск
+2019-05-10 22:05:03 INFO  MainForm:40 - Запуск приложение
+2019-05-10 22:05:27 INFO  Main:11 - Конец работы
+2019-05-10 22:14:36 INFO  Main:9 - Запуск
+2019-05-10 22:14:36 INFO  MainForm:40 - Запуск приложение
+2019-05-10 22:14:48 INFO  Main:11 - Конец работы
+2019-05-10 23:15:47 INFO  Main:9 - Запуск
+2019-05-10 23:15:47 INFO  MainForm:40 - Запуск приложение
+2019-05-10 23:16:13 INFO  MainForm:46 - Open to watch:file:/C:/Users/Admin/Downloads/654.mp4
+2019-05-10 23:16:35 INFO  Main:11 - Конец работы
+2019-05-11 00:06:31 INFO  Main:9 - Запуск
+2019-05-11 00:06:31 INFO  MainForm:43 - Запуск приложение
+2019-05-11 00:07:16 INFO  Main:9 - Запуск
+2019-05-11 00:07:18 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 00:07:18 INFO  MainServer:34 - waiting
+2019-05-11 00:07:32 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=50366,localport=65432]
+2019-05-11 00:07:32 INFO  MainServer:40 - skachat
+2019-05-11 00:07:33 INFO  MainForm:49 - Open to watch:file:/F://clientstorage//kekeke.mp4
+2019-05-11 00:07:33 INFO  MainServer:34 - waiting
+2019-05-11 00:07:56 INFO  Main:11 - Конец работы
+2019-05-11 00:24:23 INFO  Main:9 - Запуск
+2019-05-11 00:24:23 INFO  MainForm:43 - Запуск приложение
+2019-05-11 00:25:11 INFO  Main:11 - Конец работы
+2019-05-11 00:25:43 INFO  Main:9 - Запуск
+2019-05-11 00:25:43 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 00:25:43 INFO  MainServer:34 - waiting
+2019-05-11 00:27:13 INFO  Main:9 - Запуск
+2019-05-11 00:27:13 INFO  MainForm:43 - Запуск приложение
+2019-05-11 00:27:40 INFO  Main:11 - Конец работы
+2019-05-11 14:43:34 INFO  Main:9 - Запуск
+2019-05-11 14:43:35 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 14:43:35 INFO  MainServer:34 - waiting
+2019-05-11 14:44:36 INFO  Main:9 - Запуск
+2019-05-11 14:44:36 INFO  MainForm:43 - Запуск приложение
+2019-05-11 14:45:09 INFO  MainForm:122 - Start RegisterForm
+2019-05-11 14:45:35 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55165,localport=65432]
+2019-05-11 14:45:35 INFO  MainServer:40 - Reg
+2019-05-11 14:45:37 INFO  MainServer:34 - waiting
+2019-05-11 14:46:58 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55189,localport=65432]
+2019-05-11 14:46:58 INFO  MainServer:40 - Reg
+2019-05-11 14:46:58 INFO  MainServer:34 - waiting
+2019-05-11 14:48:48 INFO  Main:9 - Запуск
+2019-05-11 14:48:48 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 14:48:48 INFO  MainServer:34 - waiting
+2019-05-11 14:48:57 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55229,localport=65432]
+2019-05-11 14:48:57 INFO  MainServer:40 - Reg
+2019-05-11 14:49:03 INFO  MainServer:34 - waiting
+2019-05-11 14:49:56 INFO  Main:9 - Запуск
+2019-05-11 14:49:56 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 14:49:56 INFO  MainServer:34 - waiting
+2019-05-11 14:50:11 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55251,localport=65432]
+2019-05-11 14:50:11 INFO  MainServer:40 - Reg
+2019-05-11 14:50:12 INFO  MainServer:34 - waiting
+2019-05-11 14:51:28 INFO  Main:9 - Запуск
+2019-05-11 14:51:28 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 14:51:28 INFO  MainServer:34 - waiting
+2019-05-11 14:51:39 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55284,localport=65432]
+2019-05-11 14:51:39 INFO  MainServer:40 - Reg
+2019-05-11 14:51:40 INFO  MainServer:34 - waiting
+2019-05-11 14:54:07 INFO  Main:9 - Запуск
+2019-05-11 14:54:08 INFO  MainForm:43 - Запуск приложение
+2019-05-11 14:54:25 INFO  Main:9 - Запуск
+2019-05-11 14:54:25 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 14:54:25 INFO  MainServer:34 - waiting
+2019-05-11 14:54:54 INFO  MainForm:122 - Start RegisterForm
+2019-05-11 14:55:07 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55334,localport=65432]
+2019-05-11 14:55:07 INFO  MainServer:40 - Reg
+2019-05-11 14:55:09 INFO  MainServer:34 - waiting
+2019-05-11 14:55:54 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55353,localport=65432]
+2019-05-11 14:55:54 INFO  MainServer:40 - Reg
+2019-05-11 14:55:54 INFO  MainServer:34 - waiting
+2019-05-11 14:55:59 INFO  MainForm:128 - Start AuthorationForm
+2019-05-11 14:56:13 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55362,localport=65432]
+2019-05-11 14:56:13 INFO  MainServer:40 - Auth
+2019-05-11 14:56:13 INFO  MainServer:34 - waiting
+2019-05-11 14:56:26 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55368,localport=65432]
+2019-05-11 14:56:26 INFO  MainServer:40 - Auth
+2019-05-11 14:56:26 INFO  MainServer:34 - waiting
+2019-05-11 14:56:32 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55370,localport=65432]
+2019-05-11 14:56:32 INFO  MainServer:40 - Auth
+2019-05-11 14:56:32 INFO  MainServer:34 - waiting
+2019-05-11 14:57:04 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55383,localport=65432]
+2019-05-11 14:57:04 INFO  MainServer:40 - Auth
+2019-05-11 14:57:05 INFO  MainServer:34 - waiting
+2019-05-11 14:57:41 INFO  Main:11 - Конец работы
+2019-05-11 14:58:54 INFO  Main:9 - Запуск
+2019-05-11 14:58:55 INFO  MainForm:43 - Запуск приложение
+2019-05-11 14:59:00 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=55435,localport=65432]
+2019-05-11 14:59:00 INFO  MainServer:40 - skachat
+2019-05-11 14:59:00 INFO  MainServer:34 - waiting
+2019-05-11 14:59:00 INFO  MainForm:49 - Open to watch:file:/F://clientstorage//kekeke.mp4
+2019-05-11 14:59:04 INFO  Main:11 - Конец работы
+2019-05-11 15:22:05 INFO  Main:9 - Запуск
+2019-05-11 15:22:06 INFO  MainForm:39 - Запуск приложение
+2019-05-11 15:23:37 INFO  MainForm:45 - Open to watch:file:/C:/Users/Admin/Downloads/12.mp4
+2019-05-11 15:24:21 INFO  Main:11 - Конец работы
+2019-05-11 17:24:06 INFO  Main:9 - Запуск
+2019-05-11 17:24:06 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:25:41 INFO  Main:9 - Запуск
+2019-05-11 17:25:41 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:25:41 INFO  MainServer:34 - waiting
+2019-05-11 17:25:45 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58251,localport=65432]
+2019-05-11 17:26:42 FATAL MainServer:52 - java.net.SocketException: Connection reset
+2019-05-11 17:26:42 INFO  Main:14 - Конец работы
+2019-05-11 17:27:59 INFO  Main:9 - Запуск
+2019-05-11 17:27:59 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:31:56 INFO  Main:9 - Запуск
+2019-05-11 17:31:56 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:32:16 INFO  Main:9 - Запуск
+2019-05-11 17:32:16 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:32:16 INFO  MainServer:34 - waiting
+2019-05-11 17:32:25 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58338,localport=65432]
+2019-05-11 17:32:26 INFO  MainServer:40 - skachat
+2019-05-11 17:33:29 INFO  Main:9 - Запуск
+2019-05-11 17:33:29 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:33:44 INFO  Main:9 - Запуск
+2019-05-11 17:33:44 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:33:44 INFO  MainServer:34 - waiting
+2019-05-11 17:33:47 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58367,localport=65432]
+2019-05-11 17:33:47 INFO  MainServer:40 - load
+2019-05-11 17:33:47 INFO  MainServer:34 - waiting
+2019-05-11 17:35:25 INFO  Main:9 - Запуск
+2019-05-11 17:35:25 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:35:25 INFO  MainServer:34 - waiting
+2019-05-11 17:35:34 INFO  Main:9 - Запуск
+2019-05-11 17:35:34 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:35:40 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58396,localport=65432]
+2019-05-11 17:35:40 INFO  MainServer:40 - load
+2019-05-11 17:35:40 INFO  MainServer:34 - waiting
+2019-05-11 17:36:45 INFO  Main:9 - Запуск
+2019-05-11 17:36:45 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:36:45 INFO  MainServer:34 - waiting
+2019-05-11 17:36:48 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58411,localport=65432]
+2019-05-11 17:36:48 INFO  MainServer:40 - load
+2019-05-11 17:36:48 INFO  MainServer:34 - waiting
+2019-05-11 17:42:46 INFO  Main:9 - Запуск
+2019-05-11 17:42:46 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:42:58 INFO  Main:9 - Запуск
+2019-05-11 17:42:58 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:42:58 INFO  MainServer:34 - waiting
+2019-05-11 17:43:02 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58454,localport=65432]
+2019-05-11 17:43:02 INFO  MainServer:40 - Reg
+2019-05-11 17:43:03 INFO  MainServer:34 - waiting
+2019-05-11 17:43:54 INFO  Main:9 - Запуск
+2019-05-11 17:43:54 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:44:33 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58524,localport=65432]
+2019-05-11 17:44:33 INFO  MainServer:40 - load
+2019-05-11 17:44:33 INFO  MainServer:34 - waiting
+2019-05-11 17:44:51 INFO  Main:11 - Конец работы
+2019-05-11 17:46:04 INFO  Main:9 - Запуск
+2019-05-11 17:46:04 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:46:12 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58582,localport=65432]
+2019-05-11 17:46:12 INFO  MainServer:40 - load
+2019-05-11 17:46:12 INFO  MainServer:34 - waiting
+2019-05-11 17:47:23 INFO  Main:9 - Запуск
+2019-05-11 17:47:23 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:47:23 INFO  MainServer:34 - waiting
+2019-05-11 17:47:29 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58615,localport=65432]
+2019-05-11 17:47:29 INFO  MainServer:40 - load
+2019-05-11 17:47:29 INFO  MainServer:34 - waiting
+2019-05-11 17:49:44 INFO  Main:9 - Запуск
+2019-05-11 17:49:44 INFO  MainForm:36 - Запуск приложение
+2019-05-11 17:49:50 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58664,localport=65432]
+2019-05-11 17:49:50 INFO  MainServer:40 - load
+2019-05-11 17:49:50 INFO  MainServer:34 - waiting
+2019-05-11 17:50:40 INFO  Main:9 - Запуск
+2019-05-11 17:50:40 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:50:40 INFO  MainServer:34 - waiting
+2019-05-11 17:50:50 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58701,localport=65432]
+2019-05-11 17:50:50 INFO  MainServer:40 - load
+2019-05-11 17:50:50 INFO  MainServer:34 - waiting
+2019-05-11 17:51:38 INFO  Main:9 - Запуск
+2019-05-11 17:51:38 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 17:51:38 INFO  MainServer:34 - waiting
+2019-05-11 17:51:45 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=58717,localport=65432]
+2019-05-11 17:51:45 INFO  MainServer:40 - load
+2019-05-11 17:51:45 INFO  MainServer:34 - waiting
+2019-05-11 18:00:40 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59026,localport=65432]
+2019-05-11 18:00:40 INFO  MainServer:40 - load
+2019-05-11 18:03:22 INFO  Main:9 - Запуск
+2019-05-11 18:03:22 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:03:22 INFO  MainServer:34 - waiting
+2019-05-11 18:03:38 INFO  Main:9 - Запуск
+2019-05-11 18:03:38 INFO  MainForm:36 - Запуск приложение
+2019-05-11 18:03:49 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59089,localport=65432]
+2019-05-11 18:03:49 INFO  MainServer:40 - load
+2019-05-11 18:03:50 INFO  MainServer:34 - waiting
+2019-05-11 18:04:14 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59103,localport=65432]
+2019-05-11 18:04:14 INFO  MainServer:40 - load
+2019-05-11 18:04:14 INFO  MainServer:34 - waiting
+2019-05-11 18:05:14 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59115,localport=65432]
+2019-05-11 18:05:14 INFO  MainServer:40 - load
+2019-05-11 18:05:14 INFO  MainServer:34 - waiting
+2019-05-11 18:05:28 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59119,localport=65432]
+2019-05-11 18:05:28 INFO  MainServer:40 - load
+2019-05-11 18:05:28 INFO  MainServer:34 - waiting
+2019-05-11 18:05:38 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59122,localport=65432]
+2019-05-11 18:05:38 INFO  MainServer:40 - load
+2019-05-11 18:05:38 INFO  MainServer:34 - waiting
+2019-05-11 18:05:44 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59126,localport=65432]
+2019-05-11 18:05:44 INFO  MainServer:40 - load
+2019-05-11 18:05:44 INFO  MainServer:34 - waiting
+2019-05-11 18:06:36 INFO  Main:9 - Запуск
+2019-05-11 18:06:36 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:06:36 INFO  MainServer:34 - waiting
+2019-05-11 18:06:37 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59149,localport=65432]
+2019-05-11 18:06:37 INFO  MainServer:40 - load
+2019-05-11 18:06:37 INFO  MainServer:34 - waiting
+2019-05-11 18:07:17 INFO  Main:9 - Запуск
+2019-05-11 18:07:17 INFO  MainForm:36 - Запуск приложение
+2019-05-11 18:07:22 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59172,localport=65432]
+2019-05-11 18:07:22 INFO  MainServer:40 - load
+2019-05-11 18:07:22 INFO  MainServer:34 - waiting
+2019-05-11 18:10:42 INFO  Main:9 - Запуск
+2019-05-11 18:10:42 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:10:42 INFO  MainServer:34 - waiting
+2019-05-11 18:10:56 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59368,localport=65432]
+2019-05-11 18:10:56 INFO  MainServer:40 - load
+2019-05-11 18:10:56 INFO  MainServer:34 - waiting
+2019-05-11 18:11:05 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59374,localport=65432]
+2019-05-11 18:11:05 INFO  MainServer:40 - load
+2019-05-11 18:11:05 INFO  MainServer:34 - waiting
+2019-05-11 18:11:58 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59399,localport=65432]
+2019-05-11 18:11:58 INFO  MainServer:40 - load
+2019-05-11 18:11:58 INFO  MainServer:34 - waiting
+2019-05-11 18:12:03 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59402,localport=65432]
+2019-05-11 18:12:03 INFO  MainServer:40 - load
+2019-05-11 18:12:03 INFO  MainServer:34 - waiting
+2019-05-11 18:16:41 INFO  Main:9 - Запуск
+2019-05-11 18:16:41 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:16:41 INFO  MainServer:34 - waiting
+2019-05-11 18:16:52 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59537,localport=65432]
+2019-05-11 18:16:52 INFO  MainServer:40 - load
+2019-05-11 18:16:52 INFO  MainServer:34 - waiting
+2019-05-11 18:16:57 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59540,localport=65432]
+2019-05-11 18:16:57 INFO  MainServer:40 - load
+2019-05-11 18:16:57 INFO  MainServer:34 - waiting
+2019-05-11 18:17:35 INFO  Main:9 - Запуск
+2019-05-11 18:17:35 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:17:35 INFO  MainServer:34 - waiting
+2019-05-11 18:17:37 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59560,localport=65432]
+2019-05-11 18:17:37 INFO  MainServer:40 - load
+2019-05-11 18:17:37 INFO  MainServer:34 - waiting
+2019-05-11 18:17:44 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59565,localport=65432]
+2019-05-11 18:17:44 INFO  MainServer:40 - load
+2019-05-11 18:17:44 INFO  MainServer:34 - waiting
+2019-05-11 18:18:53 INFO  Main:9 - Запуск
+2019-05-11 18:18:53 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:18:53 INFO  MainServer:34 - waiting
+2019-05-11 18:18:55 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59587,localport=65432]
+2019-05-11 18:18:55 INFO  MainServer:40 - load
+2019-05-11 18:18:55 INFO  MainServer:34 - waiting
+2019-05-11 18:19:00 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59590,localport=65432]
+2019-05-11 18:19:00 INFO  MainServer:40 - load
+2019-05-11 18:19:00 INFO  MainServer:34 - waiting
+2019-05-11 18:19:05 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59593,localport=65432]
+2019-05-11 18:19:05 INFO  MainServer:40 - load
+2019-05-11 18:19:05 INFO  MainServer:34 - waiting
+2019-05-11 18:19:37 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59600,localport=65432]
+2019-05-11 18:19:37 INFO  MainServer:40 - load
+2019-05-11 18:19:37 INFO  MainServer:34 - waiting
+2019-05-11 18:19:41 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59601,localport=65432]
+2019-05-11 18:19:41 INFO  MainServer:40 - load
+2019-05-11 18:19:41 INFO  MainServer:34 - waiting
+2019-05-11 18:19:45 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59602,localport=65432]
+2019-05-11 18:19:45 INFO  MainServer:40 - load
+2019-05-11 18:19:46 INFO  MainServer:34 - waiting
+2019-05-11 18:20:11 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59611,localport=65432]
+2019-05-11 18:20:11 INFO  MainServer:40 - load
+2019-05-11 18:20:11 INFO  MainServer:34 - waiting
+2019-05-11 18:20:19 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59616,localport=65432]
+2019-05-11 18:20:19 INFO  MainServer:40 - load
+2019-05-11 18:20:19 INFO  MainServer:34 - waiting
+2019-05-11 18:20:22 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59619,localport=65432]
+2019-05-11 18:20:22 INFO  MainServer:40 - load
+2019-05-11 18:20:22 INFO  MainServer:34 - waiting
+2019-05-11 18:20:27 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59622,localport=65432]
+2019-05-11 18:20:27 INFO  MainServer:40 - load
+2019-05-11 18:20:27 INFO  MainServer:34 - waiting
+2019-05-11 18:20:39 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59628,localport=65432]
+2019-05-11 18:20:39 INFO  MainServer:40 - load
+2019-05-11 18:20:39 INFO  MainServer:34 - waiting
+2019-05-11 18:20:43 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59634,localport=65432]
+2019-05-11 18:20:43 INFO  MainServer:40 - load
+2019-05-11 18:20:44 INFO  MainServer:34 - waiting
+2019-05-11 18:21:17 INFO  Main:9 - Запуск
+2019-05-11 18:21:17 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:21:17 INFO  MainServer:34 - waiting
+2019-05-11 18:21:37 INFO  Main:9 - Запуск
+2019-05-11 18:21:38 INFO  MainForm:36 - Запуск приложение
+2019-05-11 18:22:50 INFO  Main:9 - Запуск
+2019-05-11 18:22:50 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:22:50 INFO  MainServer:34 - waiting
+2019-05-11 18:23:11 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59704,localport=65432]
+2019-05-11 18:23:11 INFO  MainServer:40 - load
+2019-05-11 18:23:14 INFO  MainServer:34 - waiting
+2019-05-11 18:23:33 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59711,localport=65432]
+2019-05-11 18:23:33 INFO  MainServer:40 - load
+2019-05-11 18:23:33 INFO  MainServer:34 - waiting
+2019-05-11 18:24:19 INFO  Main:9 - Запуск
+2019-05-11 18:24:19 INFO  MainForm:36 - Запуск приложение
+2019-05-11 18:24:46 INFO  Main:9 - Запуск
+2019-05-11 18:24:46 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:24:46 INFO  MainServer:34 - waiting
+2019-05-11 18:24:54 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59743,localport=65432]
+2019-05-11 18:24:54 INFO  MainServer:40 - load
+2019-05-11 18:24:54 INFO  MainServer:34 - waiting
+2019-05-11 18:26:08 INFO  Main:11 - Конец работы
+2019-05-11 18:27:24 INFO  Main:9 - Запуск
+2019-05-11 18:27:24 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-11 18:27:24 INFO  MainServer:34 - waiting
+2019-05-11 18:27:32 INFO  Main:9 - Запуск
+2019-05-11 18:27:32 INFO  MainForm:36 - Запуск приложение
+2019-05-11 18:27:42 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59818,localport=65432]
+2019-05-11 18:27:42 INFO  MainServer:40 - load
+2019-05-11 18:27:43 INFO  MainServer:34 - waiting
+2019-05-11 18:27:52 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59822,localport=65432]
+2019-05-11 18:27:52 INFO  MainServer:40 - load
+2019-05-11 18:27:52 INFO  MainServer:34 - waiting
+2019-05-11 18:28:00 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59825,localport=65432]
+2019-05-11 18:28:00 INFO  MainServer:40 - load
+2019-05-11 18:28:00 INFO  MainServer:34 - waiting
+2019-05-11 18:28:02 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=59826,localport=65432]
+2019-05-11 18:28:02 INFO  MainServer:40 - load
+2019-05-11 18:28:02 INFO  MainServer:34 - waiting
+2019-05-11 18:28:14 INFO  Main:11 - Конец работы

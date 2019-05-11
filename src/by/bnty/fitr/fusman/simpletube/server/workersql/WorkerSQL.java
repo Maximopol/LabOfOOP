@@ -1,22 +1,35 @@
-package by.bnty.fitr.fusman.simpletube.server.workerWithSQL;
+package by.bnty.fitr.fusman.simpletube.server.workersql;
+
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 
 public class WorkerSQL {
+    private static final Logger log = Logger.getLogger(WorkerSQL.class);
+
+    private static final String createTableSQL = "CREATE TABLE REGTABLE3("
+            + "email varchar(30) NOT NULL,"
+            + "pass varchar(30) NOT NULL,"
+            + "nickname varchar(30) NOT NULL"
+            + ")";
+
+    private static final String createPlaylis = "CREATE TABLE ";
+    private static final String suffix =
+            "(playlist varchar(30) NOT NULL," +
+                    "videoname varchar(30) NOT NULL," +
+                    "videopath varchar(30) NOT NULL," +
+                    "videodate varchar(30) NOT NULL," +
+                    "videoviews int NOT NULL," +
+                    "videolikes int NOT NULL," +
+                    "videodizlikes int NOT NULL );";
+
 
     public boolean reg(String mail, String pas, String nickname) {
-
-        String createTableSQL = "CREATE TABLE REGTABLE3("
-                + "email varchar(30) NOT NULL,"
-                + "pass varchar(30) NOT NULL,"
-                + "nickname varchar(30) NOT NULL"
-                + ")";
 
         try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
             //  statement.executeUpdate("INSERT INTO DBUSER VALUES ('Pinsk',50,90);");
             // statement.execute(createTableSQL);
             ResultSet rs = statement.executeQuery("SELECT * FROM REGTABLE3");
-
 
             boolean flag = true;
 
@@ -37,6 +50,10 @@ public class WorkerSQL {
             if (flag) {
                 statement.executeUpdate("INSERT INTO REGTABLE3 VALUES ('" + mail + "','" + pas + "','" + nickname + "');");
                 System.out.println("add");
+                String string = createPlaylis + (nickname + mail.hashCode()).toUpperCase() + suffix;
+                System.out.println(string);
+                statement.execute(string);
+                System.out.println("сreated");
                 return true;
             }
 

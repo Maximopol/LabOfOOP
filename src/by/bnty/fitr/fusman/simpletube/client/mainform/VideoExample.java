@@ -2,7 +2,6 @@ package by.bnty.fitr.fusman.simpletube.client.mainform;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
-import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -70,13 +69,13 @@ public class VideoExample extends Application {
 
 
         button_reg.setOnAction(event -> {
-            Runnable runnable = new RegisterForm();
-            runnable.run();
+            // RegisterForm runnable = new RegisterForm();
+            RegisterForm.run();
         });
 
         button_aoth.setOnAction(event -> {
-            Runnable runnable = new AuthorationForm();
-            runnable.run();
+            //  Runnable runnable = new AuthorationForm();
+            AuthorationForm.run();
         });
 
         button_kek.setOnAction(event -> {

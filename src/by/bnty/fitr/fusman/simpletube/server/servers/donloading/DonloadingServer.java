@@ -28,7 +28,7 @@ public class DonloadingServer extends Thread implements Server {
             // int numFiles = filenames.length;
             outD.writeInt(1);
             //for (String filename : filenames) {
-            File f = new File("F://serverstorage//kekeke.mp4");
+            File f = new File("F://serverstorage//12.mp4");
 
             outD.writeLong(f.length());//отсылаем размер файла
             outD.writeUTF(f.getName());//отсылаем имя файла
@@ -46,6 +46,7 @@ public class DonloadingServer extends Thread implements Server {
 
             outD.flush();
             in.close();
+            socket.close();
             // }
         } catch (Exception e) {
             System.err.println(e);

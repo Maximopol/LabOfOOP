@@ -7,4 +7,5 @@ public class Command {
     public static String WALKING = "walking";
     public static String SEARCHING = "search";
     public static String DONWLOAIDING = "skachat";
+    public static String LOADING = "load";
 }

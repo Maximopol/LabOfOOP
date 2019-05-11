@@ -5,13 +5,16 @@ import java.util.Objects;
 
 public class Video {
     private String name;
+    private String path;
     private Date data;
     private int countViews;
     private int countLikes;
     private int countDizLikes;
 
+
     public Video() {
         name = "";
+        path = "";
         data = new Date();
         countViews = 0;
         countLikes = 0;
@@ -26,6 +29,7 @@ public class Video {
 
     public Video(Video video) {
         name = video.name;
+        path = video.path;
         data = video.data;
         countViews = video.countViews;
         countLikes = video.countLikes;
@@ -41,12 +45,13 @@ public class Video {
                 getCountLikes() == video.getCountLikes() &&
                 getCountDizLikes() == video.getCountDizLikes() &&
                 Objects.equals(getName(), video.getName()) &&
+                Objects.equals(getPath(), video.getPath()) &&
                 Objects.equals(getData(), video.getData());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getData(), getCountViews(), getCountLikes(), getCountDizLikes());
+        return Objects.hash(getName(), getPath(), getData(), getCountViews(), getCountLikes(), getCountDizLikes());
     }
 
     public String getName() {
@@ -87,6 +92,14 @@ public class Video {
 
     public void setCountDizLikes(int countDizLikes) {
         this.countDizLikes = countDizLikes;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public String toString() {

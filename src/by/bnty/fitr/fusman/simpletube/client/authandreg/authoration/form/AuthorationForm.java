@@ -1,6 +1,5 @@
 package by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form;
 
-import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 
 import javax.swing.*;
@@ -8,11 +7,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class AuthorationForm extends JDialog implements Runnable {
+public class AuthorationForm extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -52,6 +52,17 @@ public class AuthorationForm extends JDialog implements Runnable {
         System.exit(0);
     }
 
+    public static void run() {
+        AuthorationForm dialog = new AuthorationForm();
+        dialog.pack();
+        dialog.setVisible(true);
+    }
+
+    private void onCancel() {
+        // add your code here if necessary
+        dispose();
+    }
+
     private void onOK() {
 
         try {
@@ -73,22 +84,10 @@ public class AuthorationForm extends JDialog implements Runnable {
             }
             out.close();
             bufferedReader.close();
+        } catch (IOException e) {
+            label3.setText("Server not");
         } catch (Exception e) {
             label3.setText("Error");
         }
-
-//        // add your code here
-//        dispose();
-    }
-
-    private void onCancel() {
-        // add your code here if necessary
-        dispose();
-    }
-
-    public void run() {
-        AuthorationForm dialog = new AuthorationForm();
-        dialog.pack();
-        dialog.setVisible(true);
     }
 }

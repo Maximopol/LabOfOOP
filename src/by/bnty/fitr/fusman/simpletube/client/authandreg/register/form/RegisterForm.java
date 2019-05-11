@@ -1,6 +1,5 @@
 package by.bnty.fitr.fusman.simpletube.client.authandreg.register.form;
 
-import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 
 import javax.swing.*;
@@ -12,7 +11,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class RegisterForm extends JDialog implements Runnable {
+public class RegisterForm extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
@@ -88,7 +87,7 @@ public class RegisterForm extends JDialog implements Runnable {
         dispose();
     }
 
-    public void run() {
+    public static void run() {
         RegisterForm dialog = new RegisterForm();
         dialog.pack();
         dialog.setVisible(true);
