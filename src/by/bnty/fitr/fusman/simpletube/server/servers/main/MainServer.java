@@ -1,8 +1,8 @@
-package by.bnty.fitr.fusman.simpletube.server.servers;
+package by.bnty.fitr.fusman.simpletube.server.servers.main;
 
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.CrearerMiniServer;
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Creator;
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.CrearerMiniServer;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.Creator;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
 import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
@@ -15,7 +15,6 @@ public class MainServer {
     private static final int DEFAULT_PORT = 65432;
     private static final Logger log = Logger.getLogger(MainServer.class);
     private static MainServer mainServer;
-
     public static MainServer getMainServer() {
         return mainServer == null ? mainServer = new MainServer() : mainServer;
     }

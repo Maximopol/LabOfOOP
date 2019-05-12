@@ -1,8 +1,9 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.authorization;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.registr.Register;
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
 import by.bnty.fitr.fusman.simpletube.server.workersql.WorkerSQL;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,48 +11,48 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class AuthorizationServer extends Thread implements Server {
+    private Logger log;
     private Socket socket;
     private BufferedReader bufferedReader;
 
     public AuthorizationServer(Socket socket, BufferedReader bufferedReader) {
         this.socket = socket;
         this.bufferedReader = bufferedReader;
+        log = Logger.getLogger(AuthorizationServer.class);
     }
 
     public void run() {
         try {
-            // DataInputStream din = new DataInputStream(socket.getInputStream());
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             String email = bufferedReader.readLine();
             String pas = bufferedReader.readLine();
 
-            System.out.println(email);
-            System.out.println(pas);
+            log.info("Email:" + email);
+
 
             String str = "false";
 
             if (Register.isCheckedTrueInputEmail(email)) {
-                System.out.println("вызов рега");
+                log.info("Call WorkerSQL");
                 String str2 = new WorkerSQL().singIn(email, pas);
                 if (!str2.endsWith("" + false)) {
                     str = str2;
-                    //   str2.replace(str + "\n", "");
                     System.out.println(str2);
-                    //out.print("true");
                 }
+                log.warn("not success");
             } else {
-                System.out.println("неправильаня почта");
-                str = "incorr email";
+                log.warn("Incorrect email");
+                str = "incor email";
             }
-
+            log.info("Total point:" + str);
             out.print(str);
-            // din.close();
             out.close();
             socket.close();
+            log.info("Done!");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e);
         }
     }
 }

@@ -1,42 +1,41 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.donloading;
 
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
+import org.apache.log4j.Logger;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.net.Socket;
 
 public class DonloadingServer extends Thread implements Server {
+    private Logger log;
     private Socket socket;
+    private BufferedReader bufferedReader;
 
-    private ObjectOutputStream out;
-    // private ObjectOutputStream printWriter;
-
-    // private BufferedOutputStream printWriter;
-    private OutputStream os;
-
-    public DonloadingServer(Socket socket) {
+    public DonloadingServer(Socket socket, BufferedReader bufferedReader) {
         this.socket = socket;
-
+        this.bufferedReader = bufferedReader;
+        log = Logger.getLogger(DonloadingServer.class);
     }
 
     public void run() {
         try {
             DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
-            // String xsdPath = "F://serverstorage//";
-            //String []filenames = new File(xsdPath).list();
-            // assert filenames != null;
-            // int numFiles = filenames.length;
-            outD.writeInt(1);
-            //for (String filename : filenames) {
-            File f = new File("F://serverstorage//12.mp4");
 
-            outD.writeLong(f.length());//отсылаем размер файла
-            outD.writeUTF(f.getName());//отсылаем имя файла
+            String path = "F://serverstorage//654.mp4";// bufferedReader.readLine();
+            log.info("File path:" + path);
 
-            System.out.println(f.length());
-            System.out.println(f.getName());
+            File f = new File(path);
+
+            outD.writeLong(f.length());
+            outD.writeUTF(f.getName());
+
+            log.info("File length:" + f.length() + " name:" + f.getName());
 
             FileInputStream in = new FileInputStream(f);
+
             byte[] buffer = new byte[64 * 1024];
             int count;
 
@@ -45,11 +44,14 @@ public class DonloadingServer extends Thread implements Server {
             }
 
             outD.flush();
+            outD.close();
             in.close();
             socket.close();
-            // }
+
+            log.info("Done!");
+
         } catch (Exception e) {
-            System.err.println(e);
+            log.error(e);
         }
     }
 }

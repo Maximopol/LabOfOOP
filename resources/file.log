@@ -621,3 +621,64 @@
 2019-05-12 14:30:40 INFO  Main:9 - Запуск
 2019-05-12 14:30:40 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
 2019-05-12 14:30:40 INFO  MainServer:34 - waiting
+2019-05-12 16:54:22 INFO  Main:9 - Запуск
+2019-05-12 16:54:23 INFO  MainForm:42 - Запуск приложение
+2019-05-12 16:55:27 INFO  Main:9 - Запуск
+2019-05-12 16:55:27 INFO  MainServer:30 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 16:55:27 INFO  MainServer:33 - waiting
+2019-05-12 16:55:36 INFO  MainForm:129 - Start RegisterForm
+2019-05-12 16:55:59 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=55928,localport=65432]
+2019-05-12 16:55:59 INFO  MainServer:39 - Reg
+2019-05-12 16:56:00 INFO  RegistrationServer:34 - Email: popka@gmail.com Nickname: popochka
+2019-05-12 16:56:00 INFO  RegistrationServer:39 - Call WorkerSQL
+2019-05-12 16:56:01 WARN  RegistrationServer:43 - Incorrect pass or not register your account
+2019-05-12 16:56:01 INFO  RegistrationServer:48 - Value from WorkerSQL:false
+2019-05-12 16:56:01 INFO  MainServer:33 - waiting
+2019-05-12 16:59:42 INFO  Main:9 - Запуск
+2019-05-12 16:59:42 INFO  MainServer:30 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 16:59:42 INFO  MainServer:33 - waiting
+2019-05-12 16:59:53 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=56024,localport=65432]
+2019-05-12 16:59:53 INFO  MainServer:39 - Reg
+2019-05-12 16:59:53 INFO  RegistrationServer:34 - Email: popkaa@gmail.com Nickname: popochkah
+2019-05-12 16:59:53 INFO  RegistrationServer:39 - Call WorkerSQL
+2019-05-12 16:59:55 WARN  RegistrationServer:43 - Incorrect pass or not register your account
+2019-05-12 16:59:55 INFO  RegistrationServer:48 - Value from WorkerSQL:true
+2019-05-12 16:59:55 INFO  MainServer:33 - waiting
+2019-05-12 17:00:48 INFO  MainForm:135 - Start AuthorationForm
+2019-05-12 17:01:11 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=56050,localport=65432]
+2019-05-12 17:01:11 INFO  MainServer:39 - Auth
+2019-05-12 17:01:11 INFO  AuthorizationServer:31 - Email:popkaa@gmail.com
+2019-05-12 17:01:11 INFO  AuthorizationServer:37 - Call WorkerSQL
+2019-05-12 17:01:11 WARN  AuthorizationServer:43 - not success
+2019-05-12 17:01:11 INFO  AuthorizationServer:48 - Total point:true
+popochkah
+2019-05-12 17:01:11 INFO  MainServer:33 - waiting
+2019-05-12 17:01:28 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=56058,localport=65432]
+2019-05-12 17:01:28 INFO  MainServer:39 - skachat
+2019-05-12 17:01:28 ERROR DonloadingServer:50 - java.io.FileNotFoundException: F:\serverstorage\12.mp4 (The system cannot find the file specified)
+2019-05-12 17:01:28 INFO  MainServer:33 - waiting
+2019-05-12 17:02:04 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=56071,localport=65432]
+2019-05-12 17:02:04 INFO  MainServer:39 - skachat
+2019-05-12 17:02:04 INFO  MainServer:33 - waiting
+2019-05-12 17:18:14 INFO  Main:9 - Запуск
+2019-05-12 17:18:14 INFO  MainServer:30 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 17:18:14 INFO  MainServer:33 - waiting
+2019-05-12 17:18:21 INFO  Main:9 - Запуск
+2019-05-12 17:18:21 INFO  MainForm:42 - Запуск приложение
+2019-05-12 17:19:34 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=56219,localport=65432]
+2019-05-12 17:19:34 INFO  MainServer:39 - skachat
+2019-05-12 17:19:34 INFO  DonloadingServer:28 - File path:F://serverstorage//12.mp4
+2019-05-12 17:19:34 INFO  DonloadingServer:37 - File length:0 name:12.mp4
+2019-05-12 17:19:34 INFO  DonloadingServer:53 - Done!
+2019-05-12 17:19:34 INFO  MainServer:33 - waiting
+2019-05-12 17:21:59 INFO  Main:9 - Запуск
+2019-05-12 17:21:59 INFO  MainServer:30 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 17:21:59 INFO  MainServer:33 - waiting
+2019-05-12 17:22:04 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=56255,localport=65432]
+2019-05-12 17:22:04 INFO  MainServer:39 - skachat
+2019-05-12 17:22:04 INFO  DonloadingServer:28 - File path:F://serverstorage//654.mp4
+2019-05-12 17:22:04 INFO  DonloadingServer:37 - File length:9399863 name:654.mp4
+2019-05-12 17:22:05 INFO  DonloadingServer:53 - Done!
+2019-05-12 17:22:05 INFO  MainServer:33 - waiting
+2019-05-12 17:22:05 INFO  MainForm:48 - Open to watch:file:/F://clientstorage//654.mp4
+2019-05-12 17:22:27 INFO  Main:11 - Конец работы

@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.server.servers.createrserver;
+package by.bnty.fitr.fusman.simpletube.server.createrserver;
 
 import java.io.BufferedReader;
 import java.net.Socket;

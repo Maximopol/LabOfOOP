@@ -1,16 +1,20 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.loading;
 
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
+import by.bnty.fitr.fusman.simpletube.common.Converter;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
 import by.bnty.fitr.fusman.simpletube.server.workersql.WorkerSQL;
+import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.net.Socket;
 
 public class LoadingServer extends Thread implements Server {
-    BufferedReader bufferedReader;
+    private Logger log;
+    private BufferedReader bufferedReader;
     private Socket socket;
 
     public LoadingServer(Socket socket, BufferedReader bufferedReader) {
+        log = Logger.getLogger(LoadingServer.class);
         this.socket = socket;
         this.bufferedReader = bufferedReader;
     }
@@ -18,49 +22,31 @@ public class LoadingServer extends Thread implements Server {
 
     public void run() {
         try {
-            System.out.println("Подождите...");
-
+            log.info("Starts up");
             String s1 = bufferedReader.readLine();
             String s2 = bufferedReader.readLine();
-
             String p = bufferedReader.readLine();
             String name = bufferedReader.readLine();
             String playlist = bufferedReader.readLine();
             String intcount = bufferedReader.readLine();
+            String unicCode = Converter.convertToUnique(s1, s2);
 
-            System.out.println(s1);
-            System.out.println(s2);
-            System.out.println(p);
-            System.out.println(name);
-            System.out.println(playlist);
-            System.out.println(intcount);
-            //                path+"\n"+
-//                        textField1.getText()+"\n"+
-//                        textField2.getText());
-            String xsdFolder = "F://serverstorage//" + s1 + Math.abs(s2.hashCode()) + "//";
+            log.info("Email: " + s2 + " nickname: " + s1);
+            log.info("File name: " + name + " path: " + p + " playlist: " + playlist + " size: " + intcount);
+            String xsdFolder = "F://serverstorage//" + unicCode + "//";
+            log.info("Folder:" + xsdFolder);
 
             File dir = new File(xsdFolder);
             if (!dir.exists()) {
-                dir.mkdirs();
+                log.info("This dir:" + dir.mkdirs());
             }
-
-
-            //new File(xsdFolder).mkdir();
 
             DataInputStream din = new DataInputStream(socket.getInputStream());
 
-
-            System.out.println("====");
-
-            //for (int j = 0; j < filesCount; j++) {
-
             long fileSize = Long.parseLong(intcount);
-            // String fileName = din.readUTF();
-            System.out.println(name);
+
             byte[] buffer = new byte[64 * 1024];
             FileOutputStream outF = new FileOutputStream(xsdFolder + p);
-
-            System.out.println(xsdFolder + p);
 
             long left = fileSize;
             do {
@@ -79,22 +65,15 @@ public class LoadingServer extends Thread implements Server {
             outF.flush();
             outF.close();
 
+            new WorkerSQL().addVideo(unicCode.toUpperCase(), playlist, name, p);
 
-            // }
-
-            System.out.println("Готово!");
-
-            String sss = (s1 + Math.abs(s2.hashCode())).toUpperCase();
-            System.out.println(sss);
-            new WorkerSQL().addVideo(sss, playlist, name, p);
-            // out.close();
             din.close();
             socket.close();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (RuntimeException r) {
-            r.printStackTrace();
+            log.info("Done!");
+
+        } catch (IOException | RuntimeException e) {
+            log.error(e);
         }
     }
 }

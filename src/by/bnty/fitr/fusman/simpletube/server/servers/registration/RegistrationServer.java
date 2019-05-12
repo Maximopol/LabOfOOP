@@ -1,8 +1,9 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.registration;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.registr.Register;
-import by.bnty.fitr.fusman.simpletube.server.servers.createrserver.Server;
+import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
 import by.bnty.fitr.fusman.simpletube.server.workersql.WorkerSQL;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,20 +11,19 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class RegistrationServer extends Thread implements Server {
+    private Logger log;
     private Socket socket;
     private BufferedReader bufferedReader;
 
     public RegistrationServer(Socket socket, BufferedReader bufferedReader) {
+        log = Logger.getLogger(RegistrationServer.class);
         this.socket = socket;
         this.bufferedReader = bufferedReader;
     }
 
     public void run() {
         try {
-            // DataInputStream din = new DataInputStream(socket.getInputStream());
-
-            PrintWriter out = new
-                    PrintWriter(socket.getOutputStream(), true);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             WorkerSQL workerSQL = new WorkerSQL();
 
@@ -31,31 +31,29 @@ public class RegistrationServer extends Thread implements Server {
             String pas = bufferedReader.readLine();
             String nick = bufferedReader.readLine();
 
-            System.out.println(email);
-            System.out.println(pas);
-            System.out.println(nick);
+            log.info("Email: " + email + " Nickname: " + nick);
 
             String str = "false";
 
             if (Register.isCheckedTrueInputEmail(email)) {
-                System.out.println("вызов рега");
-
+                log.info("Call WorkerSQL");
                 if (workerSQL.reg(email, pas, nick)) {
                     str = "true";
-                    //out.print("true");
                 }
+                log.warn("Incorrect pass or not register your account");
             } else {
-                System.out.println("неправильаня почта");
+                log.warn("Incorrect email");
                 str = "incorr email";
             }
+            log.info("Value from WorkerSQL:" + str);
 
             out.print(str);
-            // din.close();
             out.close();
             socket.close();
+            log.info("Done!");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e);
         }
     }
 }

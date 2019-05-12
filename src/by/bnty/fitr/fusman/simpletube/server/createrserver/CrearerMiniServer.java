@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.server.servers.createrserver;
+package by.bnty.fitr.fusman.simpletube.server.createrserver;
 
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 import by.bnty.fitr.fusman.simpletube.server.servers.authorization.AuthorizationServer;
@@ -14,12 +14,10 @@ public class CrearerMiniServer implements Creator {
     public Server createServer(String str, Socket socket, BufferedReader bufferedReader) {
         Server server = null;
 
-        System.out.println(str);
-
         if (str.equals(Command.TEST_CONNECT)) {
             server = new TestServer(socket);
         } else if (str.equals(Command.DONWLOAIDING)) {
-            server = new DonloadingServer(socket);
+            server = new DonloadingServer(socket, bufferedReader);
         } else if (str.equals(Command.REGISTRATION)) {
             server = new RegistrationServer(socket, bufferedReader);
         } else if (str.equals(Command.AUTHORIZATION)) {

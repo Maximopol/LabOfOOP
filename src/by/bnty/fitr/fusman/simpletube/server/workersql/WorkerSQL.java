@@ -1,5 +1,6 @@
 package by.bnty.fitr.fusman.simpletube.server.workersql;
 
+import by.bnty.fitr.fusman.simpletube.common.Converter;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -51,7 +52,7 @@ public class WorkerSQL {
             if (flag) {
                 statement.executeUpdate("INSERT INTO REGTABLE3 VALUES ('" + mail + "','" + pas + "','" + nickname + "');");
                 System.out.println("add");
-                String string = createPlaylis + (nickname + mail.hashCode()).toUpperCase() + suffix;
+                String string = createPlaylis + Converter.convertToUnique(nickname, mail).toUpperCase() + suffix;
                 System.out.println(string);
                 statement.execute(string);
                 System.out.println("сreated");
@@ -126,11 +127,13 @@ public class WorkerSQL {
         return flag;
     }
 
+
     private boolean createTable(String str) {
         return false;
     }
 
-    public boolean delete() {
+    private boolean delete() {
         return false;
     }
+
 }

@@ -224,10 +224,10 @@ public class MainForm extends Application {
                 String xsdFolder = "F://clientstorage//";
                 DataInputStream din = new DataInputStream(s.getInputStream());
 
-                int filesCount = din.readInt();
-                System.out.println(filesCount);
+                //int filesCount = din.readInt();
+                //System.out.println(filesCount);
 
-                for (int j = 0; j < filesCount; j++) {
+                //for (int j = 0; j < filesCount; j++) {
 
                     long fileSize = din.readLong();
                     String fileName = din.readUTF();
@@ -254,7 +254,6 @@ public class MainForm extends Application {
 
                     playVideo(mediaView, "file:/" + xsdFolder + fileName);
 
-                }
 
                 System.out.println("Готово!");
 
