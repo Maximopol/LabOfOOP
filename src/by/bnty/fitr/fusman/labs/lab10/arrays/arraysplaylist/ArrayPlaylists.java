@@ -6,11 +6,9 @@ import java.util.ArrayList;
 
 public class ArrayPlaylists extends Playlists {
 
-
     public ArrayPlaylists() {
         playlist = new ArrayList<>();
     }
-
 
     public ArrayPlaylists(String name) {
         this();

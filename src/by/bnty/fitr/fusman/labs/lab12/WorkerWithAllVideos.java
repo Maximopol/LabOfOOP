@@ -12,7 +12,6 @@ public class WorkerWithAllVideos {
             if (WorkerWithArrayVideo.searchVideo(playlists.get(i), name) != null) {
                 return WorkerWithArrayVideo.searchVideo(playlists.get(i), name);
             }
-
         }
         return null;
     }

@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.client;
+package by.bnty.fitr.fusman.simpletube.client.loadervideo;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;

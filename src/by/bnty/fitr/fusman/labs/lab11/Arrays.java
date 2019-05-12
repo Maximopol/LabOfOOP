@@ -6,7 +6,6 @@ public class Arrays {
 
     public Arrays() {
         array = new int[DEFAULT_SIZE];
-
     }
 
     public Arrays(int[] array) {

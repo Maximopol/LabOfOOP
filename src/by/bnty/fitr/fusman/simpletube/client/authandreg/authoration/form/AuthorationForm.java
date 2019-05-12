@@ -1,5 +1,6 @@
 package by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form;
 
+import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 
 import javax.swing.*;
@@ -22,8 +23,10 @@ public class AuthorationForm extends JDialog {
     private JLabel label2;
     private JButton fogotButton;
     private JLabel label3;
+    private Account account;
 
     public AuthorationForm() {
+        account = null;
         setTitle("Auth to SimpleTube");
         setContentPane(contentPane);
         setModal(true);
@@ -33,7 +36,6 @@ public class AuthorationForm extends JDialog {
 
         buttonCancel.addActionListener(e -> onCancel());
 
-        // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -41,7 +43,6 @@ public class AuthorationForm extends JDialog {
             }
         });
 
-        // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
@@ -52,10 +53,11 @@ public class AuthorationForm extends JDialog {
         System.exit(0);
     }
 
-    public static void run() {
+    public static Account run() {
         AuthorationForm dialog = new AuthorationForm();
         dialog.pack();
         dialog.setVisible(true);
+        return dialog.account;
     }
 
     private void onCancel() {
@@ -78,6 +80,9 @@ public class AuthorationForm extends JDialog {
             if (bufferedReader.readLine().equals("true")) {
                 System.out.println("Успех");
                 label3.setText("Успех");
+                String nic = bufferedReader.readLine();
+                System.out.println(nic);
+                account = new Account(nic, textField1.getText());
 
             } else {
                 label3.setText("Отказ");

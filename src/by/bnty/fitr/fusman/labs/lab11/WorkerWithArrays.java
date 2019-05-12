@@ -13,7 +13,6 @@ public class WorkerWithArrays {
                 count++;
             }
         }
-
         return count;
     }
 

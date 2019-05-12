@@ -8,7 +8,6 @@ import java.util.List;
 public abstract class Storage<T> implements BaseStorage<T> {
     protected String name;
 
-
     protected List<T> playlist;
 
     public T get(int i) {

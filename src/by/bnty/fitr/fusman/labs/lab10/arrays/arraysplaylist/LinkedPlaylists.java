@@ -6,11 +6,9 @@ import java.util.LinkedList;
 
 public class LinkedPlaylists extends Playlists {
 
-
     public LinkedPlaylists() {
         playlist = new LinkedList<>();
     }
-
 
     public LinkedPlaylists(String name) {
         this();
@@ -20,6 +18,5 @@ public class LinkedPlaylists extends Playlists {
     public LinkedPlaylists(LinkedPlaylists arrayPlaylist) {
         this.playlist = arrayPlaylist.playlist;
         name = arrayPlaylist.name;
-
     }
 }

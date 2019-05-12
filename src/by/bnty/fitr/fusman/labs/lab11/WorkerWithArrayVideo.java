@@ -7,7 +7,6 @@ import by.bnty.fitr.fusman.labs.lab10.video.Video;
 public class WorkerWithArrayVideo {
     public static Video searchVideo(Playlist playlist, String name) {
         return playlist.get(name);
-
     }
 
     public static int countLiked(Playlist playlist) {

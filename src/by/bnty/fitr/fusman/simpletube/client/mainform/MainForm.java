@@ -1,11 +1,11 @@
 package by.bnty.fitr.fusman.simpletube.client.mainform;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
-import by.bnty.fitr.fusman.simpletube.client.LoaderVideo;
 import by.bnty.fitr.fusman.simpletube.client.accountform.AccountForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
+import by.bnty.fitr.fusman.simpletube.client.loadervideo.LoaderVideo;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -28,6 +28,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+
+import static Printer.Printer.println;
 
 public class MainForm extends Application {
     private static final Logger log = Logger.getLogger(MainForm.class);
@@ -132,7 +134,8 @@ public class MainForm extends Application {
         button_aoth.setOnAction(event -> {
             log.info("Start AuthorationForm");
 //            AuthorationForm runnable = new AuthorationForm();
-            AuthorationForm.run();
+            account = AuthorationForm.run();
+            println(account);
             //   account = new Account("maks","maximopolnate@gmail.com");
         });
 

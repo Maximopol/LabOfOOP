@@ -9,10 +9,7 @@ public class ArrayVideo extends Playlist {
 
     public ArrayVideo() {
         playlist = new ArrayList<>(10);
-
-
     }
-
 
     public ArrayVideo(String name) {
         this();
@@ -24,7 +21,6 @@ public class ArrayVideo extends Playlist {
         name = arrayVideo.name;
 
     }
-
 
     public String toString() {
         return "ArrayVideo{" +

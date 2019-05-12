@@ -66,8 +66,9 @@ public class WorkerSQL {
         return false;
     }
 
-    public boolean singIn(String mail, String pas) {
-        boolean flag = false;
+    public String singIn(String mail, String pas) {
+        String flag = "" + false;
+        // boolean flag = false;
         try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
 
             ResultSet rs = statement.executeQuery("SELECT * FROM REGTABLE3");
@@ -76,6 +77,7 @@ public class WorkerSQL {
             while (rs.next()) {
                 String userid = rs.getString("email");
                 String username = rs.getString("pass");
+                String nick = rs.getString("nickname");
                 // String useride = rs.getString("nickname");
 
                 System.out.println("email : " + userid);
@@ -84,7 +86,8 @@ public class WorkerSQL {
 
                 if (mail.equals(userid)) {
                     if (pas.equals(username)) {
-                        flag = true;
+                        flag = "" + true + "\n" + nick;
+                        //  flag = true;
                     }
                     break;
                 }
@@ -93,7 +96,7 @@ public class WorkerSQL {
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            flag = false;
+            flag = "" + false;
         }
         return flag;
     }

@@ -10,8 +10,6 @@ public class HashVideo extends Playlist {
 
     public HashVideo() {
         playlist = new HashSet<>();
-
-
     }
 
     public HashVideo(String name) {

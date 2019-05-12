@@ -12,7 +12,6 @@ import by.bnty.fitr.fusman.tasks.task4.Matrix;
 public class WorkerWithMatrix {
 
     public static Matrix transpose(Matrix matrix) {
-
         Matrix matrix1 = new Matrix(matrix.getCountColumns(), matrix.getCountRows());
 
         for (int i = 0; i < matrix1.getCountRows(); i++) {
@@ -21,7 +20,6 @@ public class WorkerWithMatrix {
             }
         }
         return matrix1;
-
     }
 
     public static Matrix multiply(Matrix matrix1, Matrix matrix2) {
@@ -31,9 +29,7 @@ public class WorkerWithMatrix {
             int max = WorkerWithArrays.searchMaxElement(matrix2, i);
             for (int j = 0; j < matrix.getCountColumns(); j++) {
                 matrix.setElement(i, j, max * matrix1.getElement(i, j));
-
             }
-
         }
         return matrix;
     }

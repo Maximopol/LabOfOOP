@@ -580,3 +580,44 @@
 2019-05-12 00:52:34 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=50108,localport=65432]
 2019-05-12 00:52:34 INFO  MainServer:40 - load
 2019-05-12 00:52:36 INFO  MainServer:34 - waiting
+2019-05-12 12:18:04 INFO  Main:9 - Запуск
+2019-05-12 12:18:05 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 12:18:05 INFO  MainServer:34 - waiting
+2019-05-12 13:56:26 INFO  Main:9 - Запуск
+2019-05-12 13:56:26 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 13:56:26 INFO  MainServer:34 - waiting
+2019-05-12 13:57:06 INFO  Main:9 - Запуск
+2019-05-12 13:57:06 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 13:57:06 INFO  MainServer:34 - waiting
+2019-05-12 13:57:27 INFO  Main:9 - Запуск
+2019-05-12 13:57:27 INFO  MainForm:40 - Запуск приложение
+2019-05-12 13:57:40 INFO  MainForm:133 - Start AuthorationForm
+2019-05-12 13:57:53 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=54045,localport=65432]
+2019-05-12 13:57:53 INFO  MainServer:40 - Auth
+2019-05-12 13:57:55 INFO  MainServer:34 - waiting
+2019-05-12 13:58:46 INFO  Main:9 - Запуск
+2019-05-12 13:58:46 INFO  MainForm:40 - Запуск приложение
+2019-05-12 13:58:51 INFO  MainForm:133 - Start AuthorationForm
+2019-05-12 13:59:03 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=54064,localport=65432]
+2019-05-12 13:59:03 INFO  MainServer:40 - Auth
+2019-05-12 13:59:04 INFO  MainServer:34 - waiting
+2019-05-12 14:01:54 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=54147,localport=65432]
+2019-05-12 14:01:54 INFO  MainServer:40 - Auth
+2019-05-12 14:01:56 INFO  MainServer:34 - waiting
+2019-05-12 14:07:20 INFO  Main:9 - Запуск
+2019-05-12 14:07:20 INFO  MainForm:42 - Запуск приложение
+2019-05-12 14:07:35 INFO  MainForm:135 - Start AuthorationForm
+2019-05-12 14:08:18 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=54230,localport=65432]
+2019-05-12 14:08:18 INFO  MainServer:40 - Auth
+2019-05-12 14:08:20 INFO  MainServer:34 - waiting
+2019-05-12 14:09:54 INFO  Main:9 - Запуск
+2019-05-12 14:09:54 INFO  MainForm:42 - Запуск приложение
+2019-05-12 14:10:14 INFO  MainForm:135 - Start AuthorationForm
+2019-05-12 14:10:28 INFO  MainServer:36 - New client Socket[addr=/127.0.0.1,port=54252,localport=65432]
+2019-05-12 14:10:29 INFO  MainServer:40 - Auth
+2019-05-12 14:10:30 INFO  MainServer:34 - waiting
+2019-05-12 14:10:42 INFO  MainForm:135 - Start AuthorationForm
+2019-05-12 14:12:07 INFO  Main:11 - Конец работы
+2019-05-12 14:30:40 INFO  Main:9 - Запуск
+2019-05-12 14:30:40 INFO  MainServer:31 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-12 14:30:40 INFO  MainServer:34 - waiting

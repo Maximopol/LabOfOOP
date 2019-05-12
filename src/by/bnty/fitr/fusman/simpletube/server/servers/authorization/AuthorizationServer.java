@@ -33,9 +33,11 @@ public class AuthorizationServer extends Thread implements Server {
 
             if (Register.isCheckedTrueInputEmail(email)) {
                 System.out.println("вызов рега");
-
-                if (new WorkerSQL().singIn(email, pas)) {
-                    str = "true";
+                String str2 = new WorkerSQL().singIn(email, pas);
+                if (!str2.endsWith("" + false)) {
+                    str = str2;
+                    //   str2.replace(str + "\n", "");
+                    System.out.println(str2);
                     //out.print("true");
                 }
             } else {
