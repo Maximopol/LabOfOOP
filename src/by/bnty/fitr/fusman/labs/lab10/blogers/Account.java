@@ -67,6 +67,10 @@ public class Account {
         return playlists;
     }
 
+    public void setPlaylists(Playlists playlists) {
+        this.playlists = playlists;
+    }
+
     public AccountStatus getStatus() {
         return status;
     }

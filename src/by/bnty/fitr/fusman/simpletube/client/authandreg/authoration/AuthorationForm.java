@@ -1,14 +1,14 @@
-package by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form;
+package by.bnty.fitr.fusman.simpletube.client.authandreg.authoration;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -19,14 +19,14 @@ public class AuthorationForm extends JDialog {
     private JButton buttonCancel;
     private JTextField textField1;
     private JPasswordField passwordField1;
-    private JLabel label1;
-    private JLabel label2;
-    private JButton fogotButton;
     private JLabel label3;
+
     private Account account;
+    private Logger logger;
 
     public AuthorationForm() {
-        account = null;
+        logger = Logger.getLogger(AuthorationForm.class);
+
         setTitle("Auth to SimpleTube");
         setContentPane(contentPane);
         setModal(true);
@@ -61,38 +61,38 @@ public class AuthorationForm extends JDialog {
     }
 
     private void onCancel() {
-        // add your code here if necessary
         dispose();
     }
 
     private void onOK() {
-
         try {
             Socket socket = new Socket("localhost", 65432);
-            PrintWriter out = new
-                    PrintWriter(socket.getOutputStream(), true);
-
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             out.println(Command.AUTHORIZATION + "\n" + textField1.getText() + "\n" + passwordField1.getText());
 
-            System.out.println("посылка");
+            logger.info("Sent");
+
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             if (bufferedReader.readLine().equals("true")) {
-                System.out.println("Успех");
+                logger.info("Success");
                 label3.setText("Успех");
                 String nic = bufferedReader.readLine();
-                System.out.println(nic);
                 account = new Account(nic, textField1.getText());
+                logger.info(account);
+                account.setPlaylists(CreatePlaulistFromServ.create(bufferedReader));
+                logger.info(account);
 
             } else {
                 label3.setText("Отказ");
+                logger.warn("Fail");
             }
             out.close();
             bufferedReader.close();
-        } catch (IOException e) {
-            label3.setText("Server not");
+            socket.close();
         } catch (Exception e) {
             label3.setText("Error");
+            logger.error(e);
         }
     }
 }

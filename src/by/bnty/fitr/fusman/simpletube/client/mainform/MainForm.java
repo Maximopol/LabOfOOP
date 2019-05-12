@@ -2,9 +2,8 @@ package by.bnty.fitr.fusman.simpletube.client.mainform;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.simpletube.client.accountform.AccountForm;
-import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
+import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
-import by.bnty.fitr.fusman.simpletube.client.authandreg.runable.Runnable;
 import by.bnty.fitr.fusman.simpletube.client.loadervideo.LoaderVideo;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 import javafx.application.Application;
@@ -29,8 +28,6 @@ import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-import static Printer.Printer.println;
-
 public class MainForm extends Application {
     private static final Logger log = Logger.getLogger(MainForm.class);
     private static final int DEFAULT_HEIGHT = 600;
@@ -42,7 +39,6 @@ public class MainForm extends Application {
         log.info("Запуск приложение");
         Application.launch((String[]) null);
     }
-
 
     private void playVideo(MediaView mediaView, String url) {
         log.info("Open to watch:" + url);
@@ -75,6 +71,10 @@ public class MainForm extends Application {
         }
     }
 
+    private boolean updatePlaylist() {
+        return false;
+    }
+
     private void uiSetup(final Stage stage) {
 
         StackPane root = new StackPane();
@@ -88,11 +88,11 @@ public class MainForm extends Application {
         final Button pause_button = new Button("pause");
         final Button play_button = new Button("play");
         final Button stop_button = new Button("stop");
-        final Button button_reg = new Button("reg");
-        final Button button_aoth = new Button("sing in");
-        final Button button_kek = new Button("download");
-        final Button button_ac = new Button("Account");
-        final Button button_load = new Button("Load to serv");
+        final Button reg_button = new Button("reg");
+        final Button sign_button = new Button("sing in");
+        final Button download_button = new Button("download");
+        final Button about_account_button = new Button("Account");
+        final Button load_button = new Button("Load to serv");
 
 //        ComboBox<Playlists> cmb = new ComboBox<>();
 //        cmb.getItems().add(new Playlists(){});
@@ -112,8 +112,8 @@ public class MainForm extends Application {
         Insets buttonContainerPadding = new Insets(1, 1, 1, 1);
         buttonContainer.setPadding(buttonContainerPadding);
 
-        buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button, button_ac);
-        buttonContainer.getChildren().addAll(button_reg, button_aoth, button_kek, button_load);
+        buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button, about_account_button);
+        buttonContainer.getChildren().addAll(reg_button, sign_button, download_button, load_button);
 
 
         final FileChooser fileChooser = new FileChooser();
@@ -125,27 +125,28 @@ public class MainForm extends Application {
             writeKeyCode(key);
         });
 
-        button_reg.setOnAction(event -> {
+        reg_button.setOnAction(event -> {
             log.info("Start RegisterForm");
-//            RegisterForm runnable = new RegisterForm();
             RegisterForm.run();
         });
 
-        button_aoth.setOnAction(event -> {
+        sign_button.setOnAction(event -> {
             log.info("Start AuthorationForm");
-//            AuthorationForm runnable = new AuthorationForm();
             account = AuthorationForm.run();
-            println(account);
-            //   account = new Account("maks","maximopolnate@gmail.com");
+            //updatePlaylist();
+            log.info(account);
         });
 
-        button_ac.setOnAction(event -> {
-            Runnable runnable = new AccountForm();
-            runnable.run();
+        about_account_button.setOnAction(event -> {
+            if (account != null) {
+                AccountForm.run(account);
+            }
         });
 
-        button_load.setOnAction(event -> {
-            LoaderVideo.run(new Account("ppp", "pp@mail.com"));
+        load_button.setOnAction(event -> {
+            if (account != null) {
+                LoaderVideo.run(account);
+            }
 //            try {
 //                account = new Account("root", "root@gmail.com");
 //
@@ -210,57 +211,49 @@ public class MainForm extends Application {
 //            }
         });
 
-
-        button_kek.setOnAction(event -> {
+        download_button.setOnAction(event -> {
             try {
                 Socket s = new Socket("localhost", 65432);
 
-                System.out.println("Подождите...");
+                log.info("wait");
                 PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
                 out.println(Command.DONWLOAIDING);
 
-                System.out.println("послано");
+                log.info("sent");
                 String xsdFolder = "F://clientstorage//";
                 DataInputStream din = new DataInputStream(s.getInputStream());
 
-                //int filesCount = din.readInt();
-                //System.out.println(filesCount);
+                long fileSize = din.readLong();
+                String fileName = din.readUTF();
 
-                //for (int j = 0; j < filesCount; j++) {
+                log.info("File name:" + fileName + " size:" + fileSize);
 
-                    long fileSize = din.readLong();
-                    String fileName = din.readUTF();
-                    System.out.println(fileName);
-                    byte[] buffer = new byte[64 * 1024];
-                    FileOutputStream outF = new FileOutputStream(xsdFolder + fileName);
+                byte[] buffer = new byte[64 * 1024];
+                FileOutputStream outF = new FileOutputStream(xsdFolder + fileName);
 
-                    long left = fileSize;
-                    do {
-                        int nextPackSize = (int) Math.min(left, buffer.length);
-                        int count = din.read(buffer, 0, nextPackSize);
-                        if (count <= 0) {
-                            throw new RuntimeException("Что-то пошло не так!");
-                        }
+                long left = fileSize;
+                do {
+                    int nextPackSize = (int) Math.min(left, buffer.length);
+                    int count = din.read(buffer, 0, nextPackSize);
+                    if (count <= 0) {
+                        throw new RuntimeException("Что-то пошло не так!");
+                    }
 
-                        outF.write(buffer, 0, count);
+                    outF.write(buffer, 0, count);
 
-                        left -= count;
-                    } while (left != 0);
+                    left -= count;
+                } while (left != 0);
 
-                    outF.flush();
-                    outF.close();
-
-
-                    playVideo(mediaView, "file:/" + xsdFolder + fileName);
-
-
-                System.out.println("Готово!");
-
+                outF.flush();
+                outF.close();
                 out.close();
                 s.close();
+
+                log.info("Done!");
+                playVideo(mediaView, "file:/" + xsdFolder + fileName);
             } catch (Exception e) {
-                System.err.println(e.toString());
+                log.error(e);
             }
         });
 
@@ -272,7 +265,6 @@ public class MainForm extends Application {
                 if (player != null) {
                     player.stop();
                 }
-
                 //String filename = "file:///F:/serverstorage/kekeke.mp4";
                 //String filename = "http://techslides.com/demos/sample-videos/small.mp4";
                 playVideo(mediaView, file.toURI().toURL().toString());
@@ -294,14 +286,11 @@ public class MainForm extends Application {
             }
         });
 
-
-        pause_button.setOnAction(event ->
-                {
-                    if (player != null) {
-                        player.pause();
-                    }
-                }
-        );
+        pause_button.setOnAction(event -> {
+            if (player != null) {
+                player.pause();
+            }
+        });
 
         stop_button.setOnAction(event -> {
             if (player != null) {
@@ -311,19 +300,16 @@ public class MainForm extends Application {
 
         root.getChildren().addAll(mediaView, buttonContainer);
 
-        //  root.getChildren().remove(buttonContainer);
         String url = "file:/F:/4/VSwP4iYYJlY.png";
         root.setBackground(new Background(new BackgroundImage(new Image(url, DEFAULT_WIDTH, DEFAULT_HEIGHT, false, true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
                 BackgroundSize.DEFAULT)));
-
 
         stage.setMinHeight(DEFAULT_HEIGHT);
         stage.setMinWidth(DEFAULT_WIDTH);
         stage.setTitle("SimpleTube");
 
         stage.setScene(theScene);
-
     }
 
     @Override

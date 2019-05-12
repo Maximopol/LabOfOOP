@@ -1,6 +1,6 @@
 package by.bnty.fitr.fusman.simpletube.client.mainform;
 
-import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.form.AuthorationForm;
+import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
 import javafx.application.Application;
 import javafx.geometry.Insets;

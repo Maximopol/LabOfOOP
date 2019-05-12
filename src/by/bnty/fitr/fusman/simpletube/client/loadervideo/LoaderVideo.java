@@ -3,6 +3,7 @@ package by.bnty.fitr.fusman.simpletube.client.loadervideo;
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
 import javafx.stage.FileChooser;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
@@ -21,15 +22,15 @@ public class LoaderVideo extends JDialog {
     private JTextField textField1;
     private JTextField textField2;
     private JLabel path;
-    private JLabel filename;
-    private JLabel playlist;
     private FileChooser fileChooser;
+    private Logger log;
 
     private Account account;
 
     private String fullpath;
 
     public LoaderVideo() {
+        log = Logger.getLogger(LoaderVideo.class);
         fileChooser = new FileChooser();
         setContentPane(contentPane);
         setModal(true);
@@ -44,12 +45,11 @@ public class LoaderVideo extends JDialog {
             jfc.setDialogTitle("Выбор файла");
             jfc.setBackground(Color.LIGHT_GRAY);
 
-
             if (jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = jfc.getSelectedFile();
                 path.setText(selectedFile.getName());
                 fullpath = selectedFile.getAbsolutePath();
-                // path.setText(selectedFile.getAbsolutePath());
+                log.info("Path" + fullpath);
             }
         });
 
@@ -59,7 +59,6 @@ public class LoaderVideo extends JDialog {
                 onCancel();
             }
         });
-
 
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
@@ -81,11 +80,10 @@ public class LoaderVideo extends JDialog {
 
     private void onOK() {
         try {
-
             Socket socket = new Socket("localhost", 65432);
-            PrintWriter out = new
-                    PrintWriter(socket.getOutputStream(), true);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             File f = new File(fullpath);
+
             out.println(Command.LOADING + "\n" +
                     account.getNickname() + "\n" +
                     account.getEmail() + "\n" +
@@ -95,15 +93,7 @@ public class LoaderVideo extends JDialog {
 
             DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
 
-            //outD.writeInt(1);
-            //for (String filename : filenames) {
-            //File f = new File(fullpath);
-
-            //outD.writeLong(f.length());//отсылаем размер файла
-            // outD.writeUTF(f.getName());//отсылаем имя файла
-
-            System.out.println(f.length());
-            System.out.println(f.getName());
+            log.info("File name: " + f.getName() + " length: " + f.length());
 
             FileInputStream in = new FileInputStream(f);
             byte[] buffer = new byte[64 * 1024];
@@ -117,16 +107,14 @@ public class LoaderVideo extends JDialog {
             in.close();
             out.close();
             socket.close();
-            System.out.println("===========================");
+            log.info("Done!");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error(e);
         }
-
     }
 
     private void onCancel() {
-
         dispose();
     }
 }

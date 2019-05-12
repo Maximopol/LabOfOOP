@@ -1,6 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.client.authandreg.register.form;
 
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -17,14 +18,13 @@ public class RegisterForm extends JDialog {
     private JButton buttonCancel;
     private JTextField textField1;
     private JPasswordField passwordField1;
-    private JLabel labelEmail;
-    private JLabel labelPass;
     private JTextField textField2;
-    private JLabel labelNick;
     private JLabel lableinfo;
-
+    private Logger log;
 
     public RegisterForm() {
+        log = Logger.getLogger(RegisterForm.class);
+
         setTitle("Reg to SimpleTube");
         setContentPane(contentPane);
         setModal(true);
@@ -34,7 +34,6 @@ public class RegisterForm extends JDialog {
 
         buttonCancel.addActionListener(e -> onCancel());
 
-        // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -42,7 +41,6 @@ public class RegisterForm extends JDialog {
             }
         });
 
-        // call onCancel() on ESCAPE
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
@@ -56,34 +54,30 @@ public class RegisterForm extends JDialog {
     private void onOK() {
         try {
             Socket socket = new Socket("localhost", 65432);
-            PrintWriter out = new
-                    PrintWriter(socket.getOutputStream(), true);
-
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             out.println(Command.REGISTRATION + "\n" + textField1.getText() + "\n" + passwordField1.getText() + "\n" + textField2.getText());
 
-            System.out.println("посылка");
+            log.info("Sent");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             if (bufferedReader.readLine().equals("true")) {
-                System.out.println("Успех");
+                log.info("Success");
                 lableinfo.setText("Успех");
 
             } else {
                 lableinfo.setText("Отказ");
+                log.info("Fail");
             }
             out.close();
             bufferedReader.close();
+            socket.close();
         } catch (Exception e) {
             lableinfo.setText("Error");
+            log.error(e);
         }
-
-        //тут обработка
-
     }
 
     private void onCancel() {
-        // add your code here if necessary
-
         dispose();
     }
 
@@ -91,7 +85,6 @@ public class RegisterForm extends JDialog {
         RegisterForm dialog = new RegisterForm();
         dialog.pack();
         dialog.setVisible(true);
-        //return
     }
 
 
