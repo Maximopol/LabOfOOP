@@ -33,4 +33,8 @@ public abstract class Storage<T> implements BaseStorage<T> {
     public int size() {
         return playlist.size();
     }
+
+    public String getName() {
+        return name;
+    }
 }

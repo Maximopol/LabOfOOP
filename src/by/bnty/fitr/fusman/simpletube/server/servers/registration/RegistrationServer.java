@@ -22,6 +22,7 @@ public class RegistrationServer extends Thread implements Server {
     }
 
     public void run() {
+        log.info("run");
         try {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
@@ -39,8 +40,9 @@ public class RegistrationServer extends Thread implements Server {
                 log.info("Call WorkerSQL");
                 if (workerSQL.reg(email, pas, nick)) {
                     str = "true";
+                } else {
+                    log.warn("Incorrect pass or not register your account");
                 }
-                log.warn("Incorrect pass or not register your account");
             } else {
                 log.warn("Incorrect email");
                 str = "incorr email";

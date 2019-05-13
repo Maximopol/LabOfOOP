@@ -16,7 +16,6 @@ public class Arrays {
         array = new int[length];
     }
 
-
     public Arrays(Arrays array) {
         this(array.array.length);
         System.arraycopy(array.array, 0, this.array, 0, array.array.length);
@@ -25,7 +24,6 @@ public class Arrays {
     public int getLength() {
         return array.length;
     }
-
 
     public int getElement(int i) {
         return array[i];

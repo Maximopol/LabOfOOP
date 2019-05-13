@@ -67,6 +67,7 @@ public class LoaderVideo extends JDialog {
         LoaderVideo dialog = new LoaderVideo();
         dialog.account = account;
         dialog.pack();
+        dialog.setModal(true);
         dialog.setVisible(true);
 
     }

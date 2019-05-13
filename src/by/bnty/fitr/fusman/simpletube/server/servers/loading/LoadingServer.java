@@ -1,6 +1,6 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.loading;
 
-import by.bnty.fitr.fusman.simpletube.common.Converter;
+import by.bnty.fitr.fusman.simpletube.common.conveter.Converter;
 import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
 import by.bnty.fitr.fusman.simpletube.server.workersql.WorkerSQL;
 import org.apache.log4j.Logger;

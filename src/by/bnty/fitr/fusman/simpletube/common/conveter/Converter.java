@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.common;
+package by.bnty.fitr.fusman.simpletube.common.conveter;
 
 public class Converter {
     public static String convertToUnique(String nickname, String email) {

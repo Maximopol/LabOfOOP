@@ -16,7 +16,6 @@ public class WorkerWithArrays {
         return count;
     }
 
-
     public static int searchIndexOfMinElement(Arrays arrays) {
         int position = 0;
         for (int i = 0; i < arrays.getLength(); i++) {
@@ -46,7 +45,6 @@ public class WorkerWithArrays {
         }
         return Max;
     }
-
 
     public static int sumElementsAfterMin(Arrays arrays, int positionMin) {
         int sum = 0;

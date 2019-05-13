@@ -10,7 +10,6 @@ public class ControletWithFolder {
         IIterator<Music> iterator = folder.createIterator();
         while (iterator.hasNext()) {
             count += iterator.next().getDuration();
-
         }
         return count;
     }
@@ -29,7 +28,6 @@ public class ControletWithFolder {
     }
 
     public static Music searchName(Folder folder, String name) {
-
         for (int i = 0; i < folder.size(); i++) {
             if (folder.get(i).getName().equals(name)) {
                 return folder.get(i);

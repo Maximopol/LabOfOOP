@@ -1,17 +1,20 @@
 package by.bnty.fitr.fusman.simpletube.client.mainform;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
+import by.bnty.fitr.fusman.labs.lab10.video.Video;
 import by.bnty.fitr.fusman.simpletube.client.accountform.AccountForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;
 import by.bnty.fitr.fusman.simpletube.client.loadervideo.LoaderVideo;
 import by.bnty.fitr.fusman.simpletube.common.command.Command;
+import by.bnty.fitr.fusman.simpletube.common.conveter.Converter;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.*;
@@ -20,6 +23,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import org.apache.log4j.Logger;
 
 import java.io.DataInputStream;
@@ -34,6 +38,7 @@ public class MainForm extends Application {
     private static final int DEFAULT_WIDTH = 1000;
     private MediaPlayer player;
     private Account account = null;
+    private Video video;
 
     public static void run() {
         log.info("Запуск приложение");
@@ -94,31 +99,33 @@ public class MainForm extends Application {
         final Button about_account_button = new Button("Account");
         final Button load_button = new Button("Load to serv");
 
-//        ComboBox<Playlists> cmb = new ComboBox<>();
-//        cmb.getItems().add(new Playlists(){});
-//        cmb.getItems().add(new Playlists(){});
-
-
-//        Image defaultImage = new Image("file:/F:/4/f.png");
-//        ImageView imageView = new ImageView(defaultImage);
-//
-//        imageView.setTranslateX(200);
-//        imageView.setTranslateY(200);
-//
-//        imageView.setFitWidth(50);
-//        imageView.setFitHeight(50);
+        final Slider cycleSlider = new Slider(1, 5, 1);
+        cycleSlider.setMajorTickUnit(1);
+        cycleSlider.setShowTickLabels(true);
 
         buttonContainer.setAlignment(Pos.BOTTOM_LEFT);
         Insets buttonContainerPadding = new Insets(1, 1, 1, 1);
         buttonContainer.setPadding(buttonContainerPadding);
 
         buttonContainer.getChildren().addAll(open_button, play_button, pause_button, stop_button, about_account_button);
-        buttonContainer.getChildren().addAll(reg_button, sign_button, download_button, load_button);
+        buttonContainer.getChildren().addAll(reg_button, sign_button, download_button, load_button, cycleSlider);
 
 
         final FileChooser fileChooser = new FileChooser();
         final MediaView mediaView = new MediaView(player);
 
+        cycleSlider.valueProperty().addListener(ov -> {
+            if (cycleSlider.isValueChanging()) {
+                if (player != null) {
+                    //player.setCycleCount((int)cycleSlider.getValue());
+//                    player.setStartTime(Duration.seconds(cycleSlider.getValue()));
+//                    player.set
+//                    player.play();
+                    player.seek(Duration.seconds(cycleSlider.getValue()));
+                }
+
+            }
+        });
 
         theScene.setOnKeyPressed(event -> {
             KeyCode key = event.getCode();
@@ -133,13 +140,13 @@ public class MainForm extends Application {
         sign_button.setOnAction(event -> {
             log.info("Start AuthorationForm");
             account = AuthorationForm.run();
-            //updatePlaylist();
             log.info(account);
         });
 
         about_account_button.setOnAction(event -> {
             if (account != null) {
-                AccountForm.run(account);
+                video = AccountForm.run(account);
+                log.info("Select video" + video);
             }
         });
 
@@ -212,48 +219,56 @@ public class MainForm extends Application {
         });
 
         download_button.setOnAction(event -> {
-            try {
-                Socket s = new Socket("localhost", 65432);
+            if (video != null & account != null) {
+                log.info(video.getPath());
+                log.info(Converter.convertToUnique(account.getNickname(), account.getEmail()));
+                String ss = Converter.convertToUnique(account.getNickname(), account.getEmail()) + "//" + video.getPath();
+                log.info(ss);
+                try {
+                    Socket s = new Socket("localhost", 65432);
 
-                log.info("wait");
-                PrintWriter out = new PrintWriter(s.getOutputStream(), true);
+                    log.info("wait");
+                    PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
-                out.println(Command.DONWLOAIDING);
+                    out.println(Command.DONWLOAIDING);
+                    // String sstr = Converter.convertToUnique(account.getNickname(), account.getEmail() + "//" +);
+                    out.println(ss);
+                    log.info(ss);
+                    log.info("sent");
+                    String xsdFolder = "F://clientstorage//";
+                    DataInputStream din = new DataInputStream(s.getInputStream());
 
-                log.info("sent");
-                String xsdFolder = "F://clientstorage//";
-                DataInputStream din = new DataInputStream(s.getInputStream());
+                    long fileSize = din.readLong();
+                    String fileName = din.readUTF();
 
-                long fileSize = din.readLong();
-                String fileName = din.readUTF();
+                    log.info("File name:" + fileName + " size:" + fileSize);
 
-                log.info("File name:" + fileName + " size:" + fileSize);
+                    byte[] buffer = new byte[64 * 1024];
+                    FileOutputStream outF = new FileOutputStream(xsdFolder + fileName);
 
-                byte[] buffer = new byte[64 * 1024];
-                FileOutputStream outF = new FileOutputStream(xsdFolder + fileName);
+                    long left = fileSize;
+                    do {
+                        int nextPackSize = (int) Math.min(left, buffer.length);
+                        int count = din.read(buffer, 0, nextPackSize);
+                        if (count <= 0) {
+                            throw new RuntimeException("Что-то пошло не так!");
+                        }
 
-                long left = fileSize;
-                do {
-                    int nextPackSize = (int) Math.min(left, buffer.length);
-                    int count = din.read(buffer, 0, nextPackSize);
-                    if (count <= 0) {
-                        throw new RuntimeException("Что-то пошло не так!");
-                    }
+                        outF.write(buffer, 0, count);
 
-                    outF.write(buffer, 0, count);
+                        left -= count;
+                    } while (left != 0);
 
-                    left -= count;
-                } while (left != 0);
+                    outF.flush();
+                    outF.close();
+                    out.close();
+                    s.close();
 
-                outF.flush();
-                outF.close();
-                out.close();
-                s.close();
-
-                log.info("Done!");
-                playVideo(mediaView, "file:/" + xsdFolder + fileName);
-            } catch (Exception e) {
-                log.error(e);
+                    log.info("Done!");
+                    playVideo(mediaView, "file:/" + xsdFolder + fileName);
+                } catch (Exception e) {
+                    log.error(e);
+                }
             }
         });
 
@@ -270,18 +285,23 @@ public class MainForm extends Application {
                 playVideo(mediaView, file.toURI().toURL().toString());
 
             } catch (Exception e) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Loading Error");
-                alert.setHeaderText("Error happen when loading");
-                alert.setContentText("Cannot load the video");
-                alert.showAndWait().ifPresent(null);
+                try {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Loading Error");
+                    alert.setHeaderText("Error happen when loading");
+                    alert.setContentText("Cannot load the video");
+                    alert.showAndWait().ifPresent(null);
 
+                } catch (Exception ee) {
+                    log.error(ee);
+                }
                 log.error(e);
             }
         });
 
         play_button.setOnAction(event -> {
             if (player != null) {
+                cycleSlider.setMax(player.getCycleDuration().toSeconds());
                 player.play();
             }
         });

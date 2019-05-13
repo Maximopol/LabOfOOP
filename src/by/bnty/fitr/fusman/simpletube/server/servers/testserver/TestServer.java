@@ -24,6 +24,7 @@ public class TestServer extends Thread implements Server {
     }
 
     public void run() {
+        log.info("run");
         try {
             printWriter.println(true);
             log.info("Sent: " + true);

@@ -1,6 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.client.accountform;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
+import by.bnty.fitr.fusman.labs.lab10.video.Video;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -15,7 +16,9 @@ public class AccountForm extends JDialog {
     private JLabel nick;
     private JComboBox comboBox1;
     private JComboBox comboBox2;
+    private JButton watchSelectedVideoButton;
     private Account account;
+    private Video video;
 
 
     public AccountForm(Account account) {
@@ -23,6 +26,14 @@ public class AccountForm extends JDialog {
         setTitle("About your account");
         setContentPane(contentPane);
         setModal(true);
+        for (int i = 0; i < account.getPlaylists().size(); i++) {
+            comboBox1.addItem(account.getPlaylists().get(i).getName());
+        }
+
+        comboBox1.addActionListener(e -> select());
+
+        comboBox2.addActionListener(e -> select2());
+
         getRootPane().setDefaultButton(buttonOK);
 
         nick.setText(account.getNickname());
@@ -42,6 +53,22 @@ public class AccountForm extends JDialog {
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
+    public static Video run(Account account) {
+        AccountForm dialog = new AccountForm(account);
+        dialog.pack();
+        dialog.setModal(true);
+        dialog.setVisible(true);
+        return dialog.video;
+    }
+
+    private void select() {
+        int chosed = comboBox1.getSelectedIndex();
+
+        for (int i = 0; i < account.getPlaylists().get(chosed).size(); i++) {
+            comboBox2.addItem(account.getPlaylists().get(chosed).get(i).getName());
+        }
+    }
+
     public static void main(String[] args) {
         AccountForm dialog = new AccountForm(null);
         dialog.pack();
@@ -49,10 +76,8 @@ public class AccountForm extends JDialog {
         System.exit(0);
     }
 
-    public static void run(Account account) {
-        AccountForm dialog = new AccountForm(account);
-        dialog.pack();
-        dialog.setVisible(true);
+    private void select2() {
+        video = account.getPlaylists().get(comboBox1.getSelectedIndex()).get(comboBox2.getSelectedIndex());
     }
 
     private void onOK() {

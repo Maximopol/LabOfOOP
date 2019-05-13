@@ -84,6 +84,7 @@ public class RegisterForm extends JDialog {
     public static void run() {
         RegisterForm dialog = new RegisterForm();
         dialog.pack();
+        dialog.setModal(true);
         dialog.setVisible(true);
     }
 

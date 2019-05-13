@@ -5,6 +5,7 @@ import by.bnty.fitr.fusman.simpletube.server.servers.authorization.Authorization
 import by.bnty.fitr.fusman.simpletube.server.servers.donloading.DonloadingServer;
 import by.bnty.fitr.fusman.simpletube.server.servers.loading.LoadingServer;
 import by.bnty.fitr.fusman.simpletube.server.servers.registration.RegistrationServer;
+import by.bnty.fitr.fusman.simpletube.server.servers.searching.SearchingServer;
 import by.bnty.fitr.fusman.simpletube.server.servers.testserver.TestServer;
 
 import java.io.BufferedReader;
@@ -24,6 +25,8 @@ public class CrearerMiniServer implements Creator {
             server = new AuthorizationServer(socket, bufferedReader);
         } else if (str.equals(Command.LOADING)) {
             server = new LoadingServer(socket, bufferedReader);
+        } else if (str.equals(Command.SEARCHING)) {
+            server = new SearchingServer(socket, bufferedReader);
         }
 
         return server;

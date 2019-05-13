@@ -1,4 +1,4 @@
-package by.bnty.fitr.fusman.simpletube.client.mainform;
+package by.bnty.fitr.fusman.simpletube.common;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.AuthorationForm;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.form.RegisterForm;

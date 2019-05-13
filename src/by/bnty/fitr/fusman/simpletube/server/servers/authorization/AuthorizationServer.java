@@ -1,7 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.authorization;
 
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.registr.Register;
-import by.bnty.fitr.fusman.simpletube.common.Converter;
+import by.bnty.fitr.fusman.simpletube.common.conveter.Converter;
 import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
 import by.bnty.fitr.fusman.simpletube.server.workersql.WorkerSQL;
 import org.apache.log4j.Logger;
@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class AuthorizationServer extends Thread implements Server {
@@ -48,7 +49,7 @@ public class AuthorizationServer extends Thread implements Server {
                 str = "incor email";
             }
             log.info("Total point:" + str);
-            // out.print(str);
+
             String nick = "";
             if (!str.equals("" + false)) {
                 Scanner scanner = new Scanner(str);
@@ -65,7 +66,7 @@ public class AuthorizationServer extends Thread implements Server {
             socket.close();
             log.info("Done!");
 
-        } catch (IOException e) {
+        } catch (IOException | NoSuchElementException e) {
             log.error(e);
         }
     }

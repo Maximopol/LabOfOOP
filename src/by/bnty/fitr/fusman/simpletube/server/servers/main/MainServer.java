@@ -46,6 +46,7 @@ public class MainServer {
                 }
 
                 bufferedReader.close();
+
             }
         } catch (IOException e) {
             log.fatal(e);

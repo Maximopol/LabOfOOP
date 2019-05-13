@@ -11,7 +11,6 @@ public class Video {
     private int countLikes;
     private int countDizLikes;
 
-
     public Video() {
         name = "";
         path = "";
@@ -19,7 +18,6 @@ public class Video {
         countViews = 0;
         countLikes = 0;
         countDizLikes = 0;
-
     }
 
     public Video(String name) {

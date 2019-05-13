@@ -1,12 +1,10 @@
 package by.bnty.fitr.fusman.simpletube.server.workersql;
 
-import by.bnty.fitr.fusman.simpletube.common.Converter;
+import by.bnty.fitr.fusman.simpletube.common.conveter.Converter;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.Date;
-
-import static Printer.Printer.println;
 
 public class WorkerSQL {
     private Logger log;
@@ -15,14 +13,20 @@ public class WorkerSQL {
         log = Logger.getLogger(WorkerSQL.class);
     }
 
-    private static final String createTableSQL = "CREATE TABLE REGTABLE3("
+    private static final String CREATE_TABLE_SQL = "CREATE TABLE REGTABLE3("
             + "email varchar(30) NOT NULL,"
             + "pass varchar(30) NOT NULL,"
             + "nickname varchar(30) NOT NULL"
             + ")";
+    private static final String CREATE_TABLE_SQL_2 = "CREATE TABLE REGTABLE3("
+            + "email varchar(30) NOT NULL,"
+            + "pass varchar(30) NOT NULL,"
+            + "nickname varchar(30) NOT NULL,"
+            + "unictable varchar(30) NOT NULL"
+            + ")";
 
-    private static final String createPlaylis = "CREATE TABLE ";
-    private static final String suffix =
+    private static final String PREFIX = "CREATE TABLE ";
+    private static final String SUFFIX =
             "(playlist varchar(30) NOT NULL," +
                     "videoname varchar(30) NOT NULL," +
                     "videopath varchar(30) NOT NULL," +
@@ -31,15 +35,12 @@ public class WorkerSQL {
                     "videolikes int NOT NULL," +
                     "videodizlikes int NOT NULL );";
 
-    public static void main(String[] args) {
-        println(new WorkerSQL().getPlaylist("ppp345845514".toUpperCase()));
-    }
 
     public boolean reg(String mail, String pas, String nickname) {
         log.info("start");
         try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
             //  statement.executeUpdate("INSERT INTO DBUSER VALUES ('Pinsk',50,90);");
-            // statement.execute(createTableSQL);
+            // statement.execute(CREATE_TABLE_SQL);
             ResultSet rs = statement.executeQuery("SELECT * FROM REGTABLE3");
 
             boolean flag = true;
@@ -59,13 +60,12 @@ public class WorkerSQL {
             if (flag) {
                 statement.executeUpdate("INSERT INTO REGTABLE3 VALUES ('" + mail + "','" + pas + "','" + nickname + "');");
                 log.info("add");
-                String string = createPlaylis + Converter.convertToUnique(nickname, mail).toUpperCase() + suffix;
+                String string = PREFIX + Converter.convertToUnique(nickname, mail).toUpperCase() + SUFFIX;
                 System.out.println(string);
                 statement.execute(string);
                 log.info("сreated");
                 return true;
             }
-
 
         } catch (SQLException e) {
             log.error(e);
@@ -97,7 +97,6 @@ public class WorkerSQL {
                 }
             }
 
-
         } catch (SQLException e) {
             log.error(e);
             flag = "" + false;
@@ -121,13 +120,11 @@ public class WorkerSQL {
                     "','" + new Date().toString()
                     + "'," + 0 + "," + 0 + "," + 0 + ");");
 
-
             flag = true;
             log.info("Success");
         } catch (SQLException e) {
             log.error(e);
         }
-
         return flag;
     }
 
@@ -153,20 +150,10 @@ public class WorkerSQL {
                 stringBuilder.append(videoviews).append("\n");
                 stringBuilder.append(videolikes).append("\n");
                 stringBuilder.append(videodizlikes).append("\n");
-
             }
         } catch (SQLException e) {
             log.error(e);
         }
         return stringBuilder;
     }
-
-    private boolean createTable(String str) {
-        return false;
-    }
-
-    private boolean delete() {
-        return false;
-    }
-
 }

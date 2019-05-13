@@ -24,10 +24,12 @@ public class DonloadingServer extends Thread implements Server {
         try {
             DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
 
-            String path = "F://serverstorage//654.mp4";// bufferedReader.readLine();
-            log.info("File path:" + path);
+            String path = "F://serverstorage//";// bufferedReader.readLine();
+            String path2 = bufferedReader.readLine();
 
-            File f = new File(path);
+            log.info("File path:" + path + path2);
+
+            File f = new File(path + path2);
 
             outD.writeLong(f.length());
             outD.writeUTF(f.getName());

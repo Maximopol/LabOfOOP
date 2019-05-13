@@ -57,6 +57,7 @@ public class AuthorationForm extends JDialog {
         AuthorationForm dialog = new AuthorationForm();
         dialog.pack();
         dialog.setVisible(true);
+        dialog.setModal(true);
         return dialog.account;
     }
 

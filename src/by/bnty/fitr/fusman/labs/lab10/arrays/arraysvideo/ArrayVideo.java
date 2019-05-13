@@ -19,7 +19,6 @@ public class ArrayVideo extends Playlist {
     public ArrayVideo(ArrayVideo arrayVideo) {
         this.playlist = arrayVideo.playlist;
         name = arrayVideo.name;
-
     }
 
     public String toString() {

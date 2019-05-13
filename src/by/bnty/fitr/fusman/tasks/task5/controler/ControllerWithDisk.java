@@ -14,9 +14,7 @@ public class ControllerWithDisk {
         IIterator<Folder> iterator = disk.createIterator();
         while (iterator.hasNext()) {
             count += ControletWithFolder.countAllDuration(iterator.next());
-
         }
         return count;
     }
-
 }
