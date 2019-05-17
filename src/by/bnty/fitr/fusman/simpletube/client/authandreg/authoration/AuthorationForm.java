@@ -67,6 +67,7 @@ public class AuthorationForm extends JDialog {
 
     private void onOK() {
         try {
+            logger.info("run");
             Socket socket = new Socket("localhost", 65432);
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
@@ -81,7 +82,7 @@ public class AuthorationForm extends JDialog {
                 String nic = bufferedReader.readLine();
                 account = new Account(nic, textField1.getText());
                 logger.info(account);
-                account.setPlaylists(CreatePlaulistFromServ.create(bufferedReader));
+                account.setPlaylists(CreatePlaylists.create(bufferedReader));
                 logger.info(account);
 
             } else {
@@ -91,6 +92,8 @@ public class AuthorationForm extends JDialog {
             out.close();
             bufferedReader.close();
             socket.close();
+
+            logger.info("Done");
         } catch (Exception e) {
             label3.setText("Error");
             logger.error(e);

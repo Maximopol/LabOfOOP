@@ -65,19 +65,9 @@ public class MainForm extends Application {
                 } else {
                     player.pause();
                 }
+                log.info(player.getStatus());
             }
-//            if (key == KeyCode.UP) {
-//                player.setVolume(player.getVolume() + 1);
-//            }
-//            if (key == KeyCode.DOWN) {
-//                player.setVolume(player.getVolume() - 1);
-//            }
-//            System.out.println(player.getVolume());
         }
-    }
-
-    private boolean updatePlaylist() {
-        return false;
     }
 
     private void uiSetup(final Stage stage) {
@@ -117,13 +107,8 @@ public class MainForm extends Application {
         cycleSlider.valueProperty().addListener(ov -> {
             if (cycleSlider.isValueChanging()) {
                 if (player != null) {
-                    //player.setCycleCount((int)cycleSlider.getValue());
-//                    player.setStartTime(Duration.seconds(cycleSlider.getValue()));
-//                    player.set
-//                    player.play();
                     player.seek(Duration.seconds(cycleSlider.getValue()));
                 }
-
             }
         });
 
@@ -154,68 +139,6 @@ public class MainForm extends Application {
             if (account != null) {
                 LoaderVideo.run(account);
             }
-//            try {
-//                account = new Account("root", "root@gmail.com");
-//
-//                Socket socket = new Socket("localhost", 65432);
-//                PrintWriter out = new
-//                        PrintWriter(socket.getOutputStream(), true);
-//
-//                //out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
-//
-//                DataOutputStream outD = new DataOutputStream(socket.getOutputStream());
-//
-//                outD.writeInt(1);
-//                //for (String filename : filenames) {
-//                File f = new File("F://clientstorage//12.mp4");
-//
-//                outD.writeLong(f.length());//отсылаем размер файла
-//                outD.writeUTF(f.getName());//отсылаем имя файла
-//
-//                System.out.println(f.length());
-//                System.out.println(f.getName());
-//
-//                FileInputStream in = new FileInputStream(f);
-//                byte[] buffer = new byte[64 * 1024];
-//                int count;
-//
-//                while ((count = in.read(buffer)) != -1) {
-//                    outD.write(buffer, 0, count);
-//                }
-//
-//                outD.flush();
-//                in.close();
-//                out.close();
-//                socket.close();
-////                PrintWriter out = new PrintWriter(s.getOutputStream(), true);
-////                out.println(Command.LOADING + "\n" + account.getNickname() + "\n" + account.getEmail());
-////
-////                DataOutputStream outD = new DataOutputStream(s.getOutputStream());
-////                outD.writeInt(1);
-////
-////                File f = new File("F://clientstorage//12.mp4");
-////
-////                outD.writeLong(f.length());//отсылаем размер файла
-////                outD.writeUTF(f.getName());//отсылаем имя файла
-////
-////                System.out.println(f.length());
-////                System.out.println(f.getName());
-////
-////                FileInputStream in = new FileInputStream(f);
-////                byte[] buffer = new byte[64 * 1024];
-////                int count;
-////
-////                while ((count = in.read(buffer)) != -1) {
-////                    outD.write(buffer, 0, count);
-////                }
-////
-////                outD.flush();
-////                in.close();
-////                out.close();
-////                s.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
         });
 
         download_button.setOnAction(event -> {
@@ -231,7 +154,6 @@ public class MainForm extends Application {
                     PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
                     out.println(Command.DONWLOAIDING);
-                    // String sstr = Converter.convertToUnique(account.getNickname(), account.getEmail() + "//" +);
                     out.println(ss);
                     log.info(ss);
                     log.info("sent");

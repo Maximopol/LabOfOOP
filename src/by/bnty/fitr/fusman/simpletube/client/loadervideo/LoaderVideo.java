@@ -69,7 +69,6 @@ public class LoaderVideo extends JDialog {
         dialog.pack();
         dialog.setModal(true);
         dialog.setVisible(true);
-
     }
 
     public static void main(String[] args) {
@@ -81,9 +80,11 @@ public class LoaderVideo extends JDialog {
 
     private void onOK() {
         try {
+            log.info("run");
             Socket socket = new Socket("localhost", 65432);
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             File f = new File(fullpath);
+
 
             out.println(Command.LOADING + "\n" +
                     account.getNickname() + "\n" +

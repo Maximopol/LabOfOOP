@@ -2,6 +2,7 @@ package by.bnty.fitr.fusman.simpletube.client.accountform;
 
 import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
 import by.bnty.fitr.fusman.labs.lab10.video.Video;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import java.awt.event.KeyEvent;
@@ -19,13 +20,15 @@ public class AccountForm extends JDialog {
     private JButton watchSelectedVideoButton;
     private Account account;
     private Video video;
-
+    private Logger logger;
 
     public AccountForm(Account account) {
+        logger = Logger.getLogger(AccountForm.class);
         this.account = account;
         setTitle("About your account");
         setContentPane(contentPane);
         setModal(true);
+
         for (int i = 0; i < account.getPlaylists().size(); i++) {
             comboBox1.addItem(account.getPlaylists().get(i).getName());
         }
@@ -77,6 +80,9 @@ public class AccountForm extends JDialog {
     }
 
     private void select2() {
+        logger.info(comboBox1.getSelectedIndex());
+        logger.info(comboBox2.getSelectedIndex());
+
         video = account.getPlaylists().get(comboBox1.getSelectedIndex()).get(comboBox2.getSelectedIndex());
     }
 

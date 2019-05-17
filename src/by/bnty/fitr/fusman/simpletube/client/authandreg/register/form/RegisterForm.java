@@ -53,6 +53,7 @@ public class RegisterForm extends JDialog {
 
     private void onOK() {
         try {
+            log.info("run");
             Socket socket = new Socket("localhost", 65432);
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
@@ -71,6 +72,7 @@ public class RegisterForm extends JDialog {
             out.close();
             bufferedReader.close();
             socket.close();
+            log.info("Done");
         } catch (Exception e) {
             lableinfo.setText("Error");
             log.error(e);

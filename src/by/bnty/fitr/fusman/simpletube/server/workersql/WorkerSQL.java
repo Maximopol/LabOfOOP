@@ -39,7 +39,6 @@ public class WorkerSQL {
     public boolean reg(String mail, String pas, String nickname) {
         log.info("start");
         try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
-            //  statement.executeUpdate("INSERT INTO DBUSER VALUES ('Pinsk',50,90);");
             // statement.execute(CREATE_TABLE_SQL);
             ResultSet rs = statement.executeQuery("SELECT * FROM REGTABLE3");
 
@@ -112,8 +111,6 @@ public class WorkerSQL {
         log.info(unictable);
 
         try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
-            //  ResultSet rs = statement.executeQuery("SELECT * FROM"+unictable +")";
-
             statement.executeUpdate("INSERT INTO " + unictable + " VALUES " + "('" + playlist + "','" +
                     name + "','" +
                     path +
