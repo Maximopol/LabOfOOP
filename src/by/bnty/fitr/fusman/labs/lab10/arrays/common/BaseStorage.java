@@ -1,5 +1,7 @@
 package by.bnty.fitr.fusman.labs.lab10.arrays.common;
 
+import java.util.Comparator;
+
 public interface BaseStorage<T> {
     void remove(T t);
 
@@ -10,4 +12,6 @@ public interface BaseStorage<T> {
     T get(int i);
 
     int size();
+
+    void sort(Comparator<T> comparator);
 }

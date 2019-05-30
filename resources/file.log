@@ -2616,3 +2616,115 @@ momo
 2019-05-29 13:36:55 WARN  Park2:30 - ОТКАЗАНО
 2019-05-29 13:36:55 WARN  Park2:30 - ОТКАЗАНО
 2019-05-29 13:36:55 WARN  Park2:30 - ОТКАЗАНО
+2019-05-30 00:47:06 INFO  Main:9 - Запуск
+2019-05-30 00:47:06 INFO  MainServer:30 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-05-30 00:47:06 INFO  MainServer:33 - waiting
+2019-05-30 00:47:15 INFO  Main:9 - Запуск
+2019-05-30 00:47:15 INFO  MainForm:44 - Запуск приложение
+2019-05-30 00:47:42 INFO  MainForm:121 - Start RegisterForm
+2019-05-30 00:47:48 INFO  MainForm:126 - Start AuthorationForm
+2019-05-30 00:49:04 INFO  AuthorationForm:70 - run
+2019-05-30 00:49:04 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=49851,localport=65432]
+2019-05-30 00:49:04 INFO  AuthorationForm:76 - Sent
+2019-05-30 00:49:04 INFO  MainServer:39 - Auth
+2019-05-30 00:49:04 INFO  AuthorizationServer:34 - Email:root@mail.com
+2019-05-30 00:49:05 INFO  AuthorizationServer:40 - Call WorkerSQL
+2019-05-30 00:49:05 INFO  WorkerSQL:78 - run
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: root@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: root2@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: root3@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: vadim@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: kek@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: pop@mail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: popr@mail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: root@gmail.ru
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: roott@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: rooott@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: roout@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: rooi@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: rooyi@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: pp@mail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: popka@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: popkaa@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: ruut@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:88 - Email: mom@gmail.com
+2019-05-30 00:49:14 INFO  WorkerSQL:103 - Total point:false
+2019-05-30 00:49:14 WARN  AuthorizationServer:46 - not success
+2019-05-30 00:49:14 INFO  AuthorizationServer:51 - Total point:false
+2019-05-30 00:49:14 INFO  AuthorizationServer:67 - Done!
+2019-05-30 00:49:14 INFO  MainServer:33 - waiting
+2019-05-30 00:49:14 WARN  AuthorationForm:90 - Fail
+2019-05-30 00:49:14 INFO  AuthorationForm:96 - Done
+2019-05-30 00:49:35 INFO  AuthorationForm:70 - run
+2019-05-30 00:49:35 INFO  AuthorationForm:76 - Sent
+2019-05-30 00:49:35 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=49861,localport=65432]
+2019-05-30 00:49:35 INFO  MainServer:39 - Auth
+2019-05-30 00:49:35 INFO  AuthorizationServer:34 - Email:pp@gmail.com
+2019-05-30 00:49:35 INFO  AuthorizationServer:40 - Call WorkerSQL
+2019-05-30 00:49:35 INFO  WorkerSQL:78 - run
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: root@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: root2@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: root3@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: vadim@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: kek@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: pop@mail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: popr@mail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: root@gmail.ru
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: roott@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: rooott@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: roout@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: rooi@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: rooyi@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: pp@mail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: popka@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: popkaa@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: ruut@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:88 - Email: mom@gmail.com
+2019-05-30 00:49:36 INFO  WorkerSQL:103 - Total point:false
+2019-05-30 00:49:36 WARN  AuthorizationServer:46 - not success
+2019-05-30 00:49:36 INFO  AuthorizationServer:51 - Total point:false
+2019-05-30 00:49:36 INFO  AuthorizationServer:67 - Done!
+2019-05-30 00:49:36 INFO  MainServer:33 - waiting
+2019-05-30 00:49:36 WARN  AuthorationForm:90 - Fail
+2019-05-30 00:49:36 INFO  AuthorationForm:96 - Done
+2019-05-30 00:50:01 INFO  AuthorationForm:70 - run
+2019-05-30 00:50:01 INFO  AuthorationForm:76 - Sent
+2019-05-30 00:50:01 INFO  MainServer:35 - New client Socket[addr=/127.0.0.1,port=49867,localport=65432]
+2019-05-30 00:50:01 INFO  MainServer:39 - Auth
+2019-05-30 00:50:01 INFO  AuthorizationServer:34 - Email:pp@mail.com
+2019-05-30 00:50:01 INFO  AuthorizationServer:40 - Call WorkerSQL
+2019-05-30 00:50:01 INFO  WorkerSQL:78 - run
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: root@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: root2@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: root3@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: vadim@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: kek@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: pop@mail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: popr@mail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: root@gmail.ru
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: roott@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: rooott@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: roout@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: rooi@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: rooyi@gmail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:88 - Email: pp@mail.com
+2019-05-30 00:50:01 INFO  WorkerSQL:93 - Success
+2019-05-30 00:50:01 INFO  WorkerSQL:103 - Total point:true
+ppp
+2019-05-30 00:50:01 WARN  AuthorizationServer:46 - not success
+2019-05-30 00:50:01 INFO  AuthorizationServer:51 - Total point:true
+ppp
+2019-05-30 00:50:01 INFO  AuthorizationServer:60 - ppp
+2019-05-30 00:50:01 INFO  WorkerSQL:129 - run
+2019-05-30 00:50:01 INFO  WorkerSQL:130 - PPP345845514
+2019-05-30 00:50:02 INFO  AuthorizationServer:67 - Done!
+2019-05-30 00:50:02 INFO  MainServer:33 - waiting
+2019-05-30 00:50:02 INFO  AuthorationForm:80 - Success
+2019-05-30 00:50:02 INFO  AuthorationForm:84 - Account{email='pp@mail.com', nickname='ppp', playlists=ArrayPlaylists{, name='null', countPlaylist=0, playlist=[]}, status=Usual}
+2019-05-30 00:50:02 INFO  AuthorationForm:86 - Account{email='pp@mail.com', nickname='ppp', playlists=ArrayPlaylists{, name='null', countPlaylist=3, playlist=[ArrayVideo{name='wtf', countPlaylist=4, playlist=[Video{name='kek', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkek', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='oru', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkekek', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='lol', countPlaylist=2, playlist=[Video{name='kusa', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='kusa', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='W', countPlaylist=1, playlist=[Video{name='LOL', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}]}, status=Usual}
+2019-05-30 00:50:02 INFO  AuthorationForm:96 - Done
+2019-05-30 00:50:04 INFO  MainForm:128 - Account{email='pp@mail.com', nickname='ppp', playlists=ArrayPlaylists{, name='null', countPlaylist=3, playlist=[ArrayVideo{name='wtf', countPlaylist=4, playlist=[Video{name='kek', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkek', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='oru', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkekek', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='lol', countPlaylist=2, playlist=[Video{name='kusa', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='kusa', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='W', countPlaylist=1, playlist=[Video{name='LOL', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}]}, status=Usual}
+2019-05-30 00:50:09 INFO  AccountForm:83 - 1
+2019-05-30 00:50:09 INFO  AccountForm:84 - 0
+2019-05-30 00:50:11 INFO  MainForm:134 - Select videoVideo{name='kusa', data=Thu May 30 00:50:02 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}
+2019-05-30 00:50:12 INFO  Main:11 - Конец работы

@@ -3,6 +3,7 @@ package by.bnty.fitr.fusman.labs.lab10.arrays.common;
 import by.bnty.fitr.fusman.labs.lab10.iterator.IIterator;
 import by.bnty.fitr.fusman.labs.lab10.iterator.Iterator;
 
+import java.util.Comparator;
 import java.util.List;
 
 public abstract class Storage<T> implements BaseStorage<T> {
@@ -36,5 +37,9 @@ public abstract class Storage<T> implements BaseStorage<T> {
 
     public String getName() {
         return name;
+    }
+
+    public void sort(Comparator<T> comparator) {
+        playlist.sort(comparator);
     }
 }

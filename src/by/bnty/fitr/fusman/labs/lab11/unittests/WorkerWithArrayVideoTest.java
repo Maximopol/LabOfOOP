@@ -47,9 +47,9 @@ public class WorkerWithArrayVideoTest {
         arrayVideo.add(new Video());
         arrayVideo.add(new Video("BNTU"));
         arrayVideo.add(new Video("Opol"));
+        arrayVideo.get("kek");
 
         assertEquals(new Video("BNTU").toString(), WorkerWithArrayVideo.searchVideo(arrayVideo, "BNTU").toString());
-
     }
 
     @Test
