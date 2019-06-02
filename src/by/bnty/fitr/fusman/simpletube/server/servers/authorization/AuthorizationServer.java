@@ -1,5 +1,7 @@
 package by.bnty.fitr.fusman.simpletube.server.servers.authorization;
 
+import by.bnty.fitr.fusman.labs.lab10.blogers.Account;
+import by.bnty.fitr.fusman.simpletube.client.authandreg.authoration.CreatePlaylists;
 import by.bnty.fitr.fusman.simpletube.client.authandreg.register.registr.Register;
 import by.bnty.fitr.fusman.simpletube.common.conveter.Converter;
 import by.bnty.fitr.fusman.simpletube.server.createrserver.Server;
@@ -8,10 +10,9 @@ import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 public class AuthorizationServer extends Thread implements Server {
     private Logger log;
@@ -26,43 +27,34 @@ public class AuthorizationServer extends Thread implements Server {
 
     public void run() {
         try {
-            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-
+            log.info("run");
+            ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
             String email = bufferedReader.readLine();
             String pas = bufferedReader.readLine();
 
             log.info("Email:" + email);
 
-
-            String str = "false";
-
             if (Register.isCheckedTrueInputEmail(email)) {
                 log.info("Call WorkerSQL");
                 String str2 = new WorkerSQL().singIn(email, pas);
-                if (!str2.endsWith("" + false)) {
-                    str = str2;
-                    System.out.println(str2);
+                log.info(str2);
+
+                if (str2 != null) {
+                    Account account = new Account(str2, email);
+                    account.setPlaylists(CreatePlaylists.create(new WorkerSQL().getPlaylist(Converter.convertToUnique(str2, email).toUpperCase())));
+
+                    log.info(account);
+
+                    oos.writeObject(account);
+                    oos.flush();
                 }
-                log.warn("not success");
             } else {
                 log.warn("Incorrect email");
-                str = "incor email";
+                oos.writeObject(null);
+                oos.flush();
             }
-            log.info("Total point:" + str);
 
-            String nick = "";
-            if (!str.equals("" + false)) {
-                Scanner scanner = new Scanner(str);
-                while (scanner.hasNextLine()) {
-                    scanner.nextLine();
-                    nick = scanner.nextLine();
-                }
-                log.info(nick);
-                out.print(str + "\n" + new WorkerSQL().getPlaylist(Converter.convertToUnique(nick, email).toUpperCase()));
-            } else {
-                out.print(str);
-            }
-            out.close();
+            oos.close();
             socket.close();
             log.info("Done!");
 

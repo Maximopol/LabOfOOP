@@ -6,6 +6,8 @@ import java.util.LinkedList;
 
 public class LinkedPlaylists extends Playlists {
 
+    private static final long serialVersionUID = 6866870887800165544L;
+
     public LinkedPlaylists() {
         playlist = new LinkedList<>();
     }

@@ -3,10 +3,13 @@ package by.bnty.fitr.fusman.labs.lab10.arrays.common;
 import by.bnty.fitr.fusman.labs.lab10.iterator.IIterator;
 import by.bnty.fitr.fusman.labs.lab10.iterator.Iterator;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;
 
-public abstract class Storage<T> implements BaseStorage<T> {
+public abstract class Storage<T> implements BaseStorage<T>, Serializable {
+    protected static final long serialVersionUID = 3101383866512353095L;
+
     protected String name;
 
     protected List<T> playlist;

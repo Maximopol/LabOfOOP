@@ -4,15 +4,17 @@ import by.bnty.fitr.fusman.labs.lab10.arrays.arraysplaylist.ArrayPlaylists;
 import by.bnty.fitr.fusman.labs.lab10.arrays.common.Playlists;
 import by.bnty.fitr.fusman.simpletube.common.accountstatus.AccountStatus;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Account {
+public class Account implements Serializable {
+    private static final long serialVersionUID = 4170461015016555386L;
     private String email;
     private String nickname;
     private Playlists playlists;
     private AccountStatus status;
 
-    private Account() {
+    public Account() {
         playlists = new ArrayPlaylists();
     }
 
@@ -27,6 +29,7 @@ public class Account {
         nickname = account.nickname;
         playlists = account.playlists;
         status = account.status;
+        email = account.email;
     }
 
 

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class ArrayPlaylists extends Playlists {
 
+    private static final long serialVersionUID = 6281078260127330463L;
+
     public ArrayPlaylists() {
         playlist = new ArrayList<>();
     }

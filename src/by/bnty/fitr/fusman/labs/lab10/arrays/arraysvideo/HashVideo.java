@@ -6,6 +6,7 @@ import by.bnty.fitr.fusman.labs.lab10.video.Video;
 import java.util.HashSet;
 
 public class HashVideo extends Playlist {
+    private static final long serialVersionUID = 1341557633235817194L;
     private HashSet<Video> playlist;
 
     public HashVideo() {

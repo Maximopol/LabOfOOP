@@ -74,7 +74,7 @@ public class WorkerSQL {
     }
 
     public String singIn(String mail, String pas) {
-        String flag = "" + false;
+        String flag = null;
         log.info("run");
         try (Connection dbConnection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "en3kDH5bLSm6kAk"); Statement statement = dbConnection.createStatement()) {
 
@@ -89,7 +89,7 @@ public class WorkerSQL {
 
                 if (mail.equals(userid)) {
                     if (pas.equals(username)) {
-                        flag = "" + true + "\n" + nick;
+                        flag = nick;
                         log.info("Success");
                     }
                     break;
@@ -98,7 +98,6 @@ public class WorkerSQL {
 
         } catch (SQLException e) {
             log.error(e);
-            flag = "" + false;
         }
         log.info("Total point:" + flag);
 

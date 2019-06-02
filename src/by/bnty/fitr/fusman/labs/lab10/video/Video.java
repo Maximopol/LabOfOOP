@@ -1,9 +1,12 @@
 package by.bnty.fitr.fusman.labs.lab10.video;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Video {
+public class Video implements Serializable {
+    private static final long serialVersionUID = -634875856737059338L;
+
     private String name;
     private String path;
     private Date data;

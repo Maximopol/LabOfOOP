@@ -8,8 +8,7 @@ import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
@@ -42,7 +41,6 @@ public class AuthorationForm extends JDialog {
                 onCancel();
             }
         });
-
         contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
@@ -69,28 +67,25 @@ public class AuthorationForm extends JDialog {
         try {
             logger.info("run");
             Socket socket = new Socket("localhost", 65432);
+
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             out.println(Command.AUTHORIZATION + "\n" + textField1.getText() + "\n" + passwordField1.getText());
 
             logger.info("Sent");
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            if (bufferedReader.readLine().equals("true")) {
-                logger.info("Success");
-                label3.setText("Успех");
-                String nic = bufferedReader.readLine();
-                account = new Account(nic, textField1.getText());
-                logger.info(account);
-                account.setPlaylists(CreatePlaylists.create(bufferedReader));
-                logger.info(account);
+            ObjectInputStream oin = new ObjectInputStream(socket.getInputStream());
 
+            account = (Account) oin.readObject();
+
+            if (account == null) {
+                label3.setText("оТКАЗ");
             } else {
-                label3.setText("Отказ");
-                logger.warn("Fail");
+                label3.setText("Успех");
             }
+
+            oin.close();
             out.close();
-            bufferedReader.close();
             socket.close();
 
             logger.info("Done");

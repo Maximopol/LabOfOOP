@@ -6,6 +6,9 @@ import by.bnty.fitr.fusman.labs.lab10.arrays.common.Playlist;
 import java.util.ArrayList;
 
 public class ArrayVideo extends Playlist {
+    private static final long serialVersionUID = 7210177661240622259L;
+
+    //  private static final long serialVersionUID = 7210177661240622259L;
 
     public ArrayVideo() {
         playlist = new ArrayList<>(10);

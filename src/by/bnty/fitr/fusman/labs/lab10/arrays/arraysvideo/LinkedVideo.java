@@ -5,6 +5,8 @@ import by.bnty.fitr.fusman.labs.lab10.arrays.common.Playlist;
 import java.util.ArrayList;
 
 public class LinkedVideo extends Playlist {
+    private static final long serialVersionUID = -4881828769718186337L;
+
     public LinkedVideo() {
         playlist = new ArrayList<>();
     }
