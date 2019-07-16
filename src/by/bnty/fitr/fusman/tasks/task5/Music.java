@@ -1,5 +1,6 @@
 package by.bnty.fitr.fusman.tasks.task5;
 
+import java.util.Objects;
 import java.util.Random;
 
 
@@ -7,34 +8,34 @@ public class Music {
     private int MAX_DURATION = 1000;
     private MusicGenre genre;
     private String name;
-    private int duration;
+    private int duration_seconds;
 
     public Music() {
         genre = MusicGenre.Unknown;
         name = "Untitled";
-        duration = new Random().nextInt(MAX_DURATION);
+        duration_seconds = new Random().nextInt(MAX_DURATION);
     }
 
-    public Music(String name, int duration, MusicGenre genre) {
+    public Music(String name, int duration_seconds, MusicGenre genre) {
         this.name = name;
-        this.duration = duration;
+        this.duration_seconds = duration_seconds;
         this.genre = genre;
     }
 
     public Music(Music music) {
         genre = music.genre;
         name = music.name;
-        duration = music.duration;
+        duration_seconds = music.duration_seconds;
     }
 
 
     public int getDuration() {
-        return duration;
+        return duration_seconds;
     }
 
     public void setDuration(int duration) {
         if (duration > 0 && duration < MAX_DURATION) {
-            this.duration = duration;
+            this.duration_seconds = duration;
         }
     }
 
@@ -54,10 +55,25 @@ public class Music {
         this.genre = genre;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Music music = (Music) o;
+        return duration_seconds == music.duration_seconds &&
+                getGenre() == music.getGenre() &&
+                Objects.equals(getName(), music.getName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getGenre(), getName(), duration_seconds);
+    }
+
     public String toString() {
         return "Music{ genre=" + genre +
                 ", name='" + name + '\'' +
-                ", duration=" + duration +
+                ", duration_seconds=" + duration_seconds +
                 '}';
     }
 }

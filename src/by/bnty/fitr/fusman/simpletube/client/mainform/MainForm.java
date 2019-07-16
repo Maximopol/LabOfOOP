@@ -148,7 +148,7 @@ public class MainForm extends Application {
                 String ss = Converter.convertToUnique(account.getNickname(), account.getEmail()) + "//" + video.getPath();
                 log.info(ss);
                 try {
-                    Socket s = new Socket("localhost", 65432);
+                    Socket s = new Socket("192.168.1.7", 65432);
 
                     log.info("wait");
                     PrintWriter out = new PrintWriter(s.getOutputStream(), true);

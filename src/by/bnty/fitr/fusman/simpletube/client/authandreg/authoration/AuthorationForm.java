@@ -66,7 +66,7 @@ public class AuthorationForm extends JDialog {
     private void onOK() {
         try {
             logger.info("run");
-            Socket socket = new Socket("localhost", 65432);
+            Socket socket = new Socket("192.168.1.7", 65432);
 
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 

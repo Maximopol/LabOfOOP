@@ -6,7 +6,6 @@ public class Matrix {
 
     public Matrix() {
         array = new int[DEFAULT_SIZE][DEFAULT_SIZE];
-
     }
 
     public Matrix(int[][] array) {

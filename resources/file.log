@@ -3296,3 +3296,115 @@ ppp
 2019-06-02 17:08:55 INFO  AccountForm:84 - 0
 2019-06-02 17:09:01 INFO  MainForm:134 - Select videoVideo{name='kek', data=Sun Jun 02 17:08:48 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}
 2019-06-02 17:09:03 INFO  Main:11 - РљРѕРЅРµС† СЂР°Р±РѕС‚С‹
+2019-06-10 17:28:32 INFO  Main:9 - Запуск
+2019-06-10 17:28:32 INFO  MainForm:44 - Запуск приложение
+2019-06-10 17:28:56 INFO  MainForm:126 - Start AuthorationForm
+2019-06-10 17:29:02 INFO  AuthorationForm:68 - run
+2019-06-10 17:29:03 ERROR AuthorationForm:94 - java.net.ConnectException: Connection refused: connect
+2019-06-10 17:29:04 INFO  MainForm:128 - 
+2019-06-10 17:29:07 INFO  Main:11 - Конец работы
+2019-06-10 17:33:24 INFO  Main:9 - Р—Р°РїСѓСЃРє
+2019-06-10 17:33:24 INFO  MainServer:30 - ServerSocket[addr=0.0.0.0/0.0.0.0,localport=65432]
+2019-06-10 17:33:24 INFO  MainServer:33 - waiting
+2019-06-10 17:36:31 INFO  MainServer:35 - New client Socket[addr=/192.168.1.5,port=4222,localport=65432]
+2019-06-10 17:36:31 INFO  MainServer:39 - Reg
+2019-06-10 17:36:31 INFO  RegistrationServer:25 - run
+2019-06-10 17:36:31 INFO  RegistrationServer:35 - Email: lolkake@mail.ru Nickname: lolka
+2019-06-10 17:36:31 INFO  RegistrationServer:40 - Call WorkerSQL
+2019-06-10 17:36:31 INFO  WorkerSQL:40 - start
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : root@gmail.com nickname : root
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : root2@gmail.com nickname : root2
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : root3@gmail.com nickname : root3
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : vadim@gmail.com nickname : vadim
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : kek@gmail.com nickname : kek
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : pop@mail.com nickname : pop
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : popr@mail.com nickname : pop
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : root@gmail.ru nickname : root
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : roott@gmail.com nickname : roott
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : rooott@gmail.com nickname : rooott
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : roout@gmail.com nickname : rooutt
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : rooi@gmail.com nickname : rooi
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : rooyi@gmail.com nickname : rooi
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : pp@mail.com nickname : ppp
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : popka@gmail.com nickname : popochka
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : popkaa@gmail.com nickname : popochkah
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : ruut@gmail.com nickname : ruutik
+2019-06-10 17:36:41 INFO  WorkerSQL:51 - email : mom@gmail.com nickname : momo
+2019-06-10 17:36:42 INFO  WorkerSQL:61 - add
+2019-06-10 17:36:43 INFO  WorkerSQL:65 - СЃreated
+2019-06-10 17:36:43 INFO  RegistrationServer:50 - Value from WorkerSQL:true
+2019-06-10 17:36:43 INFO  RegistrationServer:55 - Done!
+2019-06-10 17:36:43 INFO  MainServer:33 - waiting
+2019-06-10 17:37:38 INFO  MainServer:35 - New client Socket[addr=/192.168.1.5,port=4278,localport=65432]
+2019-06-10 17:37:38 INFO  MainServer:39 - Auth
+2019-06-10 17:37:38 INFO  AuthorizationServer:30 - run
+2019-06-10 17:37:38 INFO  AuthorizationServer:35 - Email:pp@mail.com
+2019-06-10 17:37:38 INFO  AuthorizationServer:38 - Call WorkerSQL
+2019-06-10 17:37:38 INFO  WorkerSQL:78 - run
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: root@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: root2@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: root3@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: vadim@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: kek@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: pop@mail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: popr@mail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: root@gmail.ru
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: roott@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: rooott@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: roout@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: rooi@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: rooyi@gmail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:88 - Email: pp@mail.com
+2019-06-10 17:37:38 INFO  WorkerSQL:93 - Success
+2019-06-10 17:37:38 INFO  WorkerSQL:102 - Total point:ppp
+2019-06-10 17:37:38 INFO  AuthorizationServer:40 - ppp
+2019-06-10 17:37:38 INFO  WorkerSQL:128 - run
+2019-06-10 17:37:38 INFO  WorkerSQL:129 - PPP345845514
+2019-06-10 17:37:38 INFO  AuthorizationServer:46 - Account{email='pp@mail.com', nickname='ppp', playlists=ArrayPlaylists{, name='null', countPlaylist=3, playlist=[ArrayVideo{name='wtf', countPlaylist=4, playlist=[Video{name='kek', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkek', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='oru', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkekek', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='lol', countPlaylist=2, playlist=[Video{name='kusa', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='kusa', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='W', countPlaylist=1, playlist=[Video{name='LOL', data=Mon Jun 10 17:37:38 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}]}, status=Usual}
+2019-06-10 17:37:38 INFO  AuthorizationServer:59 - Done!
+2019-06-10 17:37:38 INFO  MainServer:33 - waiting
+2019-06-10 17:40:27 INFO  MainServer:35 - New client Socket[addr=/192.168.1.5,port=4357,localport=65432]
+2019-06-10 17:40:27 INFO  MainServer:39 - load
+2019-06-10 17:40:27 INFO  LoadingServer:25 - Starts up
+2019-06-10 17:40:27 INFO  LoadingServer:34 - Email: pp@mail.com nickname: ppp
+2019-06-10 17:40:27 INFO  LoadingServer:35 - File name: BelSity path: videoplayback (5).mp4 playlist: Belarus size: 108723706
+2019-06-10 17:40:27 INFO  LoadingServer:37 - Folder:F://serverstorage//ppp345845514//
+2019-06-10 17:41:01 INFO  WorkerSQL:109 - run
+2019-06-10 17:41:01 INFO  WorkerSQL:110 - PPP345845514
+2019-06-10 17:41:01 INFO  WorkerSQL:120 - Success
+2019-06-10 17:41:01 INFO  LoadingServer:73 - Done!
+2019-06-10 17:41:01 INFO  MainServer:33 - waiting
+2019-06-10 17:41:26 INFO  MainServer:35 - New client Socket[addr=/192.168.1.5,port=4389,localport=65432]
+2019-06-10 17:41:26 INFO  MainServer:39 - Auth
+2019-06-10 17:41:26 INFO  AuthorizationServer:30 - run
+2019-06-10 17:41:26 INFO  AuthorizationServer:35 - Email:pp@mail.com
+2019-06-10 17:41:26 INFO  AuthorizationServer:38 - Call WorkerSQL
+2019-06-10 17:41:26 INFO  WorkerSQL:78 - run
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: root@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: root2@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: root3@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: vadim@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: kek@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: pop@mail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: popr@mail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: root@gmail.ru
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: roott@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: rooott@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: roout@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: rooi@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: rooyi@gmail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:88 - Email: pp@mail.com
+2019-06-10 17:41:26 INFO  WorkerSQL:93 - Success
+2019-06-10 17:41:26 INFO  WorkerSQL:102 - Total point:ppp
+2019-06-10 17:41:26 INFO  AuthorizationServer:40 - ppp
+2019-06-10 17:41:26 INFO  WorkerSQL:128 - run
+2019-06-10 17:41:26 INFO  WorkerSQL:129 - PPP345845514
+2019-06-10 17:41:27 INFO  AuthorizationServer:46 - Account{email='pp@mail.com', nickname='ppp', playlists=ArrayPlaylists{, name='null', countPlaylist=4, playlist=[ArrayVideo{name='wtf', countPlaylist=4, playlist=[Video{name='kek', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkek', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='oru', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='lolkekek', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='lol', countPlaylist=2, playlist=[Video{name='kusa', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}, Video{name='kusa', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='W', countPlaylist=1, playlist=[Video{name='LOL', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}, ArrayVideo{name='Belarus', countPlaylist=1, playlist=[Video{name='BelSity', data=Mon Jun 10 17:41:27 MSK 2019, countViews=0, countLikes=0, countDizLikes=0}]}]}, status=Usual}
+2019-06-10 17:41:27 INFO  AuthorizationServer:59 - Done!
+2019-06-10 17:41:27 INFO  MainServer:33 - waiting
+2019-06-10 17:41:50 INFO  MainServer:35 - New client Socket[addr=/192.168.1.5,port=4403,localport=65432]
+2019-06-10 17:41:50 INFO  MainServer:39 - skachat
+2019-06-10 17:41:50 INFO  DonloadingServer:30 - File path:F://serverstorage//ppp345845514//videoplayback (5).mp4
+2019-06-10 17:41:50 INFO  DonloadingServer:37 - File length:108723706 name:videoplayback (5).mp4
+2019-06-10 17:42:50 ERROR DonloadingServer:56 - java.net.SocketException: Connection reset by peer: socket write error
+2019-06-10 17:42:50 INFO  MainServer:33 - waiting

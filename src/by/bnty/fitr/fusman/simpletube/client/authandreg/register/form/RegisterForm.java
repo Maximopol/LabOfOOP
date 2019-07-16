@@ -54,7 +54,7 @@ public class RegisterForm extends JDialog {
     private void onOK() {
         try {
             log.info("run");
-            Socket socket = new Socket("localhost", 65432);
+            Socket socket = new Socket("192.168.1.7", 65432);
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
 
             out.println(Command.REGISTRATION + "\n" + textField1.getText() + "\n" + passwordField1.getText() + "\n" + textField2.getText());

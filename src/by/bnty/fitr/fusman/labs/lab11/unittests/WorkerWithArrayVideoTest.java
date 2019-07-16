@@ -36,11 +36,6 @@ public class WorkerWithArrayVideoTest {
 
     }
 
-//    @Test
-//    public void searchVideo5() {
-//        assertNull(WorkerWithArrayVideo.searchVideo(new HashVideo(), ""));
-//    }
-
     @Test
     public void searchVideo6() {
         ArrayVideo arrayVideo = new ArrayVideo();

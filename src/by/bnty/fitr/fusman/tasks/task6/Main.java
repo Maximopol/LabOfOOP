@@ -7,8 +7,6 @@ public class Main {
         for (int i = 0; i < 55; i++) {
             new Car("" + i, park);
         }
-
-
         //  TimeUnit.SECONDS.sleep(1);
         //java.util.concurrent class Lock
     }
